@@ -54,3 +54,20 @@ Note: the following example will fail because the array has not already been cre
 ```
 numArray[0] = 4
 ```
+
+{::nomarkdown}
+
+<script src="https://embed.runkit.com" data-element-id="my-element"></script>
+
+<!-- anywhere else on your page -->
+<div id="my-element">
+function foo()
+{
+    return "hello world"
+}
+
+foo();
+</div>
+{:/}
+
+
