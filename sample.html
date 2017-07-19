@@ -1,0 +1,199 @@
+<html>
+<head>
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+    position: fixed;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+</style>
+
+ 
+ 
+<script src="https://embed.runkit.com" data-element-id="my-element"></script>
+
+</head>
+<body>
+
+
+
+<xmp theme="united" style="display:none;">
+This unit will introduce you to arrays written in JavaScript.
+
+You will learn about the theory behind using arrays and you will also complete some practical challenges to practise your new skills.
+
+1\. 1\. Experiments
+===================
+
+This window is provided for you to try out any code you develop. Use it to experiment and practise. Feel free to come back to this page at any time.
+
+```js
+// Write experimental code below
+//
+
+console.log('your experiment file')
+
+```
+
+[RUN CODE](index.html?sent=yes)
+
+2\. Arrays explained
+====================
+
+You have already studied arrays in the Flode arrays unit, so you should be familiar with the concept of arrays. (If you haven’t completed the Flode unit, we recommend that you do. It is available in the `An Introduction to Programming \> Flode` course).
+
+```js
+
+// Create a list with ages
+var ages  = [12, 5, 68, 51, 62]
+
+// Create a list with names
+var names = ['Richard', 'Alice', 'Jennifer', 'Bob', 'Harry']
+
+for (var index = 0; index < ages.length; index++ ) {
+  console.log(names[index] + ' is ' + ages[index])
+}
+
+```
+
+[RUN THE CODE]()
+</xmp>
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Modal Header</h2>
+    </div>
+    <div class="modal-body">
+      
+			<div id="my-element">
+						
+			// Create a list with ages
+			var ages  = [12, 5, 68, 51, 62]
+			
+			// Create a list with names
+			var names = ['Richard', 'Alice', 'Jennifer', 'Bob', 'Harry']
+			
+			for (var index = 0; index < ages.length; index++ ) {
+			  console.log(names[index] + ' is ' + ages[index])
+			}
+			</div>
+    </div> 
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+ 
+</body>
+</html>
+
+
