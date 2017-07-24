@@ -24,7 +24,7 @@ function codeToHtml(string) {
             
             var altura =   (rawCode.split("\\n").length - 1) * 18; 
 
-            
+
             /*
             var lastcmd = "<button onclick='myFunction" + counter + "()'>RUN CODE </button> <script>  function myFunction" + counter + "() {  runkitGen('" + rawCode + "') } </script>";
             if (lang && hljs.getLanguage(lang)) {

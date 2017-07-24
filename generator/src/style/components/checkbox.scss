@@ -1,0 +1,50 @@
+.checkbox {
+  margin-bottom: 7px;
+
+  input[type='checkbox']{
+    display: none;
+  }
+
+  input[type='checkbox'] + label{
+    position: relative;
+    @include flexbox();
+    @include align-items(center);
+    color: #1c2e36;
+    font-size: 19px;
+    font-weight: 100;
+  }
+
+  input[type='checkbox'] + label > span{
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    margin-right: 1em;
+    width: 1rem;
+    height: 1rem;
+    background: transparent;
+    border: 1px solid #f7b617;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 250ms cubic-bezier(.4,.0,.23,1);
+  }
+
+  input[type='checkbox'] + label:hover > span, input[type='checkbox']:focus + label > span{
+    background: rgba(255,255,255,.1);
+  }
+
+  input[type='checkbox']:checked + label > span{
+    border: .4em solid #f7b617;
+    animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
+  }
+  input[type='checkbox']:checked + label > span:before{
+    content: "";
+    position: absolute;
+    top: .6rem;
+    left: .2rem;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    transform: rotate(45deg);
+    transform-origin: 0% 100%;
+    animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
+  }
+}
