@@ -1,2 +1,0 @@
-# LaboratoriaJS
-Libro JS

@@ -1,8 +1,0 @@
-<script>
-var parts = window.location.pathname.slice(1).split('/');
-var filename = parts[parts.length - 1];
-
-if (filename.split('.').length === 1) {
-  window.location = window.location.origin + '#' + parts.join('/');
-}
-</script>
