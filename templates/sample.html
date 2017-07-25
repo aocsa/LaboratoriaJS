@@ -1,0 +1,188 @@
+<div class="container">
+    <h1>1 . Expresiones numéricas y de cadena</h1>
+    <p>¿Estás listo para comenzar a escribir código de verdad?</p>
+    <p>Te recomendamos que aprendas JavaScript ya que esto abre el mundo del desarrollo web. También puedes hacer el &quot;lado del servidor&quot; de desarrollo con JavaScript, esto se utiliza para cosas como la escritura de archivos y manejo de Base de Datos.</p>
+    <p>El mejor enfoque es trabajar a través del curso usando primero el lenguaje JavaScript. Una vez que hayas completado el curso usando JavaScript, te resultará mucho más fácil trabajar con tecnología web.</p>
+    <h1>1 . 1 . Entradas y salidas</h1>
+    <p>La forma en que se maneja las entradas y salidas en código es muy similar a los diagramas de flujo.</p>
+    <p>Haga clic en el botón de abajo para <strong>Ejecutar Código</strong>. Los resultados del programa aparecerán justo debajo del botón.</p>
+    <pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id='code45' ></script><div  id='code45'>
+// Obtener la entrada desde la línea de comandos
+var digit1 = 123 // prompt (mensaje)
+var digit2 = 324 // prompt (mensaje)
+var digit3 = 546 // prompt (mensaje)
+
+// Las variables digit1, digit2 y digit3 ahora están siendo asignadas
+// valores pasados al programa.
+
+// Haga algo matemático
+var num = digit1 * (digit2 + digit3)
+
+// la variable num ahora contiene el  resultado de la expresión matemática
+
+// Imprimir algunos resultados (outputs)
+console.log ('Nuestros resultados:')
+console.log ('digit1 =' + digit1)
+console.log ('digit2 =' + digit2)
+console.log ('digit3 =' + digit3)
+console.log ('num =' + num)
+</div></code></pre>
+    <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p>
+    <h2>Inputs (Entradas)</h2>
+    <p>Usted obtendrá un input (entrada) para su código usando la función <code>promt()</code>. JavaScript hace esto fácil, proporcionando acceso a los argumentos de línea de comandos como éste:</p>
+    <pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id='code46' ></script><div  id='code46'>var digit1 = prompt("input 1") 
+var digit2 = prompt("input 2")
+var digit3 = prompt("input 3")
+</div></code></pre>
+    <p>Usted aprenderá más sobre cómo funciona ésto más adelante. Por ahora, ésto es suficiente para usted.</p>
+    <h2>Outputs (Salidas)</h2>
+    <p>Para emitir datos, utilice la función <code>console.log ()</code> como se muestra a la izquierda. Ésto puede contener cualquier expresión JavaScript válida.</p>
+    <h1>1 . 2 . Errores</h1>
+    <p>A menudo cometerá errores al escribir código. Pronto se acostumbrará a ésto, lo importante es desarrollar la habilidad de aprender a entender los errores y luego arreglarlos (debugging o depuración).</p>
+    <p>Mire el código de abajo. Este código contiene un error de sintaxis simple.</p>
+    <p>Ahora presione el botón de abajo para ejecutar el código.</p>
+    <pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id='code47' ></script><div  id='code47'>// Obtener inputs desde la línea de comandos
+var digit1 = 123 // prompt
+var digit2 = 324 // prompt
+var digit3 = 546 // prompt
+
+// Existe un error en ésta línea
+var num =  digit1 +  digit4
+
+//Output
+console.log ('digit1 = ' + digit1)
+console.log ('digit2 = ' + digit2)
+console.log ('digit3 = ' + digit3)
+console.log ('num = ' + num)
+
+</div></code></pre>
+    <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p>
+    <p>Cuando ejecute el código, verá aparecer un error</p>
+    <h2>Entendiendo el error</h2>
+    <p>El error parece bastante hostil. Sin embargo, si lee el error cuidadosamente y mira hacia atrás a través de su código, debería ser capaz de averiguar qué hacer para solucionarlo. Echa un vistazo a la siguiente explicación.</p>
+    <p>Este es el mensaje de error:</p>
+    <pre><code><script src="https://embed.runkit.com" data-element-id='code48' ></script><div  id='code48'>ReferenceError: digit4 is not defined (digit4 no esta definido)
+
+</div></code></pre>
+    <p>Vamos a analizarlo:</p>
+    <ul>
+        <li><code>ReferenceError:</code> Esto simplemente nos dice que hay un error.</li>
+        <li><code>digit4 is not defined</code> Esto nos dice que la variable<code>digit4</code> no está definida en ninguna parte de nuestro código aunque hemos intentado usarlo.</li>
+    </ul>
+    <p>La información que viene debajo de esas líneas iniciales es realmente para situaciones de depuración más avanzadas y puede ignorarse de forma segura por ahora.</p>
+    <h1>1 . 3 . Experimentos</h1>
+    <p>Esta ventana se proporciona para que pruebe cualquier código que desarrolle. Úselo para experimentar y practicar.</p>
+    <p>Hay un código de inicio proporcionado para usted. Este código se explicará en las siguientes páginas.</p>
+    <pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id='code49' ></script><div  id='code49'>
+// Escriba algún código abajo
+
+console.log ('Experimentos')
+
+</div></code></pre>
+    <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p>
+    <h1>1 . 4 . Semicolons (Punto y coma)</h1>
+    <p>Es posible que se le haya dicho que necesita poner los puntos y coma <code>;</code> al final de cada línea en código JavaScript. <strong>Esto no es verdad</strong>.</p>
+    <p>Puedes <em>poner</em> punto y coma al final de cada línea, pero ciertamente no tienes que hacerlo. Hay solamente 2 casos especiales donde ésto es necesario y usted no encontrará estos casos hasta que usted se encuentre mucho más avanzado e incluso entonces será muy raro.</p>
+    <p>Por lo tanto, nuestro consejo es no utilizar ningún punto y coma en absoluto. En estos ejemplos, no los usamos para nuestro desarrollo.</p>
+    <h1>2 . Expresiones numéricas</h1>
+    <p>Empecemos partiendo de un digrama de flujo que demuestre una expresión numérica.</p>
+    <p>Si pasa por el gráfico verá que evalúa las expresiones A ∗ (B + C)</p>
+    <p>En la siguiente página verá exactamente el mismo código escrito en JavaScript</p>
+    <p><img src="resources/C816E9B1F63BC27E6DE9C2FE5D4CAC01.png" alt="Screenshot 2017-07-12 13.21.02.png"></p>
+    <h1>2 . 1 . Código equivalente</h1>
+    <p>Abajo está el código JavaScript equivalente al digrama de flujo de la página anterior.</p>
+    <p>Si ejecuta el código verá que se ocupa de la expresión numérica exactamente de la misma manera que hizo el gráfico de Flode.</p>
+    <pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id='code50' ></script><div  id='code50'>
+// Obtener inputs (entradas) desde la línea de comandos
+var input0 = 1213
+var input1 = 123
+var input2 = 322
+
+// Más código
+var num = input0 * (input1 + input2)
+
+// Una sentencia de debug (depuración)
+console.info ('num is' + num)
+
+// Output (Salida)
+console.log (num)
+
+</div></code></pre>
+    <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p>
+    <h1>2 . 2 . Adición</h1>
+    <h2>Reto</h2>
+    <p>Su código debe esperar un input. Todo lo que necesitas hacer es añadir 12 al input y dar un output al resultado.</p>
+    <pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id='code51' ></script><div  id='code51'>
+// Obtener un input desde la línea de comandos
+// Asegúrese de que el input se almacena como un número
+var input = 12 // +process.argv [2]
+
+// Su código va aquí
+
+
+</div></code></pre>
+    <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">VERIFICAR CÓDIGO</a></p>
+    <h1>2 . 3 . A * (B + C / 3)</h1>
+    <p>Pasamos tres inputs, A, B y C.</p>
+    <p>Debe dar salida A* (B + C/3).</p>
+    <pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id='code52' ></script><div  id='code52'>
+// Obtenga nuestro input desde la línea de comandos
+// Asegúrese de que el input se almacene como un número
+var A = +process.argv [2]
+var B = +proceso.argv [3]
+var C = +process.argv [4]
+
+// Su código va aquí
+
+</div></code></pre>
+    <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">VERIFICAR CÓDIGO</a></p>
+    <h1>3 . Expresiones de strings (cadenas)</h1>
+    <p>Mira el digrama de flujo de abajo. Si lo revisa, verá cómo se maneja los strings. En la siguiente página, aprenderá cómo hacer lo mismo usando código.</p>
+    <p>Al pasar por el gráfico, puede ver qué sucede con las variables después de cada operación.</p>
+    <p><img src="resources/A902CDBB2A2958B283F8419EE6D1783F.png" alt="Screenshot 2017-07-12 13.25.23.png"></p>
+    <h1>3 . 1 . Código equivalente</h1>
+    <p>Abajo se puede ver el código equivalente al diagrama de flujo anterior.</p>
+    <p>Como puede ver, es exactamente casi lo mismo.</p>
+    <pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id='code53' ></script><div  id='code53'>
+var str = 'Hola' 		             // Crear una variable de cadena
+var newStr = str + 'mundo!'   	 // '¡Hola Mundo!'
+console.log(newStr)		         // output
+
+newStr = '123' + 10		          // '12310'
+console.log(newStr) 		       // output
+
+newStr = '123' + '456' 		     // '123456'
+console.log (newStr)		       // output
+
+</div></code></pre>
+    <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p>
+    <h1>3 . 2 . Concatenando Strings</h1>
+    <p>Le estamos proporcionando una cadena como entrada para su programa.</p>
+    <p>Su tarea es agregar el string: <code>, hola!</code> al string que le proporcionamos y luego la emitiremos.</p>
+    <p>¡Asegúrese de incluir el espacio después de la coma!</p>
+    <pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id='code54' ></script><div  id='code54'>
+// Obtener el input desde la línea de comandos
+var inputText = process.argv [2]
+
+// Su código va aquí
+
+</div></code></pre>
+    <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">VERIFICAR CÓDIGO</a></p>
+    <h1>3 . 3 . Unirse a más strings</h1>
+    <p>Le proporcionaremos 2 strings a su programa.</p>
+    <p>Su trabajo es unir los strings para obtener un solo string con un espacio entre los dos strings originales.</p>
+    <p>Éste es un caso común en la codificación y usted tendrá que crear su string uniendo los inputs y añadiendo el espacio en el medio.</p>
+    <pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id='code55' ></script><div  id='code55'>
+// Obtener un input desde la línea de comandos
+var string1 = process.argv [2]
+var string2 = process.argv [3]
+
+// Su código va aquí
+
+
+</div></code></pre>
+    <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">VERIFICAR CÓDIGO</a></p>
+
+
+
+</div>

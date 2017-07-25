@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	
+	
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title> Laboratoria JS</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/lodash/2.4.1/lodash.js"></script>
+        <script src="https://cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/9.1.0/styles/github.min.css">
+        <script src="https://twemoji.maxcdn.com/twemoji.min.js"></script>
+
+
+
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">     
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    
+        <!--bower:css-->
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
+        <!--endbower-->
+        <!-- bower:js -->
+        <script src="/lib/jquery/dist/jquery.js"></script>
+        <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <!-- endbower -->
+        <!-- inject:css-->
+        <link rel="stylesheet" href="/css/styles.css">
+        <!-- endinject-->
+        <!--inject:js-->
+        <script src="/js/app.js"></script>
+        <!--endinject-->
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<script src="https://embed.runkit.com">
+		</script>
+		
+		<script>
+		
+		    function  runkitGen (divID, data) {
+    		    var notebook = RunKit.createNotebook({
+							    // the parent element for the new notebook
+							    element: document.getElementById(divID),
+            
+                              preamble: "var _ = require(\"lodash\")",
+            
+            							    // specify the source of the notebook
+                              source: data,
+                       
+                              onResult: function () {             
+                                  evaluated = true; 
+                              }
+							});
+
+		    }
+
+		</script>
+
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      
+      <ul class="nav navbar-right navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+          <ul class="dropdown-menu" style="padding:12px;">
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+            </form>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1> Arrays
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              
+			
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+	<%- list %>
+
+
+</div>
+                                                
+         
+
+<!-- anywhere else on your page -->
+ <div id = "code"></div>
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+   
+      <div class="col-sm-6">
+          <p class="pull-right">  <i class="icon-heart-empty"></i>   <a href="http://www.laboratoria.la">Laboratoria 2017</a></p>      
+      </div>
+    </div>
+  </div>
+</footer>
+	</body>
+</html>
