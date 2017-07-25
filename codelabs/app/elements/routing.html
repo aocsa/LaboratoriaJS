@@ -18,7 +18,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     // Removes end / from app.baseUrl which page.base requires for production
     if (window.location.port === '') {  // if production
-      page.base(app.baseUrl.replace(/\/$/, ''));
+      page.base(app.baseUrl.replace(/\/$/, 'LaboratoriaJS'));
+
     }
 
     // Middleware
@@ -42,7 +43,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       next();
     });
 
-    page('LaboratoriaJS/', function() {
+    page('/', function() {
       app.route = 'home';
       setFocus(app.route);
       closeDrawer (null, null);
@@ -56,16 +57,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     });
 
 
-    page('LaboratoriaJS/s2', function() {
+    page('/s2', function() {
       app.route = 's2';
       setFocus(app.route);
     });
 
-    page('LaboratoriaJS/s3', function() {
+    page('/s3', function() {
       app.route = 's3';
       setFocus(app.route);
     });
-    page('LaboratoriaJS/s4', function() {
+    page('/s4', function() {
       app.route = 's4';
       setFocus(app.route);
     });
