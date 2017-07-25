@@ -45,6 +45,32 @@ function codeToHtml(string) {
     return md.render(string);
 }
 
+
+function codeTddToHtml(string) {	
+    var hljs = require('highlight.js');  	
+    var md = require('markdown-it')({
+        highlight: function (str, lang) {
+            var rawCode = escape(str);
+            counter++;
+            var divID = "code" + counter;
+            
+            rawCode = '"' + rawCode + '"';
+            divID = "'" + divID + "'";
+             
+
+            var lastcmd = '<div id=' +  divID + ' </div>'
+            
+            var scriptCode = "var flask = new CodeFlask;";
+            scriptCode += "flask.run(" + divID + ", { language: 'javascript', lineNumbers: true });";
+            //scriptCode += "flask.update(" +  rawCode +  ");";
+            return lastcmd + '<script>'  +   scriptCode  + '</script>';
+            
+        }
+    }); 	
+    return md.render(string);
+}
+
+
 var express = require('express'); 
 var app = express();
 
@@ -57,7 +83,7 @@ app.set('view engine', 'ejs');
  
 var str = '';
 var fs = require('fs')
-fs.readFile('2.md', 'utf8', function (err,data) {
+fs.readFile('../4.md', 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
   }
@@ -68,7 +94,7 @@ app.get('/', function (req, res) {
 	var ret = codeToHtml(str);
     res.render('index', {title: 'Hello from render',list: ret});
 });
-
+ 
 app.get('/books', function (req, res) {
     res.send('Hello Books');
 });
