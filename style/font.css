@@ -1,0 +1,21 @@
+@font-face { 
+    font-family: Monserrat;
+    src: url('fonts/Montserrat-Regular.woff') format('woff');
+    font-weight: normal;
+}
+@font-face { 
+    font-family: Monserrat;
+    src: url('fonts/Montserrat-Bold.woff') format('woff');
+    font-weight: bold;
+}
+@font-face { 
+    font-family: PFHandbook;
+    src: url('fonts/PFHandbookPro-Light.woff') format('woff');
+    font-weight: normal;
+}
+@font-face { 
+    font-family: PFHandbook;
+    src: url('fonts/PFHandbookPro-LightItalic.woff') format('woff');
+    font-weight: italic;
+}
+

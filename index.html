@@ -1,328 +1,2278 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="description" content=""><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Polymer Starter Kit"><title>Laboratoria : BookJS</title><meta name="theme-color" content="#2E3AA1"><link rel="manifest" href="manifest.json"><meta name="msapplication-TileColor" content="#3372DF"><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="PSK"><link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="Polymer Starter Kit"><link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png"><meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"><link rel="stylesheet" href="styles/main.css"><script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script><link rel="import" href="elements/elements.html"><style is="custom-style" include="shared-styles"></style><script src="https://cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/lodash/2.4.1/lodash.js"></script><script src="https://cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/9.1.0/styles/github.min.css"><script src="https://twemoji.maxcdn.com/twemoji.min.js"></script><link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"><script src="https://code.jquery.com/jquery-1.12.4.js"></script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script><script src="https://embed.runkit.com">
-		</script><script>
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/ico">
+    <title>Laboratoria</title>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js" async=""></script>
+    <script>
+        window.Polymer = {
+            dom: 'shadow',
+            lazyRegister: 'max',
+            useNativeCSSProperties: true
+        };
 
-		    function  runkitGen (divID, data) {
-    		    var notebook = RunKit.createNotebook({
-							    // the parent element for the new notebook
-							    element: document.getElementById(divID),
+    </script>
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="google-codelab-survey.html">
+    <link rel="import" href="google-codelab-step.html">
+    <link rel="import" href="google-codelab.html">
+    <link rel="stylesheet" type="text/css" href="./style/font.css">
+    <style is="custom-style">
+        p {
+            font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            font-family: Monserrat, PFHandbook;
+            background: var(--google-codelab-background, --paper-grey-300);
+        }
 
-                              preamble: "var _ = require(\"lodash\")",
+    </style>
+</head>
 
-            							    // specify the source of the notebook
-                              source: data,
+<body>
 
-                              onResult: function () {
-                                  evaluated = true;
-                              }
-							});
+    <google-codelab title="Laboratoria!" feedback-link="https://github.com/googlecodelabs" environment="web" last-updated="2017-07-18">
 
-		    }
+        <google-codelab-step label="Funciones" duration="2">
+            <div id="wrapper">
 
-		</script></head><body unresolved=""><template is="dom-bind" id="app"><paper-drawer-panel id="paperDrawerPanel" left-drawer="" force-narrow=""><paper-scroll-header-panel navigation="" flex="" drawer=""><paper-toolbar id="drawerToolbar"><paper-icon-button icon="menu"></paper-icon-button></paper-toolbar><paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]"><a data-route="home" href="{{baseUrl}}"><iron-icon icon="code"></iron-icon><span>Expresiones numéricas y de cadena</span></a> <a data-route="s2" href="{{baseUrl}}s2"><iron-icon icon="code"></iron-icon><span>Estructuras Condicionales</span></a></paper-menu></paper-scroll-header-panel><paper-scroll-header-panel main="" id="headerPanelMain" condenses="" keep-condensed-header=""><paper-toolbar id="mainToolbar" class="tall"><paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle=""></paper-icon-button><span class="space"></span><paper-icon-button icon="refresh"></paper-icon-button><paper-icon-button icon="search"></paper-icon-button><div class="middle middle-container"><div class="app-name">Tutorial de JavaScript</div></div><div class="bottom bottom-container"><div class="bottom-title">El futuro de la web ahora!</div></div></paper-toolbar><div class="content"><iron-pages attr-for-selected="data-route" selected="{{route}}"><section data-route="home" tabindex="-1"><paper-material elevation="1"><h1 class="page-title" tabindex="-1">Expresiones numéricas y de cadena</h1><div class="container"><h1>1 . Expresiones numéricas y de cadena</h1><p>¿Estás listo para comenzar a escribir código de verdad?</p><p>Te recomendamos que aprendas JavaScript ya que esto abre el mundo del desarrollo web. También puedes hacer el &quot;lado del servidor&quot; de desarrollo con JavaScript, esto se utiliza para cosas como la escritura de archivos y manejo de Base de Datos.</p><p>El mejor enfoque es trabajar a través del curso usando primero el lenguaje JavaScript. Una vez que hayas completado el curso usando JavaScript, te resultará mucho más fácil trabajar con tecnología web.</p><h1>1 . 1 . Entradas y salidas</h1><p>La forma en que se maneja las entradas y salidas en código es muy similar a los diagramas de flujo.</p><p>Haga clic en el botón de abajo para <strong>Ejecutar Código</strong>. Los resultados del programa aparecerán justo debajo del botón.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code45"></script><div id="code45">
-                  // Obtener la entrada desde la línea de comandos
-                  var digit1 = 123 // prompt (mensaje)
-                  var digit2 = 324 // prompt (mensaje)
-                  var digit3 = 546 // prompt (mensaje)
+                <p>¿Estás listo para comenzar a escribir código de verdad?</p>
 
-                  // Las variables digit1, digit2 y digit3 ahora están siendo asignadas
-                  // valores pasados al programa.
+                <p>Te recomendamos que aprendas JavaScript ya que esto abre el mundo del desarrollo web. También puedes hacer el “lado del servidor” de desarrollo con JavaScript, esto se utiliza para cosas como la escritura de archivos y manejo de Base de Datos.</p>
 
-                  // Haga algo matemático
-                  var num = digit1 * (digit2 + digit3)
+                <p>El mejor enfoque es trabajar a través del curso usando primero el lenguaje JavaScript. Una vez que hayas completado el curso usando JavaScript, te resultará mucho más fácil trabajar con tecnología web.</p>
 
-                  // la variable num ahora contiene el  resultado de la expresión matemática
+                <h1 id="1.1.entradasysalidas">1 . 1 . Entradas y salidas</h1>
 
-                  // Imprimir algunos resultados (outputs)
-                  console.log ('Nuestros resultados:')
-                  console.log ('digit1 =' + digit1)
-                  console.log ('digit2 =' + digit2)
-                  console.log ('digit3 =' + digit3)
-                  console.log ('num =' + num)
-                  </div></code></pre><p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p><h2>Inputs (Entradas)</h2><p>Usted obtendrá un input (entrada) para su código usando la función <code>promt()</code>. JavaScript hace esto fácil, proporcionando acceso a los argumentos de línea de comandos como éste:</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code46"></script><div id="code46">var digit1 = prompt("input 1")
-                  var digit2 = prompt("input 2")
-                  var digit3 = prompt("input 3")
-                  </div></code></pre><p>Usted aprenderá más sobre cómo funciona ésto más adelante. Por ahora, ésto es suficiente para usted.</p><h2>Outputs (Salidas)</h2><p>Para emitir datos, utilice la función <code>console.log ()</code> como se muestra a la izquierda. Ésto puede contener cualquier expresión JavaScript válida.</p><h1>1 . 2 . Errores</h1><p>A menudo cometerá errores al escribir código. Pronto se acostumbrará a ésto, lo importante es desarrollar la habilidad de aprender a entender los errores y luego arreglarlos (debugging o depuración).</p><p>Mire el código de abajo. Este código contiene un error de sintaxis simple.</p><p>Ahora presione el botón de abajo para ejecutar el código.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code47"></script><div id="code47">// Obtener inputs desde la línea de comandos
-                  var digit1 = 123 // prompt
-                  var digit2 = 324 // prompt
-                  var digit3 = 546 // prompt
+                <p>La forma en que se maneja las entradas y salidas en código es muy similar a los diagramas de flujo.</p>
 
-                  // Existe un error en ésta línea
-                  var num =  digit1 +  digit4
+                <p>Haga clic en el botón de abajo para <strong>Ejecutar Código</strong>. Los resultados del programa aparecerán justo debajo del botón.</p>
+                <pre><code>
+// Obtener la entrada desde la línea de comandos
+var digit1 = 123 // prompt (mensaje)
+var digit2 = 324 // prompt (mensaje)
+var digit3 = 546 // prompt (mensaje)
 
-                  //Output
-                  console.log ('digit1 = ' + digit1)
-                  console.log ('digit2 = ' + digit2)
-                  console.log ('digit3 = ' + digit3)
-                  console.log ('num = ' + num)
+<p>// Las variables digit1, digit2 y digit3 ahora están siendo asignadas
+// valores pasados al programa.</p>
 
-                  </div></code></pre><p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p><p>Cuando ejecute el código, verá aparecer un error</p><h2>Entendiendo el error</h2><p>El error parece bastante hostil. Sin embargo, si lee el error cuidadosamente y mira hacia atrás a través de su código, debería ser capaz de averiguar qué hacer para solucionarlo. Echa un vistazo a la siguiente explicación.</p><p>Este es el mensaje de error:</p><pre><code><script src="https://embed.runkit.com" data-element-id="code48"></script><div id="code48">ReferenceError: digit4 is not defined (digit4 no esta definido)
+<p>// Haga algo matemático
+var num = digit1 * (digit2 + digit3)</p>
 
-                  </div></code></pre><p>Vamos a analizarlo:</p><ul><li><code>ReferenceError:</code> Esto simplemente nos dice que hay un error.</li><li><code>digit4 is not defined</code> Esto nos dice que la variable<code>digit4</code> no está definida en ninguna parte de nuestro código aunque hemos intentado usarlo.</li></ul><p>La información que viene debajo de esas líneas iniciales es realmente para situaciones de depuración más avanzadas y puede ignorarse de forma segura por ahora.</p><h1>1 . 3 . Experimentos</h1><p>Esta ventana se proporciona para que pruebe cualquier código que desarrolle. Úselo para experimentar y practicar.</p><p>Hay un código de inicio proporcionado para usted. Este código se explicará en las siguientes páginas.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code49"></script><div id="code49">
-                  // Escriba algún código abajo
+<p>// la variable num ahora contiene el resultado de la expresión matemática</p>
+// Imprimir algunos resultados (outputs)
+console.log ('Nuestros resultados:')
+console.log ('digit1 =' + digit1)
+console.log ('digit2 =' + digit2)
+console.log ('digit3 =' + digit3)
+console.log ('num =' + num)</code></pre>
 
-                  console.log ('Experimentos')
+                <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p>
 
-                  </div></code></pre><p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p><h1>1 . 4 . Semicolons (Punto y coma)</h1><p>Es posible que se le haya dicho que necesita poner los puntos y coma <code>;</code> al final de cada línea en código JavaScript. <strong>Esto no es verdad</strong>.</p><p>Puedes <em>poner</em> punto y coma al final de cada línea, pero ciertamente no tienes que hacerlo. Hay solamente 2 casos especiales donde ésto es necesario y usted no encontrará estos casos hasta que usted se encuentre mucho más avanzado e incluso entonces será muy raro.</p><p>Por lo tanto, nuestro consejo es no utilizar ningún punto y coma en absoluto. En estos ejemplos, no los usamos para nuestro desarrollo.</p><h1>2 . Expresiones numéricas</h1><p>Empecemos partiendo de un digrama de flujo que demuestre una expresión numérica.</p><p>Si pasa por el gráfico verá que evalúa las expresiones A ∗ (B + C)</p><p>En la siguiente página verá exactamente el mismo código escrito en JavaScript</p><p><img src="resources/C816E9B1F63BC27E6DE9C2FE5D4CAC01.png" alt="Screenshot 2017-07-12 13.21.02.png"></p><h1>2 . 1 . Código equivalente</h1><p>Abajo está el código JavaScript equivalente al digrama de flujo de la página anterior.</p><p>Si ejecuta el código verá que se ocupa de la expresión numérica exactamente de la misma manera que hizo el gráfico de Flode.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code50"></script><div id="code50">
-                  // Obtener inputs (entradas) desde la línea de comandos
-                  var input0 = 1213
-                  var input1 = 123
-                  var input2 = 322
+                <h2 id="inputsentradas">Inputs (Entradas)</h2>
 
-                  // Más código
-                  var num = input0 * (input1 + input2)
+                <p>Usted obtendrá un input (entrada) para su código usando la función <code>prompt()</code>. JavaScript hace esto fácil, proporcionando acceso a los argumentos de línea de comandos como éste:</p>
+                <pre><code>var digit1 = prompt("input 1")
+var digit2 = prompt("input 2")
+var digit3 = prompt("input 3")</code></pre>
 
-                  // Una sentencia de debug (depuración)
-                  console.info ('num is' + num)
+                <p>Usted aprenderá más sobre cómo funciona ésto más adelante. Por ahora, ésto es suficiente para usted.</p>
 
-                  // Output (Salida)
-                  console.log (num)
+                <h2 id="outputssalidas">Outputs (Salidas)</h2>
 
-                  </div></code></pre><p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p><h1>2 . 2 . Adición</h1><h2>Reto</h2><p>Su código debe esperar un input. Todo lo que necesitas hacer es añadir 12 al input y dar un output al resultado.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code51"></script><div id="code51">
-                  // Obtener un input desde la línea de comandos
-                  // Asegúrese de que el input se almacena como un número
-                  var input = 12 // +process.argv [2]
+                <p>Para emitir datos, utilice la función <code>console.log ()</code> como se muestra a la izquierda. Ésto puede contener cualquier expresión JavaScript válida.</p>
 
-                  // Su código va aquí
+                <h1 id="1.2.errores">1 . 2 . Errores</h1>
 
+                <p>A menudo cometerá errores al escribir código. Pronto se acostumbrará a ésto, lo importante es desarrollar la habilidad de aprender a entender los errores y luego arreglarlos (debugging o depuración).</p>
 
-                  </div></code></pre><p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">VERIFICAR CÓDIGO</a></p><h1>2 . 3 . A * (B + C / 3)</h1><p>Pasamos tres inputs, A, B y C.</p><p>Debe dar salida A* (B + C/3).</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code52"></script><div id="code52">
-                  // Obtenga nuestro input desde la línea de comandos
-                  // Asegúrese de que el input se almacene como un número
-                  var A = +process.argv [2]
-                  var B = +proceso.argv [3]
-                  var C = +process.argv [4]
+                <p>Mire el código de abajo. Este código contiene un error de sintaxis simple.</p>
 
-                  // Su código va aquí
+                <p>Ahora presione el botón de abajo para ejecutar el código.</p>
+                <pre><code>// Obtener inputs desde la línea de comandos
+var digit1 = 123 // prompt("input ")
+var digit2 = 324 // prompt("input ")
+var digit3 = 546 // prompt("input ")
 
-                  </div></code></pre><p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">VERIFICAR CÓDIGO</a></p><h1>3 . Expresiones de strings (cadenas)</h1><p>Mira el digrama de flujo de abajo. Si lo revisa, verá cómo se maneja los strings. En la siguiente página, aprenderá cómo hacer lo mismo usando código.</p><p>Al pasar por el gráfico, puede ver qué sucede con las variables después de cada operación.</p><p><img src="resources/A902CDBB2A2958B283F8419EE6D1783F.png" alt="Screenshot 2017-07-12 13.25.23.png"></p><h1>3 . 1 . Código equivalente</h1><p>Abajo se puede ver el código equivalente al diagrama de flujo anterior.</p><p>Como puede ver, es exactamente casi lo mismo.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code53"></script><div id="code53">
-                  var str = 'Hola' 		             // Crear una variable de cadena
-                  var newStr = str + 'mundo!'   	 // '¡Hola Mundo!'
-                  console.log(newStr)		         // output
+<p>// Existe un error en ésta línea
+var num = digit1 + digit4</p>
+//Output
+console.log ('digit1 = ' + digit1)
+console.log ('digit2 = ' + digit2)
+console.log ('digit3 = ' + digit3)
+console.log ('num = ' + num)
+</code></pre>
 
-                  newStr = '123' + 10		          // '12310'
-                  console.log(newStr) 		       // output
+                <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p>
 
-                  newStr = '123' + '456' 		     // '123456'
-                  console.log (newStr)		       // output
+                <p>Cuando ejecute el código, verá aparecer un error</p>
 
-                  </div></code></pre><p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p><h1>3 . 2 . Concatenando Strings</h1><p>Le estamos proporcionando una cadena como entrada para su programa.</p><p>Su tarea es agregar el string: <code>, hola!</code> al string que le proporcionamos y luego la emitiremos.</p><p>¡Asegúrese de incluir el espacio después de la coma!</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code54"></script><div id="code54">
-                  // Obtener el input desde la línea de comandos
-                  var inputText = process.argv [2]
+                <h2 id="entendiendoelerror">Entendiendo el error</h2>
 
-                  // Su código va aquí
+                <p>El error parece bastante hostil. Sin embargo, si lee el error cuidadosamente y mira hacia atrás a través de su código, debería ser capaz de averiguar qué hacer para solucionarlo. Echa un vistazo a la siguiente explicación.</p>
 
-                  </div></code></pre><p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">VERIFICAR CÓDIGO</a></p><h1>3 . 3 . Unirse a más strings</h1><p>Le proporcionaremos 2 strings a su programa.</p><p>Su trabajo es unir los strings para obtener un solo string con un espacio entre los dos strings originales.</p><p>Éste es un caso común en la codificación y usted tendrá que crear su string uniendo los inputs y añadiendo el espacio en el medio.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code55"></script><div id="code55">
-                  // Obtener un input desde la línea de comandos
-                  var string1 = process.argv [2]
-                  var string2 = process.argv [3]
+                <p>Este es el mensaje de error:</p>
+                <pre><code class="(null)">ReferenceError: digit4 is not defined (digit4 no esta definido)
+</code></pre>
 
-                  // Su código va aquí
+                <p>Vamos a analizarlo:</p>
 
+                <ul>
+                    <li><code>ReferenceError:</code> Esto simplemente nos dice que hay un error.</li>
+                    <li><code>digit4 is not defined</code> Esto nos dice que la variable<code>digit4</code> no está definida en ninguna parte de nuestro código aunque hemos intentado usarlo.</li>
+                </ul>
 
-                  </div></code></pre><p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">VERIFICAR CÓDIGO</a></p></div></paper-material></section><section data-route="s2" tabindex="-1"><paper-material elevation="1"><h1 class="page-title" tabindex="-1">Estructuras Condicionales</h1><div class="container"><p>Esta unidad trata de usar sentencias condicionales en JavaScript.</p><p>Aquí hay un buen ejemplo:</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code1"></script><div id="code1">if (number > = 10 && number < 100) {	// 1. si el número es de 2 dígitos
-    console.log('número de 2 dígitos') 	// entonces el output está diciendo
-  }
-  else if (number> = 100) {			        // 2. De lo contrario, si hay más de 2 dígitos
-    console.log ('número de dígitos múltiples') // entonces el output está diciendo
-  }
-  else {						                    // 3. de lo contrario
-    console.log ('número de 1 dígito')	// este debe ser un número de un solo dígito
-  }
-  </div></code></pre><p><strong>Si</strong> el número es mayor o igual a 10 y el número es menor que 100, <strong>entonces</strong> mostrar ‘número de 2 dígitos’ <strong>de lo contrario si</strong> el número es mayor o igual a 100 entonces mostrar ‘número de dígitos múltiples’ <strong>de lo contrario</strong> mostrar 'número de 1 dígito'.</p><h1>1 . 1 . Experimentos</h1><p>Esta ventana se proporciona para que pruebe cualquier código que desarrolle. Úselo para experimentar y practicar.</p><p>Hay un código de inicio proporcionado para usted. Este código se explicará en las siguientes páginas.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code2"></script><div id="code2">
-  // Escribe el código de experimento a continuación
+                <p>La información que viene debajo de esas líneas iniciales es realmente para situaciones de depuración más avanzadas y puede ignorarse de forma segura por ahora.</p>
 
-  console.log ('su archivo de experimento')
+                <h1 id="1.3.experimentos">1 . 3 . Experimentos</h1>
 
-  </div></code></pre><p><a href="">EJECUTE EL CÓDIGO</a></p><h1>2 . Condiciones explicadas</h1><p>Echa un vistazo a la diagrama de flujo; el gráfico muestra el uso de una condición.</p><h2>Ejemplo</h2><p><img src="resources/ABA2686987271F50F421DE94863644A9.png" alt="Screenshot 2017-07-12 20.10.38.png"></p><p>En este ejemplo, la condición es input0 &gt; 100 . Puede ver cómo esta condición puede ser verdadera o falsa. Estos son los únicos dos posibles resultados de la decisión.</p><h1>2 . 1 . Condiciones en el código</h1><p>A la izquierda está el código JavaScript equivalente al gráfico de Flode de la página anterior.</p><p>Si ejecuta el código verá que se ocupa de la sentencia condicional exactamente de la misma manera que hizo el gráfico de Flode.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code3"></script><div id="code3">
-  // Obtener el input desde la línea de comandos
-  var number = +process.argv [2]
+                <p>Esta ventana se proporciona para que pruebe cualquier código que desarrolle. Úselo para experimentar y practicar.</p>
 
-  // Su código va abajo
+                <p>Hay un código de inicio proporcionado para usted. Este código se explicará en las siguientes páginas.</p>
+                <pre><code>
+// Escriba algún código abajo
+console.log ('Experimentos')
+</code></pre>
 
-  // output del número del input del programa
-  console.log ('La entrada de línea de comandos es:' + number)
+                <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p>
 
-  // Y aquí viene nuestra declaración ‘if'
-  if (number> 100) {
-    console.log ('grande')
-  }
-  else {
-    console.log ('pequeño')
-  }
+                <h1 id="1.4.semicolonspuntoycoma">1 . 4 . Semicolons (Punto y coma)</h1>
 
-  </div></code></pre><p><a href="">EJECUTE EL CÓDIGO</a></p><p>Echa un vistazo a cómo funciona este código:</p><p>En primer lugar, los datos de prueba de nuestra variable de entrada <code>number</code>, proviene de la línea de comandos.</p><pre><code class="language-text"><script src="https://embed.runkit.com" data-element-id="code4"></script><div id="code4">var number = process.argv [2]
-  </div></code></pre><p>Y aquí viene la parte importante. Se utiliza una instrucción <code>if</code> para comprobar si<code>number</code> es mayor que 100 . Si lo es, entonces emitimos la cadena 'grande'. De lo contrario, emitiremos la cadena 'pequeño'.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code5"></script><div id="code5">if (number > 100) {
-    console.log ('grande')
-  }
-  else {
-    console.log ('pequeño')
-  }
-  </div></code></pre><h1>2 . 2 . Declaraciones condicionales explicadas</h1><p>Ahora vamos a ver con más detalle cómo funciona la sentencia <code>if</code>. Aquí está el código completo nuevamente:</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code6"></script><div id="code6">if (number> 100) {
-    console.log ('grande’')
-  }
-  else {
-    console.log ('pequeño')
-  }
-  </div></code></pre><p>En primer lugar, eche un vistazo a la primera línea:</p><h2>La sentencia if</h2><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code7"></script><div id="code7">
-   if (number > 100) {
+                <p>Es posible que se le haya dicho que necesita poner los puntos y coma <code>;</code> al final de cada línea en código JavaScript. <strong>Esto no es verdad</strong>.</p>
 
-  </div></code></pre><p>1. Inicie la línea con <code>if</code>.</p><p>2. Ahora especifique la condición dentro de los paréntesis <code>(condión)</code>.</p><p>3. Por último, al final de la línea se añade un <code>{</code>, conocido como una <strong>llave</strong>.</p><h2>Si la condición es verdadera</h2><p><strong>if</strong> (si) la condición es verdadera, entonces realizas todas las instrucciones que vienen después de ella, dentro del <code>{</code> <code>}</code>. En este ejemplo sólo hay una instrucción.</p><pre><code><script src="https://embed.runkit.com" data-element-id="code8"></script><div id="code8">
+                <p>Puedes <em>poner</em> punto y coma al final de cada línea, pero ciertamente no tienes que hacerlo. Hay solamente 2 casos especiales donde ésto es necesario y usted no encontrará estos casos hasta que usted se encuentre mucho más avanzado e incluso entonces será muy raro.</p>
+
+                <p>Por lo tanto, nuestro consejo es no utilizar ningún punto y coma en absoluto. En estos ejemplos, no los usamos para nuestro desarrollo.</p>
+
+                <h1 id="2.expresionesnuméricas">2 . Expresiones numéricas</h1>
+
+                <p>Empecemos partiendo de un digrama de flujo que demuestre una expresión numérica.</p>
+
+                <p>Si pasa por el gráfico verá que evalúa las expresiones A ∗ (B + C)</p>
+
+                <p>En la siguiente página verá exactamente el mismo código escrito en JavaScript</p>
+
+                <figure>
+                    <img src="resources/C816E9B1F63BC27E6DE9C2FE5D4CAC01.png" alt="Screenshot 2017-07-12 13.21.02.png">
+                    <figcaption>Screenshot 2017–07–12 13.21.02.png</figcaption>
+                </figure>
+
+                <h1 id="2.1.códigoequivalente">2 . 1 . Código equivalente</h1>
+
+                <p>Abajo está el código JavaScript equivalente al digrama de flujo de la página anterior.</p>
+
+                <p>Si ejecuta el código verá que se ocupa de la expresión numérica exactamente de la misma manera que hizo el gráfico de Flode.</p>
+                <pre><code>
+// Obtener inputs (entradas) desde la línea de comandos
+var input0 = 1213
+var input1 = 123
+var input2 = 322
+
+<p>// Más código
+var num = input0 * (input1 + input2)</p>
+
+<p>// Una sentencia de debug (depuración)
+console.info ('num is' + num)</p>
+// Output (Salida)
+console.log (num)
+</code></pre>
+
+                <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p>
+
+                <h1 id="2.2.adición">2 . 2 . Adición</h1>
+
+                <h2 id="reto">Reto</h2>
+
+                <p>Su código debe esperar un input. Todo lo que necesitas hacer es añadir 12 al input y dar un output al resultado.</p>
+                <pre><code>
+// Obtener un input desde la línea de comandos
+// Asegúrese de que el input se almacena como un número
+var input = 12 // prompt("input ")
+
+<p>// Su código va aquí</p>
+</code></pre>
+
+                <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">VERIFICAR CÓDIGO</a></p>
+
+                <h1 id="2.3.abc3">2 . 3 . A * (B + C / 3)</h1>
+
+                <p>Pasamos tres inputs, A, B y C.</p>
+
+                <p>Debe dar salida A* (B + C/3).</p>
+                <pre><code>
+// Obtenga nuestro input desde la línea de comandos
+// Asegúrese de que el input se almacene como un número
+var A = 12 // prompt("input: ")
+var B = 13 // prompt("input: ")
+var C = 14 // prompt("input: ")
+// Su código va aquí
+</code></pre>
+
+                <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">VERIFICAR CÓDIGO</a></p>
+
+                <h1 id="3.expresionesdestringscadenas">3 . Expresiones de strings (cadenas)</h1>
+
+                <p>Mira el digrama de flujo de abajo. Si lo revisa, verá cómo se maneja los strings. En la siguiente página, aprenderá cómo hacer lo mismo usando código.</p>
+
+                <p>Al pasar por el gráfico, puede ver qué sucede con las variables después de cada operación.</p>
+
+                <figure>
+                    <img src="resources/A902CDBB2A2958B283F8419EE6D1783F.png" alt="Screenshot 2017-07-12 13.25.23.png">
+                    <figcaption>Screenshot 2017–07–12 13.25.23.png</figcaption>
+                </figure>
+
+                <h1 id="3.1.códigoequivalente">3 . 1 . Código equivalente</h1>
+
+                <p>Abajo se puede ver el código equivalente al diagrama de flujo anterior.</p>
+
+                <p>Como puede ver, es exactamente casi lo mismo.</p>
+                <pre><code>
+var str = 'Hola' // Crear una variable de cadena
+var newStr = str + 'mundo!' // '¡Hola Mundo!'
+console.log(newStr) // output
+
+<p>newStr = '123' + 10 // '12310'
+console.log(newStr) // output</p>
+newStr = '123' + '456' // '123456'
+console.log (newStr) // output
+</code></pre>
+
+                <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">EJECUTAR CÓDIGO</a></p>
+
+                <h1 id="3.2.concatenandostrings">3 . 2 . Concatenando Strings</h1>
+
+                <p>Le estamos proporcionando una cadena como entrada para su programa.</p>
+
+                <p>Su tarea es agregar el string: <code>, hola!</code> al string que le proporcionamos y luego la emitiremos.</p>
+
+                <p>¡Asegúrese de incluir el espacio después de la coma!</p>
+                <pre><code>
+// Obtener el input desde la línea de comandos
+var inputText = "Alex"// prompt("input: ")
+// Su código va aquí
+</code></pre>
+
+                <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">VERIFICAR CÓDIGO</a></p>
+
+                <h1 id="3.3.unirseamásstrings">3 . 3 . Unirse a más strings</h1>
+
+                <p>Le proporcionaremos 2 strings a su programa.</p>
+
+                <p>Su trabajo es unir los strings para obtener un solo string con un espacio entre los dos strings originales.</p>
+
+                <p>Éste es un caso común en la codificación y usted tendrá que crear su string uniendo los inputs y añadiendo el espacio en el medio.</p>
+                <pre><code>
+// Obtener un input desde la línea de comandos
+var string1 = "sumar" // prompt("input: ")
+var string2 = "strings" // prompt("input: ")
+
+<p>// Su código va aquí</p>
+</code></pre>
+
+                <p><a href="https://github.com/aocsa/LaboratoriaJS/blob/master">VERIFICAR CÓDIGO</a></p>
+                <!-- ##END MARKED WRAPPER## -->
+            </div>
+        </google-codelab-step>
+
+        <google-codelab-step label="Estructuras Condicionales" duration="3">
+             <div id="wrapper">
+ 
+<p>Esta unidad trata de usar sentencias condicionales en JavaScript.</p>
+
+<p>Aquí hay un buen ejemplo:</p>
+<pre><code class="js">var number = 123   // prompt("input: ")
+
+if (number &gt;= 10 &amp;&amp; number &lt; 100) {	// 1. si el número es de 2 dígitos
+  console.log('número de 2 dígitos') 	// entonces el output está diciendo 
+}
+else if (number &gt;= 100) {			        // 2. De lo contrario, si hay más de 2 dígitos
+  console.log ('número de dígitos múltiples') // entonces el output está diciendo 
+}
+else {						                    // 3. de lo contrario
+  console.log ('número de 1 dígito')	// este debe ser un número de un solo dígito
+}</code></pre>
+
+<p><strong>Si</strong> el número es mayor o igual a 10 y el número es menor que 100, <strong>entonces</strong> mostrar ‘número de 2 dígitos’ <strong>de lo contrario si</strong> el número es mayor o igual a 100 entonces mostrar ‘número de dígitos múltiples’ <strong>de lo contrario</strong> mostrar ‘número de 1 dígito’.</p>
+
+<h1 id="1.1.experimentos">1 . 1 . Experimentos</h1>
+
+<p>Esta ventana se proporciona para que pruebe cualquier código que desarrolle. Úselo para experimentar y practicar.</p>
+
+<p>Hay un código de inicio proporcionado para usted. Este código se explicará en las siguientes páginas.</p>
+<pre><code class="js">
+// Escribe el código de experimento a continuación
+
+console.log ('su archivo de experimento')
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<h1 id="2.condicionesexplicadas">2 . Condiciones explicadas</h1>
+
+<p>Echa un vistazo a la diagrama de flujo; el gráfico muestra el uso de una condición.</p>
+
+<h2 id="ejemplo">Ejemplo</h2>
+
+<figure>
+<img src="resources/ABA2686987271F50F421DE94863644A9.png" alt="Screenshot 2017-07-12 20.10.38.png">
+<figcaption>Screenshot 2017–07–12 20.10.38.png</figcaption>
+</figure>
+
+<p>En este ejemplo, la condición es input0 &gt; 100 . Puede ver cómo esta condición puede ser verdadera o falsa. Estos son los únicos dos posibles resultados de la decisión.</p>
+
+<h1 id="2.1.condicionesenelcódigo">2 . 1 . Condiciones en el código</h1>
+
+<p>A la izquierda está el código JavaScript equivalente al gráfico de Flode de la página anterior.</p>
+
+<p>Si ejecuta el código verá que se ocupa de la sentencia condicional exactamente de la misma manera que hizo el gráfico de Flode.</p>
+<pre><code class="js">
+// Obtener el input desde la línea de comandos
+var number = +process.argv [2]
+
+// Su código va abajo
+
+// output del número del input del programa
+console.log ('La entrada de línea de comandos es:' + number)
+
+// Y aquí viene nuestra declaración ‘if'
+if (number&gt; 100) {
   console.log ('grande')
-
-  </div></code></pre><p>Todo lo que está dentro de <code>{</code> y `} se le denomina <em>bloque de código</em>.</p><h2>De otra manera</h2><p>Si la condición es <strong>falsa</strong> (not true), el bloque de código <code>else</code> se ejecuta en su lugar.</p><pre><code><script src="https://embed.runkit.com" data-element-id="code9"></script><div id="code9">
+}
+else {
   console.log ('pequeño')
+}
+</code></pre>
 
-  </div></code></pre><h2>Bloques de código</h2><p>El <code>{</code> al final de la línea <code>if</code> se utiliza para iniciar un bloque de código. Una vez que se ha iniciado el bloque de código, agrega el código que desea ejecutar en las siguientes líneas. A continuación, finaliza el bloque de código con un <code>}</code>.</p><h1>2 . 3 . Indentación</h1><p>Indentación significa dejar un espacio vacío entre el margen izquierdo y el comienzo de una línea de código. En algunos lenguajes de programación como Python, la sangría es <em>requerida</em>. En estos idiomas, si no se indenta su código correctamente, no se ejecutará.</p><p>En JavaScript, su código funcionará bien sin sangría pero parecerá desordenado y puede ser difícil para otros leer y entender.</p><p>Echa un vistazo al código que está escrito sin sangría. Es difícil de leer en comparación con el código que hemos utilizado en las páginas anteriores.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code10"></script><div id="code10">if (number > 100) {
-    console.log ('grande')
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
 
-  } else {
-    console.log ('pequeño')
-  }
-  </div></code></pre><h2>¿Qué código se debería identar?</h2><p>Se debe identar todo el código dentro de un bloque de código. Los bloques de código comienzan con el carácter <code>{</code> y terminan con <code>}</code>.</p><pre><code class="language-text"><script src="https://embed.runkit.com" data-element-id="code11"></script><div id="code11">If (number > 100) {
-    aquí todo el código identado
-  }
-  </div></code></pre><p>Pronto verás otras sentencias que también tienen bloques de código, como son los ciclos <code>for</code> y<code>while</code>. Estos deben ser identados también.</p><pre><code class="language-text"><script src="https://embed.runkit.com" data-element-id="code12"></script><div id="code12">while (contador  <= 1="" 9)="" {="" console.log="" (contador)="" contador="contador" +="" }="" <="" div=""></=></div></code></pre><h2>¿Cómo se indenta código?</h2><p>Pulse la tecla de tabulación al principio de una nueva línea para identar su código. (La tecla de tabulación es la tecla con dos flechas apuntando en direcciones opuestas).</p><p>A veces los principiantes presionan la barra de espacio varias veces para sangrar su código. <strong>No haga esto</strong>.</p><p>Siempre use la tecla de tabulación en su lugar. Esto asegura que las sangrías sean consistentes.</p><p>En JavaScript, utilice 2 o 4 espacios para sangrar.</p><h1>2 . 4 . Explicación de iguales</h1><p>Echa un vistazo al diagrama de flujo.</p><p><img src="resources/A07B07C57B8B5658F01A8EC75706C7FA.png" alt="Screenshot 2017-07-12 20.20.52.png"></p><p>A continuación se muestra el código JavaScript equivalente:</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code13"></script><div id="code13">if (number == 100) {
-    console.log ('es 100')
-  } else {
-    console.log ('no es 100')
-  }
-  </div></code></pre><h2>¿Por qué usamos ==?</h2><p>Tenga en cuenta que necesita utilizar <code>==</code> y ** not ** =.</p><p>En JavaScript (y muchos otros lenguajes de programación) <code>=</code> es el operador * de asignación *, no un operador de comparación. Esto significa que usted usa <code>==</code> para comparar cosas y <code>=</code> para establecer variables.</p><pre><code class="language-text"><script src="https://embed.runkit.com" data-element-id="code14"></script><div id="code14">N = 100 // asigna N a 100
-  N == 100 // falso a menos que N tenga el valor 100
-  </div></code></pre><h1>2 . 5 . Desafío ==</h1><p>Le proporcionaremos un número, N.</p><ul><li>Si N es igual a 100, el output ‘éxito’</li><li>De lo contrario, output ‘pierde’</li></ul><p>Recuerde que el string distingue entre mayúsculas y minúsculas.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code15"></script><div id="code15">// Obtener argumentos de la línea de comandos
-  // Asegúrese de que N se maneje como un número
-  var N = +process.argv[2]
+<p>Echa un vistazo a cómo funciona este código:</p>
 
-  // Su código va aquí
+<p>En primer lugar, los datos de prueba de nuestra variable de entrada <code>number</code>, proviene de la línea de comandos.</p>
+<pre><code class="text">var number = process.argv [2]</code></pre>
 
-  </div></code></pre><p><a href="">¡Revisalo!</a></p><h1>2 . 6 . No es igual explicado</h1><p>Echa un vistazo a la tabla de Flode a la izquierda, que muestra una condición &quot;no es igual&quot;. A continuación se muestra el código JavaScript equivalente.</p><p>! [Screenshot 2017-07-12 20.22.50.png](resources/ 68D791572098196733D1301DBC3AD230.png)</p><pre><code class="language-text"><script src="https://embed.runkit.com" data-element-id="code16"></script><div id="code16">if (input0 != 100) { console.log ('no es 100')} else {console.log ('es 100')}
+<p>Y aquí viene la parte importante. Se utiliza una instrucción <code>if</code> para comprobar si<code>number</code> es mayor que 100 . Si lo es, entonces emitimos la cadena ‘grande’. De lo contrario, emitiremos la cadena ‘pequeño’.</p>
+<pre><code class="js">if (number &gt; 100) {
+  console.log ('grande')
+}
+else {
+  console.log ('pequeño')
+}</code></pre>
 
-  </div></code></pre><h2>!=</h2><p>Usted puede recordar de la unidad anterior que el signo <code>!</code> Significa 'no' por lo tanto <code>!=</code> Significa ‘no es igual’</p><h1>2 . 7 . No es igual a (!=)</h1><p>Le pasaremos un string.</p><ul><li>Si el string no es igual a ‘Bingo’ output ‘perdio’</li><li>De lo contrario, output ‘exito!’</li></ul><p>Utilice el <code>!=</code> en su condición.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code17"></script><div id="code17">
-  // Obtener argumentos de línea de comandos
-  Var testString = proceso.argv [2]
+<h1 id="2.2.declaracionescondicionalesexplicadas">2 . 2 . Declaraciones condicionales explicadas</h1>
 
-  // Su código va aquí
+<p>Ahora vamos a ver con más detalle cómo funciona la sentencia <code>if</code>. Aquí está el código completo nuevamente:</p>
+<pre><code class="js">var number = 123   // prompt("input: ")
+if (number &gt; 100) {
+  console.log ('grande’')
+}
+else {
+  console.log ('pequeño')
+}</code></pre>
 
-  </div></code></pre><p><a href="">¡Revisalo!</a></p><h1>2 . 8 . Dos condiciones</h1><p>Ahora veamos otro ejemplo. Mira el gráfico de Flode a la izquierda. Pase a través de la tabla y verá que funciona de la siguiente manera:</p><blockquote></blockquote><p>! [ Screenshot 2017-07-12 20.25.59.png](resources/ F47FA1181121E6DF09BBA962869EA162.png)</p><blockquote><p>Si el número es menor o igual a 100, output 'pequeño'. Si el número es mayor que 100 y también mayor que 200 el output es 'enorme', si no el output es 'grande'</p></blockquote><p>Ahora haga clic en la pestaña del archivo <code>if2.js</code> en el panel izquierdo para ver cómo se escribiría el código JavaScript para hacer lo mismo.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code18"></script><div id="code18">
-  var number = 211
+<p>En primer lugar, eche un vistazo a la primera línea:</p>
 
-  // Como está escrito en el gráfico de Flode
-  if (number <= 100)="" {="" console.log="" ('pequeño')="" }="" else="" if="" (number=""> 200) {
-    console.log ('enorme')
-  }
-  else {
-    console.log ('grande')
-  }
+<h2 id="lasentenciaif">La sentencia if</h2>
+<pre><code class="js">
+ if (number &gt; 100) {
+</code></pre>
 
-  </=></div></code></pre><h2>else if (de lo contrario si)</h2><p>Eche un vistazo a la segunda condición, se utiliza la siguiente instrucción:</p><pre><code class="language-text"><script src="https://embed.runkit.com" data-element-id="code19"></script><div id="code19">else if (input0 \> 200) {
-  </div></code></pre><p>El uso de <code>else if</code> significa que esta línea sólo se ejecutará si la primera condición <code>if</code> fue <code>false</code>.</p><p>Esta es la forma general en que JavaScript evalúa las sentencias <code>if</code>.</p><pre><code class="language-text"><script src="https://embed.runkit.com" data-element-id="code20"></script><div id="code20">if (condicion1) {hace algo} else if (condicion2) {hace otra cosa} else if (condicion3) {hace otra cosa} si no de otra manera {hace esto}
-  </div></code></pre><ul><li>Se evalúa la primera condición <code>if</code>. Si es cierto, entonces se ejecutará el bloque de código y la ejecución saltará al final de todas las condiciones <code>if / else</code>.</li><li>Si es falso, entonces todas las condiciones <code>else if</code> serán evaluadas a su vez hasta que una de ellas tenga una condición <code>true</code>.</li><li>Si ninguna de las condiciones <code>if</code> o <code>else if</code> se evalúan como <code>true</code>, entonces el bloque de código <code>else</code> se ejecutará automáticamente (si se utilizara).</li></ul><h1>2 . 9 . Corregir los errores</h1><p>Corrige el código partido a la izquierda</p><ul><li>¡Puede haber más de un error!</li><li>Asegúrese de que su programa funcione en ambos casos: <code>str</code> es al inicio igual a ‘there’ y luego no es igual.</li></ul><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code21"></script><div id="code21">
-  // Obtener argumentos de la línea de comandos
-  input0 = process.argv [2]
+<p>1. Inicie la línea con <code>if</code>.</p>
 
-  // Su código va aquí
-  if (input0 = 'there') {
-    console.log (1)
-  }
-  else {
-    console.log (0)
+<p>2. Ahora especifique la condición dentro de los paréntesis <code>(condión)</code>.</p>
 
-  </div></code></pre><p><a href="">¡Revisalo!</a></p><h1>2 . 10 . Corregir más errores</h1><p>Corrige el código partido a la izquierda. Podría haber uno o más errores.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code22"></script><div id="code22">
-  // Obtener un input desde la línea de comandos
-  var text = process.argv [2]
+<p>3. Por último, al final de la línea se añade un <code>{</code>, conocido como una <strong>llave</strong>.</p>
 
-  if (texts != 'Bingo')
-    console.log ('Perdió')
-  }
-  else {
-    console.log ('Acertó!')
+<h2 id="silacondiciónesverdadera">Si la condición es verdadera</h2>
 
-  </div></code></pre><p><a href="">¡Revisalo!</a></p><h1>2 . 11 . 1 ó 0</h1><p>Se le proporciona un input numérico que será 1 o 0.</p><p>Si el número es 1, el output es &quot;prender&quot;, si es 0 el output es&quot;apagar&quot;.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code23"></script><div id="code23">// Obtener argumentos de la línea de comandos
-  // Asegúrese de que sean tratados como números
-  var N = +process.argv [2]
+<p><strong>if</strong> (si) la condición es verdadera, entonces realizas todas las instrucciones que vienen después de ella, dentro del <code>{</code> <code>}</code>. En este ejemplo sólo hay una instrucción.</p>
 
-  // Su código va aquí
+<p></p><pre><code class="(null)">
+console.log ('grande')
+</code></pre><p></p>
 
-  </div></code></pre><p><a href="">¡Revisalo!</a></p><h1>2 . 12 . True o False (verdadero o falso)</h1><p>Este desafío está al revés.</p><p>Le proporcionamos un input de string que es &quot;true&quot; o &quot;false&quot;. Debería dar de output un número 1 si es verdadero ‘true’ o 0 si es falso ‘false’.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code24"></script><div id="code24">// Obtener argumentos de la línea de comandos
-  var inputText = process.argv[2]
+<p>Todo lo que está dentro de <code>{</code> y `} se le denomina <em>bloque de código</em>.</p>
 
-  // Su código va aquí
+<h2 id="deotramanera">De otra manera</h2>
 
-  </div></code></pre><p><a href="">¡Revisalo!</a></p><h1>3 . Operadores lógicos</h1><p>Eche un vistazo a la tabla Flode a la izquierda. El gráfico contiene dos bloques condicionales donde se puede ver que se utiliza <code>and</code>(y) y<code>or</code>(o).</p><p>! [Screenshot 2017-07-12 20.29.53.png] ( resources / 3C66D3735FF4861679FB5FBAE11771C4.png)</p><p>A continuación se muestra el código JavaScript equivalente. Pruebe con diferentes valores para <code>number</code>.</p><pre><code class="language-text"><script src="https://embed.runkit.com" data-element-id="code25"></script><div id="code25">// Cambie el valor del número y pase a través del número var number = -10
-  // un ejemplo de 'and' if (number \> = 10 && number \<100) 1="" 2="" {console.log="" ('número="" de="" dígitos')}="" else="" {console="" .log="" dígito')}="" ejemplo="" 'o'="" if="" (número="" \="" <0="" ||="" número=""> = 1000) {console.log ('Número inválido')} else {console.log ('OK’)}
-  </100)></div></code></pre><h2>&amp;&amp; y ||</h2><p>Lo único nuevo es que cuando se utilizan operadores lógicos en JavaScript, no se puede escribir &quot;and&quot; y &quot;or&quot;. Tienes que usar '&amp;&amp;' y '||'.</p><p>Aparte de esto, el `if / else 'sigue exactamente los mismos principios.</p><h1>3 . 1 . 'and' y 'or' en el código</h1><p>A la izquierda está el código JavaScript. Siéntase libre de jugar con esto, experimentar y probar cosas.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code26"></script><div id="code26">
-  // establece este número para probar tus valores booleanos
-  var number  = -10
+<p>Si la condición es <strong>falsa</strong> (not true), el bloque de código <code>else</code> se ejecuta en su lugar.</p>
 
-  // Primer bloque if
-  if (number > = 10 && number < 100 ) {
-    console.log ('número de 2 dígitos')
-  }
-  else {
-    console.log ('número de 1 dígito')
-  }
+<p></p><pre><code class="(null)">
+console.log ('pequeño')
+</code></pre><p></p>
 
-  // Otro bloque if
-  if (number < 0 || number >= 1000) {
-    console.log ('Número no válido')
-  }
-  else {
-    console.log ('ok')
-  }
-  </div></code></pre><p><a href="">EJECUTE SU CÓDIGO</a></p><h1>3 . 2 . Coches rápidos 1</h1><p>Se le proporcionan 2 valores de input que determinan la velocidad de 2 coches.</p><p>Si cualquier coche está viajando en más de 70 entonces el output es 'carro rápido'.De lo contrario el output es 'ok'.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code27"></script><div id="code27">
-  // Obtener el input desde la línea de comandos
-  // Asegúrese de que sean tratados como números
-  var car1 = +process.argv[2]
-  var car2 = +process.argv[3]
+<h2 id="bloquesdecódigo">Bloques de código</h2>
 
-  // Su código va aquí
+<p>El <code>{</code> al final de la línea <code>if</code> se utiliza para iniciar un bloque de código. Una vez que se ha iniciado el bloque de código, agrega el código que desea ejecutar en las siguientes líneas. A continuación, finaliza el bloque de código con un <code>}</code>.</p>
 
-  </div></code></pre><p><a href="">¡Revisalo!</a></p><h1>3 . 3 . Coches rápidos 2</h1><p>Se le proporcionan 2 valores de input que determinan la velocidad de 2 coches.</p><ul><li>Si ambos coches están viajando en más de 70 entonces el output es ‘2 carros rápidos’</li><li>Si sólo un coche se está moviendo a más de 70, el output es '1 carro rápido'</li><li>De lo contrario el output es 'ningún carro rápido'</li></ul><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code28"></script><div id="code28">
-  // Obtener las velocidades de nuestro carro desde la línea de comandos
-  // Trátelos como números
-  var speed1 = +process.argv[2]
-  var speed2 = +process.argv[3]
+<h1 id="2.3.indentación">2 . 3 . Indentación</h1>
 
-  // Escribe tu código abajo
+<p>Indentación significa dejar un espacio vacío entre el margen izquierdo y el comienzo de una línea de código. En algunos lenguajes de programación como Python, la sangría es <em>requerida</em>. En estos idiomas, si no se indenta su código correctamente, no se ejecutará.</p>
 
-  </div></code></pre><p><a href="">¡Revisalo!</a></p><h1>3 . 4 . Categorías</h1><p>Se le proporciona la edad de una persona y es necesario determinar en qué nivel escolar esta la persona.</p><ul><li>Si esta de 6 a 11 el output es escuela ‘primaria’</li><li>Si esta de 12 a 18 el output es 'escuela ‘secundaria’</li><li>Si es ninguno de los dos, a continuación, el output es ‘NA’</li></ul><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code29"></script><div id="code29">
-  // Obtenga los argumentos en la línea de comandos
-  var age = +process.argv[2]
+<p>En JavaScript, su código funcionará bien sin sangría pero parecerá desordenado y puede ser difícil para otros leer y entender.</p>
 
-  // Su código va aquí
+<p>Echa un vistazo al código que está escrito sin sangría. Es difícil de leer en comparación con el código que hemos utilizado en las páginas anteriores.</p>
+<pre><code class="js">if (number &gt; 100) { 
+  console.log ('grande')
+  
+} else {
+  console.log ('pequeño')
+}</code></pre>
 
-  </div></code></pre><p><a href="">¡Revisalo!</a></p><h1>4 . Booleano</h1><p>Ha utilizado valores booleanos antes en Flode. Para recordarle, a la izquierda está el gráfico de Flode con el que trabajó anteriormente.</p><p>! [Screenshot 2017-07-12 20.32.50.png]( resources/ 11985949559234B73AC59209DE70D904.png)</p><p>En un bloque Flode, puede utilizar cualquiera de los siguientes:</p><pre><code class="language-text"><script src="https://embed.runkit.com" data-element-id="code30"></script><div id="code30">esFrio = true esFrio = false
-  </div></code></pre><p>Mire el gráfico de Flode a la izquierda. Puede ver que el gráfico toma una decisión basada en la variable booleana mostrada anteriormente.</p><p>¿La condición de decisión es <code>esFrio</code>? También podríamos escribirlo así y se comportaría exactamente de la misma manera:</p><pre><code class="language-text"><script src="https://embed.runkit.com" data-element-id="code31"></script><div id="code31">esFrio = true
-  </div></code></pre><h2>No</h2><p>Ahora mire la segunda decisión. La expresión <code>!tieneJumper</code> puede leerse como '<strong>no</strong> tiene Jumper '.</p><p>Tenga en cuenta el carácter <code>!</code> Antes de <code>tieneJumper</code>. Esto significa 'no'.</p><p>También podríamos haberlo escrito así:</p><pre><code class="language-text"><script src="https://embed.runkit.com" data-element-id="code32"></script><div id="code32">tieneJumper = false
-  </div></code></pre><p>... y el resultado sería el mismo. Sin embargo, mezclar sus comparaciones <code>true</code> y<code>false</code> puede ser confuso. Es más legible hacer todas sus comparaciones &quot;verdaderas&quot; si es posible.</p><h2>Jugar con el gráfico</h2><p>Pase a través de la tabla. Siéntase libre de experimentar y cambiar los valores de <code>esFrio</code> y<code>tieneJumper</code> y seguir con el flujo de ejecución para asegurarse de que se entiende.</p><p>En las siguientes páginas hay algunos retos para reforzar su comprensión de los conceptos booleanos.</p><h1>4 . 1 . Código equivalente</h1><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code33"></script><div id="code33">
-  var esFrio = false          // Cambia entre verdadero y falso
+<h2 id="¿quécódigosedeberíaidentar">¿Qué código se debería identar?</h2>
 
-  if (esFrio) {
-    console.log ('tiemblo')
-  }
-  else {
-    console.log ('Sudo')
-  }
+<p>Se debe identar todo el código dentro de un bloque de código. Los bloques de código comienzan con el carácter <code>{</code> y terminan con <code>}</code>.</p>
+<pre><code class="text">If (number &gt; 100) {
+  aquí todo el código identado
+}</code></pre>
 
-  var tieneJumper = true     // Cambia también entre true y false
-  if ( !tieneJumper) {
-    console.log ('Comprar un Jumper')
-  }
-  else {
-    console.log ('Ponermelo')
-  }
-  </div></code></pre><h1>4 . 2 . Retornar un booleano simple</h1><p>Le proporcionamos un número, N.</p><p>Si N es mayor o igual a 100, genera un booleano verdadero, de lo contrario falso.</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code34"></script><div id="code34">
-  // Obtener argumentos de la línea de comandos
-  // Asegúrese de que sean tratados como números
-  var N = +process.argv[2]
+<p>Pronto verás otras sentencias que también tienen bloques de código, como son los ciclos <code>for</code> y<code>while</code>. Estos deben ser identados también.</p>
+<pre><code class="text">while (contador  &lt;= 9) {
+  console.log (contador)
+  contador = contador + 1
+}</code></pre>
 
-  // Su código va aquí
+<h2 id="¿cómoseindentacódigo">¿Cómo se indenta código?</h2>
 
-  </div></code></pre><p><a href="">¡Revisalo!</a></p><h1>4 . 3 . Inputs (entradas) booleanas</h1><p>Pasamos en 2 entradas booleanas, Frío y Lluvioso.</p><p>Debería generar una sola cadena: <code>('Frío' o 'caliente') 'y' ('lluvioso' o 'seco')</code> Basado en estos inputs.</p><p><code>('Frío' o 'caliente')</code> significa que debe usar una de las dos palabras, dependiendo del valor booleano de entrada (input).</p><p>Por ejemplo, falso, verdadero = ‘cálido y lluvioso’</p><pre><code class="language-js"><script src="https://embed.runkit.com" data-element-id="code35"></script><div id="code35">
-  // Obtener entrada desde la línea de comandos
-  Var isCold = process.argv [2]
-  Var isRainy = proceso.argv [3]
+<p>Pulse la tecla de tabulación al principio de una nueva línea para identar su código. (La tecla de tabulación es la tecla con dos flechas apuntando en direcciones opuestas).</p>
 
-  // Su código va aquí
+<p>A veces los principiantes presionan la barra de espacio varias veces para sangrar su código. <strong>No haga esto</strong>.</p>
+
+<p>Siempre use la tecla de tabulación en su lugar. Esto asegura que las sangrías sean consistentes.</p>
+
+<p>En JavaScript, utilice 2 o 4 espacios para sangrar.</p>
+
+<h1 id="2.4.explicacióndeiguales">2 . 4 . Explicación de iguales</h1>
+
+<p>Echa un vistazo al diagrama de flujo.</p>
+
+<figure>
+<img src="resources/A07B07C57B8B5658F01A8EC75706C7FA.png" alt="Screenshot 2017-07-12 20.20.52.png">
+<figcaption>Screenshot 2017–07–12 20.20.52.png</figcaption>
+</figure>
+
+<p>A continuación se muestra el código JavaScript equivalente:</p>
+<pre><code class="js">var number = 123   // prompt("input: ")
+if (number == 100) {
+  console.log ('es 100')
+} else {
+  console.log ('no es 100')
+}</code></pre>
+
+<h2 id="¿porquéusamos">¿Por qué usamos ==?</h2>
+
+<p>Tenga en cuenta que necesita utilizar <code>==</code> y ** not ** =.</p>
+
+<p>En JavaScript (y muchos otros lenguajes de programación) <code>=</code> es el operador * de asignación *, no un operador de comparación. Esto significa que usted usa <code>==</code> para comparar cosas y <code>=</code> para establecer variables.</p>
+<pre><code class="text">N = 100 // asigna N a 100 
+N == 100 // falso a menos que N tenga el valor 100</code></pre>
+
+<h1 id="2.5.desafío">2 . 5 . Desafío ==</h1>
+
+<p>Le proporcionaremos un número, N.</p>
+
+<ul>
+<li>Si N es igual a 100, el output ‘éxito’</li>
+<li>De lo contrario, output ‘pierde’</li>
+</ul>
+
+<p>Recuerde que el string distingue entre mayúsculas y minúsculas.</p>
+<pre><code class="js">// Obtener argumentos de la línea de comandos
+// Asegúrese de que N se maneje como un número
+var N = +process.argv[2]
+
+// Su código va aquí
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="2.6.noesigualexplicado">2 . 6 . No es igual explicado</h1>
+
+<p>Echa un vistazo a la tabla de Flode a la izquierda, que muestra una condición “no es igual”. A continuación se muestra el código JavaScript equivalente.</p>
+
+<p>! [Screenshot 2017–07–12 20.22.50.png](resources/ 68D791572098196733D1301DBC3AD230.png)</p>
+<pre><code class="text">if (input0 != 100) { 
+  console.log ('no es 100')} else {console.log ('es 100')
+}
+</code></pre>
+
+<h2 id="(null)">!=</h2>
+
+<p>Usted puede recordar de la unidad anterior que el signo <code>!</code> Significa ‘no’ por lo tanto <code>!=</code> Significa ‘no es igual’</p>
+
+<h1 id="2.7.noesiguala">2 . 7 . No es igual a (!=)</h1>
+
+<p>Le pasaremos un string.</p>
+
+<ul>
+<li>Si el string no es igual a ‘Bingo’ output ‘perdio’</li>
+<li>De lo contrario, output ‘exito!’</li>
+</ul>
+
+<p>Utilice el <code>!=</code> en su condición.</p>
+<pre><code class="js">
+// Obtener argumentos de línea de comandos
+Var testString = proceso.argv [2]
+
+// Su código va aquí
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="2.8.doscondiciones">2 . 8 . Dos condiciones</h1>
+
+<p>Ahora veamos otro ejemplo. Mira el gráfico de Flode a la izquierda. Pase a través de la tabla y verá que funciona de la siguiente manera:</p>
+
+<blockquote>
+</blockquote>
+
+<p>! [ Screenshot 2017–07–12 20.25.59.png](resources/ F47FA1181121E6DF09BBA962869EA162.png)</p>
+
+<blockquote>
+<p>Si el número es menor o igual a 100, output ‘pequeño’. Si el número es mayor que 100 y también mayor que 200 el output es ‘enorme’, si no el output es ‘grande’</p>
+</blockquote>
+
+<p>Ahora haga clic en la pestaña del archivo <code>if2.js</code> en el panel izquierdo para ver cómo se escribiría el código JavaScript para hacer lo mismo.</p>
+<pre><code class="js">
+var number = 211
+
+// Como está escrito en el gráfico de Flode
+if (number &lt;= 100) {
+  console.log ('pequeño')
+}
+else if (number&gt; 200) {
+  console.log ('enorme')
+}
+else {
+  console.log ('grande')
+}
+</code></pre>
+
+<h2 id="elseifdelocontrariosi">else if (de lo contrario si)</h2>
+
+<p>Eche un vistazo a la segunda condición, se utiliza la siguiente instrucción:</p>
+<pre><code class="text">else if (input0 \&gt; 200) {</code></pre>
+
+<p>El uso de <code>else if</code> significa que esta línea sólo se ejecutará si la primera condición <code>if</code> fue <code>false</code>.</p>
+
+<p>Esta es la forma general en que JavaScript evalúa las sentencias <code>if</code>.</p>
+<pre><code class="text">if (condicion1) {hace algo} else if (condicion2) {hace otra cosa} else if (condicion3) {hace otra cosa} si no de otra manera {hace esto}</code></pre>
+
+<ul>
+<li>Se evalúa la primera condición <code>if</code>. Si es cierto, entonces se ejecutará el bloque de código y la ejecución saltará al final de todas las condiciones <code>if / else</code>.</li>
+<li>Si es falso, entonces todas las condiciones <code>else if</code> serán evaluadas a su vez hasta que una de ellas tenga una condición <code>true</code>.</li>
+<li>Si ninguna de las condiciones <code>if</code> o <code>else if</code> se evalúan como <code>true</code>, entonces el bloque de código <code>else</code> se ejecutará automáticamente (si se utilizara).</li>
+</ul>
+
+<h1 id="2.9.corregirloserrores">2 . 9 . Corregir los errores</h1>
+
+<p>Corrige el código partido a la izquierda</p>
+
+<ul>
+<li>¡Puede haber más de un error!</li>
+<li>Asegúrese de que su programa funcione en ambos casos: <code>str</code> es al inicio igual a ‘there’ y luego no es igual.</li>
+</ul>
+<pre><code class="js">
+// Obtener argumentos de la línea de comandos
+input0 = "there" // prompt("input: ")
+
+// Su código va aquí
+if (input0 = 'there') {
+  console.log (1)
+}
+else {
+  console.log (0)
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="2.10.corregirmáserrores">2 . 10 . Corregir más errores</h1>
+
+<p>Corrige el código partido a la izquierda. Podría haber uno o más errores.</p>
+<pre><code class="js">
+// Obtener un input desde la línea de comandos
+var text = "Bingo" // prompt("input: ")
+
+if (texts != 'Bingo')
+  console.log ('Perdió')
+}
+else {
+  console.log ('Acertó!')
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="2.11.1ó0">2 . 11 . 1 ó 0</h1>
+
+<p>Se le proporciona un input numérico que será 1 o 0.</p>
+
+<p>Si el número es 1, el output es “prender”, si es 0 el output es“apagar”.</p>
+<pre><code class="js">// Obtener argumentos de la línea de comandos
+// Asegúrese de que sean tratados como números
+var N = "prender" // prompt("input: ")
+
+// Su código va aquí
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="2.12.trueofalseverdaderoofalso">2 . 12 . True o False (verdadero o falso)</h1>
+
+<p>Este desafío está al revés.</p>
+
+<p>Le proporcionamos un input de string que es “true” o “false”. Debería dar de output un número 1 si es verdadero ‘true’ o 0 si es falso ‘false’.</p>
+<pre><code class="js">// Obtener argumentos de la línea de comandos
+var inputText = "true" // prompt("input: ")
+
+// Su código va aquí
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.operadoreslógicos">3 . Operadores lógicos</h1>
+
+<p>Eche un vistazo a la tabla Flode a la izquierda. El gráfico contiene dos bloques condicionales donde se puede ver que se utiliza <code>and</code>(y) y<code>or</code>(o).</p>
+
+<figure>
+<img src="resources/3C66D3735FF4861679FB5FBAE11771C4.png" alt="Screenshot 2017-07-12 20.29.53.png">
+<figcaption>Screenshot 2017–07–12 20.29.53.png</figcaption>
+</figure>
+
+<p>A continuación se muestra el código JavaScript equivalente. Pruebe con diferentes valores para <code>number</code>.</p>
+<pre><code class="text">// Cambie el valor del número y pase a través del número 
+var number = -10 
+// un ejemplo de 'and' 
+if (number &gt;= 10 &amp;&amp; number &lt;100) {
+  console.log ('número de 2 dígitos')
+} else {
+  console .log ('número de 1 dígito')
+}
+// ejemplo de 'o' 
+if (número &lt; 0 || número &gt;= 1000) {
+  console.log ('Número inválido')} 
+else {
+  console.log ('OK’)
+}</code></pre>
+
+<h2 id="y">&amp;&amp; y ||</h2>
+
+<p>Lo único nuevo es que cuando se utilizan operadores lógicos en JavaScript, no se puede escribir “and” y “or”. Tienes que usar ‘&amp;&amp;’ y ‘||’.</p>
+
+<p>Aparte de esto, el `if / else ’sigue exactamente los mismos principios.</p>
+
+<h1 id="3.1.andyorenelcódigo">3 . 1 . ‘and’ y ‘or’ en el código</h1>
+
+<p>A la izquierda está el código JavaScript. Siéntase libre de jugar con esto, experimentar y probar cosas.</p>
+<pre><code class="js">
+// establece este número para probar tus valores booleanos
+var number  = -10
+
+// Primer bloque if
+if (number &gt; = 10 &amp;&amp; number &lt; 100 ) {
+  console.log ('número de 2 dígitos')
+}
+else {
+  console.log ('número de 1 dígito')
+}
+
+// Otro bloque if
+if (number &lt; 0 || number &gt;= 1000) {
+  console.log ('Número no válido')
+}
+else {
+  console.log ('ok')
+}</code></pre>
+
+<p><a href="">EJECUTE SU CÓDIGO</a></p>
+
+<h1 id="3.2.cochesrápidos1">3 . 2 . Coches rápidos 1</h1>
+
+<p>Se le proporcionan 2 valores de input que determinan la velocidad de 2 coches.</p>
+
+<p>Si cualquier coche está viajando en más de 70 entonces el output es ‘carro rápido’.De lo contrario el output es ‘ok’.</p>
+<pre><code class="js">
+// Obtener el input desde la línea de comandos
+// Asegúrese de que sean tratados como números
+var car1 = 12 // prompt("input: ")
+var car2 = 15 // prompt("input: ")
+
+// Su código va aquí
+</code></pre>
+
+<p><a href="">¡Revisalo!</a> </p>
+
+<h1 id="3.3.cochesrápidos2">3 . 3 . Coches rápidos 2</h1>
+
+<p>Se le proporcionan 2 valores de input que determinan la velocidad de 2 coches.</p>
+
+<ul>
+<li>Si ambos coches están viajando en más de 70 entonces el output es ‘2 carros rápidos’</li>
+<li>Si sólo un coche se está moviendo a más de 70, el output es ‘1 carro rápido’</li>
+<li>De lo contrario el output es ‘ningún carro rápido’</li>
+</ul>
+<pre><code class="js">
+// Obtener las velocidades de nuestro carro desde la línea de comandos
+// Trátelos como números
+var speed1 = 13 // prompt("input: ")
+var speed2 = 14 // prompt("input: ")
+
+// Escribe tu código abajo
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.4.categorías">3 . 4 . Categorías</h1>
+
+<p>Se le proporciona la edad de una persona y es necesario determinar en qué nivel escolar esta la persona.</p>
+
+<ul>
+<li>Si esta de 6 a 11 el output es escuela ‘primaria’</li>
+<li>Si esta de 12 a 18 el output es ’escuela ‘secundaria’</li>
+<li>Si es ninguno de los dos, a continuación, el output es ‘NA’</li>
+</ul>
+<pre><code class="js">
+// Obtenga los argumentos en la línea de comandos
+var age = 14 // prompt("input: ")
+
+// Su código va aquí
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="4.booleano">4 . Booleano</h1>
+
+<p>Ha utilizado valores booleanos antes en Flode. Para recordarle, a la izquierda está el gráfico de Flode con el que trabajó anteriormente.</p>
+
+<figure>
+<img src="resources/11985949559234B73AC59209DE70D904.png" alt="Screenshot 2017-07-12 20.32.50.png">
+<figcaption>Screenshot 2017–07–12 20.32.50.png</figcaption>
+</figure>
+
+<p>En un bloque Flode, puede utilizar cualquiera de los siguientes:</p>
+<pre><code class="text">esFrio = true 
+esFrio = false</code></pre>
+
+<p>Mire el gráfico de Flode a la izquierda. Puede ver que el gráfico toma una decisión basada en la variable booleana mostrada anteriormente.</p>
+
+<p>¿La condición de decisión es <code>esFrio</code>? También podríamos escribirlo así y se comportaría exactamente de la misma manera:</p>
+<pre><code class="text">esFrio = true</code></pre>
+
+<h2 id="no">No</h2>
+
+<p>Ahora mire la segunda decisión. La expresión <code>!tieneJumper</code> puede leerse como ‘<strong>no</strong> tiene Jumper ’.</p>
+
+<p>Tenga en cuenta el carácter <code>!</code> Antes de <code>tieneJumper</code>. Esto significa ‘no’.</p>
+
+<p>También podríamos haberlo escrito así:</p>
+<pre><code class="text">tieneJumper = false</code></pre>
+
+<p>… y el resultado sería el mismo. Sin embargo, mezclar sus comparaciones <code>true</code> y<code>false</code> puede ser confuso. Es más legible hacer todas sus comparaciones “verdaderas” si es posible.</p>
+
+<h2 id="jugarconelgráfico">Jugar con el gráfico</h2>
+
+<p>Pase a través de la tabla. Siéntase libre de experimentar y cambiar los valores de <code>esFrio</code> y<code>tieneJumper</code> y seguir con el flujo de ejecución para asegurarse de que se entiende.</p>
+
+<p>En las siguientes páginas hay algunos retos para reforzar su comprensión de los conceptos booleanos.</p>
+
+<h1 id="4.1.códigoequivalente">4 . 1 . Código equivalente</h1>
+<pre><code class="js">
+var esFrio = false          // Cambia entre verdadero y falso
+
+if (esFrio) {
+  console.log ('tiemblo')
+}
+else {
+  console.log ('Sudo')
+}
+
+var tieneJumper = true     // Cambia también entre true y false
+if ( !tieneJumper) {
+  console.log ('Comprar un Jumper')
+}
+else {
+  console.log ('Ponermelo')
+}</code></pre>
+
+<h1 id="4.2.retornarunbooleanosimple">4 . 2 . Retornar un booleano simple</h1>
+
+<p>Le proporcionamos un número, N.</p>
+
+<p>Si N es mayor o igual a 100, genera un booleano verdadero, de lo contrario falso.</p>
+<pre><code class="js">
+// Obtener argumentos de la línea de comandos
+// Asegúrese de que sean tratados como números
+var N = 19 // prompt("input: ")
+
+// Su código va aquí
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="4.3.inputsentradasbooleanas">4 . 3 . Inputs (entradas) booleanas</h1>
+
+<p>Pasamos en 2 entradas booleanas, Frío y Lluvioso.</p>
+
+<p>Debería generar una sola cadena:<br>
+<code>('Frío' o 'caliente') 'y' ('lluvioso' o 'seco')</code><br>
+Basado en estos inputs.</p>
+
+<p><code>('Frío' o 'caliente')</code> significa que debe usar una de las dos palabras, dependiendo del valor booleano de entrada (input).</p>
+
+<p>Por ejemplo, falso, verdadero = ‘cálido y lluvioso’</p>
+<pre><code class="js">
+// Obtener entrada desde la línea de comandos
+Var isCold =true // prompt("input: ")
+Var isRainy = false // prompt("input: ")
+
+// Su código va aquí
+
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+<!-- ##END MARKED WRAPPER## -->
+    </div>
+
+        </google-codelab-step>
+
+        <google-codelab-step label="Estructuras Repetitivas" duration="12">
+            
+              <div id="wrapper">
+      <p>Esta unidad le presenta el concepto de usar bucles en código.</p>
+
+<p>Podrían parecer un poco aterrador, pero obtendrá dominarlos muy rápidamente.</p>
+
+<h3 id="elbuclefor">El bucle for</h3>
+<pre><code class="js">var total= 0							// variable del contador 
+for(var ctr = 0; ctr &lt;= input0; ctr++) {// bucle hasta la input0 
+	total = total + ctr 		   	 	// incremento total del contador de bucle 
+	console.log (total) 			 	// output el total actual
+}
+</code></pre>
+
+<h3 id="elbuclewhile">El bucle while</h3>
+<pre><code class="js">var ctr = 0   							// variable de bucle 
+var total = 0 							// variable de contador 
+while (ctr &lt;= input0) { 				// bucle hasta que ctr es igual a input0 
+	total = total + ctr++   			// aumenta el total por el número de bucle, incremento
+	console.log (total) 				// fuera del total actual
+}</code></pre>
+
+<h1 id="1.1.experimentos">1 . 1 . Experimentos</h1>
+
+<p>Esta ventana se proporciona para que pruebe cualquier código que desarrolle. Úselo para experimentar y practicar.</p>
+<pre><code class="js">// Escribe el código experimental a continuación
+//
+
+console.log ('su archivo de experimentos')</code></pre>
+
+<p><a href="">EJECUTE SU CÓDIGO</a></p>
+
+<h1 id="2.descripcióndeloops">2 . Descripción de Loops</h1>
+
+<p>Antes de comenzar a usar bucles en código, eche un vistazo al gráfico de Flode a la izquierda.</p>
+
+<p>Es un bucle muy simple pero es un buen lugar para comenzar.</p>
+
+<p>! [Screenshot 2017–07–13 20.35.12.png](resources/ EB31491F9C954EB3816EC85488201B9F.png)</p>
+
+<h1 id="2.1.elbuclewhile">2 . 1 . El bucle while</h1>
+
+<p>El código que ves a la izquierda es el equivalente exacto del gráfico de Flode, pero escrito en JavaScript.</p>
+
+<p>Tener un empuje en la ejecución del código:</p>
+<pre><code class="js">var counter = 0 			// Esta es una variable 'counter'.
+
+while (contador &lt;= 9) {		// Si la condición es verdadera, se vuelve hacia atrás
+&nbsp;&nbsp;console.log (contador)
+&nbsp;&nbsp;counter = counter + 1 	// Aquí agregamos 1 al contador. Esto es conocido
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;// como "incrementar" el contador.
+}
+</code></pre>
+
+<p><a href="">EJECUTE</a></p>
+
+<h1 id="2.2.whileexplicado">2 . 2 . While explicado</h1>
+
+<p>Echa un vistazo al código con más detalle. Debe ser bastante fácil de entender, ya que es muy similar al gráfico de Flode.</p>
+
+<h2 id="elbloquedecódigowhile">El bloque de código while</h2>
+
+<p>Eche un vistazo a la sentencia <code>while</code> y su bloque de código.</p>
+
+<p>Cada sentencia while se ve así:</p>
+<pre><code class="js">while ( alguna_condicion) { 
+	algun_código 
+	algun_codigo_más 
+	incluso_algun_codigo_más
+}  
+el código continúa ejecutándose aquí 
+una vez que 'alguna_condicion' ya no es true</code></pre>
+
+<p>Lo que esto dice es lo siguiente: <em>“Mientras la condición es verdadera, ejecuta todas las sentencias de código que ocurren ** dentro ** de éste bloque de código.”</em></p>
+
+<p>Por lo tanto, el bucle va y viene hasta que la condición es falsa. Exactamente igual que con el gráfico de Flode.</p>
+
+<p>En el ejemplo de código, cada vez que se ejecutan las sentencias en el bloque de código, la variable <code>counter</code> se incrementa en uno. Eventualmente, alcanza el valor <code>10</code>, momento en el cual la condición se vuelve falsa y cualquier declaración después de ejecutar el bloque de código.</p>
+
+<h2 id="juega">Juega</h2>
+
+<p>Siéntase libre de cambiar algunos de los valores en el código y ejecutarlo de nuevo utilizando el botón de abajo. También puedes añadir más de uno a <code>counter</code> en cada bucle * iteracion * y ver qué pasa.</p>
+<pre><code class="js">
+var counter = 0 			// Esta es una variable 'counter'.
+
+while (counter &lt;= 9) {		// Si la condición es verdadera, se vuelve hacia atrás
+&nbsp;&nbsp;console.log (counter)
+&nbsp;&nbsp;counter = counter + 1 	// Aquí agregamos 1 al contador. Esto es conocido
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	// como 'incrementando' el contador.
+}
+</code></pre>
+
+<p><a href="">EJECUTAR</a></p>
+
+<p>Recuerde, si lo desea, puede restablecer el código del menú ‘Configuración’ en la parte superior. Para ello, seleccione la opción “Restablecer capítulo”.</p>
+
+<h1 id="2.3.tengacuidadoconlosbuclesinfinitos">2 . 3 . Tenga cuidado con los bucles infinitos</h1>
+
+<p>Un error común que la gente a veces hace con los bucles <code>while</code> es olvidar incrementar el contador.</p>
+
+<p>Si, al completar los desafíos de esta sección, ve que no ocurre nada, es probable que haya creado un bucle infinito (se ha olvidado de incrementar su contador).</p>
+
+<p>Eche un vistazo al código de la izquierda. ¿Puedes ver lo que está mal con él?</p>
+
+<p>Si ejecuta el código, se ejecutará para siempre y el programa se bloqueará.</p>
+
+<p>La razón de esto es que usted nunca está incrementando la variable <code>counter</code>, la condición siempre es verdadera (menos de 10), por lo que va y viene alrededor del bucle para siempre.</p>
+
+<h2 id="ejecuteloyluegoarreglarlo">Ejecutelo y luego arreglarlo</h2>
+
+<p>Pulse el botón ‘Ejecute el codigo’ a continuación y verá que nunca obtiene nada.</p>
+
+<p>Su reto es fijar el código incrementando el contador correctamente dentro del bucle. A continuación, debe ver el output correcto.</p>
+<pre><code class="js">
+// Obtener entrada desde la línea de comandos
+var loops = 10 // prompt("input: ")
+
+var ctr = 0
+while (ctr &lt; loops) {
+&nbsp;&nbsp;console.log (ctr)
+}</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<p><strong>Importante:</strong> Si no ocurre nada al pulsar el botón de ejecución una vez que haya arreglado el código, es posible que deba volver una página y luego reenviarlo para actualizarlo.</p>
+
+<h1 id="3.desafíos">3 . Desafíos</h1>
+
+<p>Ahora es el momento de probar algunos desafíos que te pondrán a prueba en lo que has aprendido sobre loops hasta ahora. Los retos se hacen más difíciles a medida que avanza - al tiempo que los ha completado, estará listo para comenzar con algunos algoritmos más complejos.</p>
+
+<h1 id="3.1.cuentade0an">3 . 1 . Cuenta de 0 a N</h1>
+
+<p>Vamos a pasar en un valor, N. Usted debe escribir un programa donde los outputs de todos los valores vayan de 0 a más incluyendo a N.</p>
+<pre><code class="js">
+// Obtener inputs desde la línea de comandos
+var N = 10 // prompt("input: ")
+
+// Su código va aquí
+
+for (var i = 0; i &lt;= N; i ++) {
+&nbsp;&nbsp;console.log (i);
+}
+
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.2.contardena0">3 . 2 . Contar de N a 0</h1>
+
+<p>¡Cuidado con el bucle infinito!</p>
+
+<p>Le pasaremos un valor, N. Usted debe emitir cada valor positivo de N hacia abajo e incluyendo a 0.</p>
+<pre><code class="js">
+// Obtener entrada desde la línea de comandos
+var N = 10 // prompt("input: ")
+
+// Su código va aquí
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.3.na0o-na0">3 . 3 . N a 0 o -N a 0</h1>
+
+<p>Este es un desafío difícil para usted.</p>
+
+<p>Pasaremos un valor N. N puede ser positivo o negativo.</p>
+
+<ul>
+<li>Si N es positivo, entonces emite todos los valores desde N hacia abajo y ** excluyendo ** a 0.</li>
+<li>Si N es negativo, entonces emite cada valor desde N hacia arriba y ** excluyendo ** a 0.</li>
+</ul>
+<pre><code class="js">
+// Obtener input desde la línea de comandos
+var N = 19 // prompt("input: ")
+
+// Su código va aquí
+
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="4.variablesdeutilidad">4 . Variables de utilidad</h1>
+
+<p>Hemos descubierto variables de utilidad antes, dentro de nuestras unidades Flode.</p>
+
+<h2 id="resumen">Resumen</h2>
+
+<p>Muy a menudo en un bucle, necesitará actualizar un valor con cada * iteración * de su bucle. Al final del bucle es posible que desee hacer algo con ese valor.</p>
+
+<p>A la izquierda hay un buen ejemplo de esto mostrado en un gráfico de Flode. El gráfico de Flode está haciendo lo siguiente:</p>
+
+<blockquote>
+<p>Sumar todos los valores entre 0 y 10 y dar output al resultado.</p>
+</blockquote>
+
+<p>Pase a través de la tabla y observe con cuidado la variable llamada <code>total</code>. Puede ver que la variable <code>total</code> se actualiza cada vez que pasamos por el bucle. Una vez que el bucle está terminado, emitimos el <code>total</code> que ha estado aumentando con cada * iteración * del bucle.</p>
+
+<p>Una serie de desafíos que siguen requieren que utilice esta técnica, así que asegúrese de que usted lo entiende.</p>
+
+<figure>
+<img src="resources/1C4B696E87AD29C42873C44AAF969A15.png" alt="Screenshot 2017-07-13 20.41.28.png">
+<figcaption>Screenshot 2017–07–13 20.41.28.png</figcaption>
+</figure>
+
+<h1 id="4.1.códigoequivalente">4 . 1 . Código equivalente</h1>
+
+<p>A la izquierda está el código JavaScript equivalente al gráfico de Flode de la página anterior.</p>
+
+<p>Si ejecuta el código, verá que se ocupa del bucle exactamente de la misma manera que el gráfico de Flode.</p>
+<pre><code class="js">
+var counter = 1 				// Esta es una variable 'counter'.
+var total = 0 					// Esta es nuestra variable de utilidad, 'total'
+
+while (counter &lt;= 10) {			// Si la condición es verdadera, entra en el bucle
+&nbsp;&nbsp;total = total + counter 		// Añadimos el valor actual de 'contador' a 'total'
+&nbsp;&nbsp;counter = counter + 1 		// Aquí agregamos 1 al contador. Esto se conoce como
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	// 'incrementar' el contador.
+&nbsp;&nbsp;console.log (total) 			// Y finalmente, la salida 'total'
+}
+
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<h1 id="5.buclesfor">5 . Bucles For</h1>
+
+<p>Hasta ahora has aprendido sobre los bucles <code>while</code>. Ahora vas a mirar un bucle diferente, que hace lo mismo, pero con una sintaxis diferente (estructura de sentencias) que lo hace más adecuado para tareas particulares.</p>
+<pre><code class="js">
+// Obtener input desde la línea de comandos
+var N = 10 // prompt("input: ")
+
+// usaremos esta variable para mantenerse al día con el total
+var total = 0
+
+for(var ctr = 0; ctr &lt;= N; ctr ++) {	// bucle de 0 a 10
+&nbsp;&nbsp;Total = total + ctr 					// agrega valor de bucle al total
+&nbsp;&nbsp;console.log (total) 					// imprimir el total actual
+}
+
+console.log ('Final total:' + total) // imprimir final total
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<p>Eche un vistazo al código de la izquierda. Hace lo mismo que el código de bucle <code>while</code> escrito abajo.</p>
+<pre><code class="(null)">// Obtenemos la entrada de la línea de comando 
+var N = 10 // prompt("input: ")
+
+// usaremos esta variable para mantenerse al nivel de
+var total = 0 
+
+var ctr = 0 			// variable de bucle 
+while (ctr \ &lt;= N) {	// bucle 0 a 10 total 
+	total = total + ctr // agregar valor de bucle al total 
+	ctr = ctr + 1 		// incremento del contador de bucle 
+	console.log (total) // imprimir total actual
+}
+
+console.log ('Total final: '+ Total) // imprimir total final
+</code></pre>
+
+<h1 id="5.1.forexplicado">5 . 1 . For explicado</h1>
+
+<p>Echemos un vistazo al bucle <code>for</code> con más detalle.</p>
+<pre><code class="(null)">var total = 0 
+for (var ctr = 0; ctr \&lt;= N; ctr++) {
+	total = total + ctr 
+	console.log(total) }</code></pre>
+
+<p>Observe que hay 3 partes en la sentencia <code>for</code>. Estos se explican a continuación.</p>
+
+<h2 id="inicialización">Inicialización</h2>
+
+<p><code>var ctr = 0;</code></p>
+
+<p>Esta es la parte de inicialización. Puede tener varias sentencias JavaScript separadas por un <code>,</code>. Al final pones un <code>;</code></p>
+
+<h2 id="condición">Condición</h2>
+
+<p>`ctr &lt;= N; ’esta es la segunda parte. Es la condición del bucle. El bucle se ejecutará hasta que la condición ya no sea verdadera.</p>
+
+<h2 id="finaldelasdeclaracionesdebucleloop">Final de las declaraciones de bucle (loop)</h2>
+
+<p><code>ctr ++</code> es la sentencia final de bucle. Cualquier sentencia JavaScript encontrada aquí se ejecuta al final del bloque de código de bucle justo antes de que se evalúe la condición. Si hay más de una instrucción de fin de bucle, las sentencias están separadas por <code>,</code></p>
+
+<h2 id="¿quéesctr">¿Qué es ctr ++?</h2>
+
+<p>Sigue trabajando en esta unidad y lo descubrirás!</p>
+
+<h1 id="5.2.unpocomássobredefor">5 . 2 . Un poco más sobre de For</h1>
+
+<p>Mira el código de la izquierda y verás que tenemos tres versiones diferentes de código que hacen lo mismo.</p>
+
+<p>Hemos puesto <code>console.log (total)</code> en las instrucciones de fin de bucle. Si ejecuta el código, debe ver por sí mismo que cada salida termina igual.</p>
+<pre><code class="js">
+// Obtener un input desde la línea de comandos
+var N = 10 // prompt("input: ")
+
+// 
+----------------------------------------------------------------
+console.log ("Versión 1")
+{
+&nbsp;&nbsp;var total
+&nbsp;&nbsp;for (var ctr = 0, totral = 0; ctr&lt;= N; ctr ++, console.log(total)) {
+&nbsp;&nbsp;&nbsp;&nbsp;total = total + ctr
+&nbsp;&nbsp;}
+&nbsp;&nbsp;console.log ('Final Total : ' + total)
+}
+
+// 
+----------------------------------------------------------------
+console.log ("Versión 2")
+{
+&nbsp;&nbsp;var total = 0 						// mantiene nuestro total
+&nbsp;&nbsp;for(var ctr = 0; ctr &lt;= N; ctr ++) {	// bucle hasta input0
+&nbsp;&nbsp;&nbsp;&nbsp;total = total + ctr				    // agregar valor de bucle actual
+&nbsp;&nbsp;&nbsp;&nbsp;console.log (total) 				// resultado total hasta ahora
+&nbsp;&nbsp;}
+&nbsp;&nbsp;console.log ('Final Total : ' + total) // output final total 
+}
+
+// ------------------------------------------------ ----------------
+console.log ("Versión 3")
+{
+&nbsp;&nbsp;var total = 0 				// mantiene nuestro total
+&nbsp;&nbsp;var ctr = 0 					// nuestro contador de bucle
+&nbsp;&nbsp;while(ctr &lt;= N) {				// loop hasta input0
+&nbsp;&nbsp;&nbsp;&nbsp;total = total + ctr++		// actualización de total, contador de incremento
+&nbsp;&nbsp;&nbsp;&nbsp;console.log (total) 		// output total hasta ahora
+&nbsp;&nbsp;}
+&nbsp;&nbsp;console.log ('Final total : ' + total) // final total del output
+}</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<h2 id="entoncescuálesladiferencia">Entonces cuál es la diferencia?</h2>
+
+<p>Los bucles <code>for</code> y<code>while</code> son * funcionalmente equivalentes *. La diferencia entre los dos viene de decidir qué tipo de bucle indica mejor la intención del código . También tendrá que decidir qué tipo de bucle es más fácil de entender para otra persona que mira su código.</p>
+
+<h2 id="elprimerejemploesmalo.">El primer ejemplo es malo.</h2>
+
+<ol>
+<li>Coloca toda la inicialización del bucle y variable lógica dentro de la sentencia <code>for</code>, lo que dificulta la comprensión de cómo se controla el bucle.</li>
+<li>Esto hace que sea mucho más difícil hacer comentarios de alguna manera significativa.</li>
+<li>También es mucho más difícil validar las condiciones de inicio y parada de un vistazo.</li>
+<li>La declaración de la variable <code>total</code> se requiere para dar el alcance de la variable, pero la inicialización de<code>total</code> en la primera sección del bucle <code>for</code> deja el potencial de error entre ellos.</li>
+<li>Una vez que haya visto las sentencias <code>for</code> y<code>while</code> unas cuantas veces, el bucle como un todo será más fácil de leer, independientemente del lazo que se elija.</li>
+</ol>
+
+<h2 id="jugar">Jugar</h2>
+
+<p>Siéntase libre de experimentar con el código de la izquierda. Si lo estropeas, puedes restablecerlo eligiendo la opción ‘Restaurar archivos actuales’ en el menú ‘Configuración’ en la parte superior de esta página.</p>
+
+<h1 id="5.3.ctrctr--">5 . 3 . ctr++, ctr–</h1>
+
+<p><code>ctr++</code> se utiliza al final de bucle.</p>
+
+<p>El operador `++ ’se llama el operador * operador de incremento *. Incrementa una variable por uno.</p>
+
+<p>Si se escribe <code>++</code> después de la variable, como esto: <code>c++</code>, la variable se incrementa después de que se evalúa la sentencia. Si se escribe <code>++</code>, como esto: <code>++c</code>, la variable se incrementa antes de que se evalúe la sentencia. Esto puede afectar el orden de las operaciones.</p>
+
+<p>A continuación, <code>b</code> terminará con un valor de 8 y<code>c</code> con un valor de 5:</p>
+<pre><code class="js">var c= 4
+var b= 2 * c++
+console.log(b)
+console.log(c)</code></pre>
+
+<p>Pero en el siguiente ejemplo, <code>b</code> terminará con un valor de 10 porque<code>++c</code> establece <code>c = 5</code> antes de evaluar<code>2 \ * c</code>. La variable <code>c</code> como antes tendrá un valor de 5:</p>
+<pre><code class="js">var c= 4
+var b= 2 * ++c
+console.log(b)
+console.log(c) </code></pre>
+
+<p>variable+= and variable-=<br>
+Aquí tenemos una solución corta (una manera corta y limpia de escribir). </p>
+<pre><code class="js">ctr += 10 es la manera corta de ctr = ctr + 10
+ctr -= 10 es la manera corta de ctr = ctr - 10
+ctr *= 10 es la manera corta de = ctr * 10
+ctr /= 10 es la manera corta de = ctr / 10</code></pre>
+
+<h1 id="6.desafíos">6 . Desafíos</h1>
+
+<p>Aquí hay un conjunto final de retos para completar. Estos desafíos requieren el uso de variables de utilidad.</p>
+
+<p>Cuando complete los siguientes desafíos, utilice la sentencia <code>for</code> y no<code>while</code>.</p>
+
+<h1 id="6.1.tabladetiempos">6 . 1 . Tabla de tiempos</h1>
+
+<p>Le proporcionaremos un número N. Proporcione el output de la tabla de tiempos para ese número de 1 a 12.</p>
+
+<p>Por lo tanto, si pasamos en 6, debe salir 6, 12, 18, 24 … 66, 72</p>
+<pre><code class="js">
+// Obtener entrada desde la línea de comandos
+var N = 6 // input ()
+
+// Su código va aquí
+
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="6.2.factorial">6 . 2 . Factorial</h1>
+
+<p>Factorial de X, también puede ser escrito como X!X! , Es X * (X - 1) * (X - 2) * (X - 3) …. * (1) X * (X - 1) * (X - 2) * (X - 3) .. .. * (1).</p>
+
+<p>Entonces, <code>4!</code> Es <code>4*3*2*1 = 24</code>.</p>
+
+<p>Le proporcionamos un valor N. Calcular N! Y el output sólo del resultado final.</p>
+<pre><code class="js">
+// Obtener input desde la línea de comandos
+var N = 4 // input ()
+
+// Su código va aquí
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="6.3.cuadrado">6 . 3 . Cuadrado</h1>
+
+<p>Le proporcionaremos un valor N. Usted debe calcular la suma de cada valor de N al cuadrado de 0 hasta y incluyendo N.</p>
+
+<p>En la notación matemática, esto se escribe como ΣNi = 0i2Σi = 0Ni2</p>
+
+<p>Así que si pasamos en 3, que la salida 02 + 12 + 22 + 32 = 14</p>
+<pre><code class="js">
+// Obtener entrada desde la línea de comandos
+var N = 3 // input ()
+
+// Su código va aquí
+
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="6.4.xalay">6 . 4 . X a la Y</h1>
+
+<p>Vamos a pasar en 2 valores, X e Y. Usted debe calcular XYXY y en el output sólo el resultado final.</p>
+
+<p>Probablemente sepa que XYXY puede calcularse como X veces a sí mismo Y veces.</p>
+<pre><code class="js">
+// Obtener input desde la línea de comandos
+var X = 19 //  prompt()
+var Y = 10 //  prompt()
+
+// Su código va aquí
+
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="6.5.fibonacci">6 . 5 . Fibonacci</h1>
+
+<p>La secuencia de Fibonacci es la serie de números:</p>
+
+<p>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, …</p>
+
+<p>El siguiente número en la secuencia se calcula sumando los dos números anteriores.</p>
+
+<ul>
+<li>Comenzamos con 0 y 1</li>
+<li>El primer 1 en la lista anterior se encuentra agregando los 2 números anteriores (0 + 1)</li>
+<li>El 2 se encuentra agregando los dos números antes de él (1 + 1)</li>
+<li>Similarmente, el 3 se encuentra agregando los dos números antes de él (1 + 2),</li>
+<li>El 5 es (2 + 3)</li>
+</ul>
+
+<p>¡y así!</p>
+
+<p>Pasaremos un valor N. Escribiremos un programa que genere la secuencia Fibonacci completa para N iteraciones.</p>
+
+<p>** Importante: ** Si N es 0, entonces esperamos obtener un output de ‘0’. Si N = 1 entonces esperamos <code>0, 1</code>, etc.</p>
+<pre><code class="js">
+// Obtener un input desde la línea de comandos
+var N =  10 // prompt("input: ")
+
+// Su código va aquí
+
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="7.lasentenciabreak">7 . La sentencia ‘break’</h1>
+
+<p>La instrucción <code>break</code> es una forma de escapar de un bucle antes de que se cumpla la condición del bucle.</p>
+
+<p>La instrucción <code>break</code> no debería nunca necesitar ser usada. Cualquier programa que parece requerir una sentencia break puede ser reescrito para funcionar igualmente bien sin él.</p>
+
+<p>Echa un vistazo al código de la izquierda. El código muestra un bucle que cuenta de 0 a 9. Sin embargo, la sentencia <code>break</code> en el bucle está esperando para ver si el índice de bucle golpea a 7, y si lo hace, el bucle se sale inmediatamente.</p>
+
+<p>Este es un ejemplo artificial, pero ilustra muy bien cómo funciona la ruptura.</p>
+<pre><code class="js">
+for (var i=0; i&lt;10; i++ ) {
+&nbsp;&nbsp;console.log(i)
+&nbsp;&nbsp;if (i == 7) {
+&nbsp;&nbsp;&nbsp;&nbsp;break
+&nbsp;&nbsp;}
+}
+console.log ('Finalizado').</code></pre>
+
+<p><a href="">EJECUTA EL CÓDIGO</a></p>
+
+<h1 id="7.1.lainstruccióncontinue">7 . 1 . La instrucción ‘continue’</h1>
+
+<p>La instrucción <code>continue</code> se utiliza para saltar sobre una iteración y continuar el bucle desde la parte superior.</p>
+
+<p>El ejemplo de la izquierda muestra un bucle que salta mostrando el contador de bucle si es un número impar.</p>
+
+<p>Como <code>break</code> en la página anterior,<code>continue</code> no debería ser necesaria bajo ninguna circunstancia normal. Cualquier código que parece requerir una instrucción de continuación podría volver a escribirse mejor sin ella.</p>
+<pre><code class="js">
+for (var i=0; i&lt;10; i++) {
+&nbsp;&nbsp;if (i % 2 == 1) {
+&nbsp;&nbsp;&nbsp;&nbsp;continue
+&nbsp;&nbsp;}
+&nbsp;&nbsp;console.log (i)
+}
+console.log ('Finalizado').</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<h1 id="7.2.todolisto">7 . 2 . Todo listo</h1>
+
+<p>¡Bien hecho!</p>
+
+<p>En esta unidad has aprendido a usar bucles de control con <code>for</code> y <code>while</code>. Seguirá aprendiendo más acerca de los bucles de control en las siguientes unidades.</p>
+<!-- ##END MARKED WRAPPER## -->
+    </div>
+
+    </google-codelab-step>
+    
+    
+    <google-codelab-step label="Arrays" duration="2">
+        
+          <div id="wrapper">
+      <p>Esta unidad le presentará a los arrays escritos en JavaScript.</p>
+
+<p>Aprenderá acerca de la teoría detrás de usar arrays y también completará algunos desafíos prácticos para practicar sus nuevas habilidades.</p>
+
+<h1 id="1.1.experimentos">1 . 1 . Experimentos</h1>
+
+<p>Esta ventana se proporciona para que pruebe cualquier código que desarrolle. Úselo para experimentar y practicar. Siéntase libre en volver a esta página en cualquier momento.</p>
+<pre><code class="js">// Escribe el código de experimento a continuación
+//
+
+console.log ('su archivo de experimento')
+</code></pre>
+
+<p><a href="">EJECUTE SU CÓDIGO</a></p>
+
+<h1 id="2.arraysexplicados">2 . Arrays explicados</h1>
+
+<p>Usted ya ha estudiado arrays en la unidad Arrays de Flode, por lo que debe estar familiarizado con el concepto de arrays. (Si no ha completado la unidad Flode, le recomendamos que lo haga. Está disponible en el curso <code>Una Introducción a la Programación \&gt; Flode</code>).</p>
+<pre><code class="js">
+// Crear una lista con edades
+var edades = [12, 5, 68, 51, 62]
+
+// Crear una lista con nombres
+var nombres = ['Richard', 'Alice', 'Jennifer', 'Bob', 'Harry']
+
+for (var indice = 0; indice &lt; edades.length; indice ++) {
+&nbsp;&nbsp;console.log (nombres[indice] + 'es' + edades[indice])
+}
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<h2 id="creacióndearrays">Creación de arrays</h2>
+
+<p>La creación de arrays en JavaScript funciona exactamente de la misma manera que en Flode.</p>
+
+<h3 id="cadenasdearraysstringsdearrays">Cadenas de Arrays (strings de arrays)</h3>
+
+<p>Crea un string de arrays como esta:</p>
+<pre><code class="(null)">strArray = ['Alice', 'Shahneila', 'Bob,' Tariq ']</code></pre>
+
+<h3 id="arraysdenúmeros">Arrays de números</h3>
+
+<p>Aquí hay un ejemplo de un array numérico:</p>
+<pre><code class="(null)">numArray = [1, 3,141, 5, 17,1, 100]</code></pre>
+
+<h3 id="arrayvacío">Array vacío</h3>
+
+<p>Si va a crear su propio array, entonces necesita crear una variable de array vacía antes de agregar cualquier dato a ella.</p>
+
+<p>La forma correcta de crear una variable de array vacía es la siguiente:</p>
+<pre><code class="(null)">numArray = []
+numArray [0] = 4</code></pre>
+
+<p>Nota: el siguiente ejemplo fallará porque no se ha creado el array:</p>
+<pre><code class="(null)">numArray [0] = 4</code></pre>
+
+<h1 id="2.1.longituddeunarray">2 . 1 . Longitud de un array</h1>
+
+<p>Cada array tiene un número de elementos (valores o variables). Es importante conocer el número de elementos que tiene una array.</p>
+<pre><code class="js">
+// declare un array de números
+var numeros = [1, 2, 3, 4, 5, 6]
+
+// obtener la longitud del array
+var longitudArray = numeros.length
+
+// imprimir la longitud
+console.log ('Longitud de [' + numeros + '] es:' + longitudArray)
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<p>Mire el código de la izquierda, verás lo siguiente:</p>
+<pre><code class="(null)">6  var longitudArray = numeros.length</code></pre>
+
+<p>Este código devuelve el número de elementos del array <code>numeros</code>.</p>
+
+<p>Este código se utiliza a menudo en bucles para realizar un recorrido circular a través de todos los elementos de un array.</p>
+
+<h1 id="2.2.configurandoelementosdelarray">2 . 2 . Configurando elementos del array</h1>
+
+<p>Es fácil establecer un elemento de un array utilizando las mismas técnicas.</p>
+
+<p><code>numArray [4] = 50</code> establece el quinto elemento del array llamado<code>numArray</code> a <code>50</code>.</p>
+
+<h2 id="definiendounarray">Definiendo un array</h2>
+
+<p>Si desea crear un array y ya sabe los elementos (que no es el caso a menudo), entonces usted puede hacerlo de esta manera.</p>
+<pre><code class="(null)">numArray = [1, 55, 3, 16]</code></pre>
+
+<p>A menudo, no tendrás ningún elemento para comenzar y querrás agregarlos más tarde.</p>
+
+<p>Si este es el caso, debe primero crear un array vacío como éste .</p>
+<pre><code class="(null)">numArray = []</code></pre>
+
+<h2 id="ejecutarelcódigo">Ejecutar el código</h2>
+
+<p>Eche un vistazo al código de la izquierda.</p>
+<pre><code class="js">// Crear algunos arrays
+var unusedArray = [1,2,3,4]
+var unusedStrArray = ['Alice', 'Shahneila', 'Bob', 'Tariq']
+var numArray = []
+
+// Asignar algunos datos a los elementos 1 y 5
+numArray [0] = 10
+numArray [4] = 50
+
+// Mostrarlos todos en la consola
+for (var i=0; i &lt; numArray.length; i++) {
+&nbsp;&nbsp;&nbsp;&nbsp;console.log (numArray[i])
+}
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<p>Esto muestra cómo:</p>
+
+<ol>
+<li>Defina un nuevo array.</li>
+<li>Asigne valores a los elementos del array (tenga en cuenta que no estamos asignando valores a los elementos * contiguos *).</li>
+<li>Muestre cada elemento del array en la consola.</li>
+</ol>
+
+<p>Cuando ejecute el código, observe cómo algunos de los elementos se muestran como * undefined *. La razón de esto es que sólo asignamos los elementos 0 y 4 . JavaScript inserta automáticamente los elementos del array entre nosotros. Debido a que los elementos que JavaScript ha insertado son indefinidos, no tienen ningún valor asignado a ellos.</p>
+
+<h1 id="2.3.pushypop">2 . 3 . push y pop</h1>
+
+<p>JavaScript tiene un par de métodos útiles para agregar elementos al final de un array. Se les llama push y pop.</p>
+<pre><code class="js">
+// Crear un array con algunos valores
+var valores = [10, 20, 30, 40, 50, 60]
+
+//ciclo de 0 a 2, empujando cada uno al final de la lista
+for (var indice = 0; indice &lt; 3; indice++) {
+&nbsp;&nbsp;valores.push (indice)
+&nbsp;&nbsp;console.log (valores)
+}
+
+console.log ('--- Remove  ')
+
+//ciclo de 0 a 2, saliendo del final de la lista
+for (var indice = 0; indice &lt; 3; indice++) {
+&nbsp;&nbsp;valores.pop ()
+&nbsp;&nbsp;console.log (valores)
+}
+</code></pre>
+
+<p><a href="">EJECUTE SU CÓDIGO</a></p>
+
+<h2 id="push">Push</h2>
+
+<p><code>valores.push(newElement)</code> se utiliza para agregar un nuevo elemento al final de una array. Imagínese como “estamos empujando un nuevo elemento al final de la array”.</p>
+
+<h2 id="pop">Pop</h2>
+
+<p><code>valores.pop()</code> se utiliza para eliminar el último elemento de la array. Imagínese como “estamos haciendo estallar un elemento fuera del final de la array”.</p>
+
+<p>Ejecute el código para comprobar que entiende lo que está sucediendo.</p>
+
+<h1 id="2.4.unshiftyshift">2 . 4 . Unshift y shift</h1>
+
+<p>Unshift y shift también son métodos útiles para agregar o quitar elementos. Donde push y pop agregan y quitan elementos al * final * de un array, unshift y shift agregan y quitan elementos al * comienzo*.</p>
+<pre><code class="js">
+// Crear un array con algunos valores
+var valores = [10, 20, 30, 40, 50, 60]
+
+for (var indice = 0; indice &lt; 3; indice++) {
+&nbsp;&nbsp;valores.unshift(indice)
+&nbsp;&nbsp;console.log (valores)
+}
+
+console.log ('--- Remove  ')
+
+for (var indice = 0; indice &lt; 3; indice++) {
+&nbsp;&nbsp;valores.shift()
+&nbsp;&nbsp;console.log (valores)
+}
+</code></pre>
+
+<p><a href="">EJECUTA TU CÓDIGO</a></p>
+
+<h2 id="unshift">Unshift</h2>
+
+<p><code>valores.unshift (newElement)</code> se utiliza para agregar un nuevo elemento al inicio de un array.</p>
+
+<h2 id="shift">Shift</h2>
+
+<p><code>valores.shift ()</code> se utiliza para eliminar el primer elemento al principio de un array.</p>
+
+<p>Ejecute el código para comprobar que usted entiende lo que está sucediendo.</p>
+
+<h1 id="3.1.sumadearray">3 . 1 . Suma de array</h1>
+
+<p>Tenga en cuenta que el array <code>numeros</code> viene de los argumentos de la línea de comandos, los cuales están almacenados en un array llamado ‘process.argv’ para nosotros por el intérprete de JavaScript.<br>
+Los dos primeros elementos que no queremos han sido eliminados usando la función array <code>slice (2)</code>.</p>
+
+<p>Estamos pasando en un array de de números. Agregue todos los elementos de la array y genere el resultado.</p>
+<pre><code class="js">
+// Obtener un input de array desde la línea de comandos
+var numeros =  [1,3,4,6,7] //  
+
+// Su código va aquí
 
 
-  </div></code></pre><p><a href="">¡Revisalo!</a></p></div></paper-material></section></iron-pages></div></paper-scroll-header-panel></paper-drawer-panel><paper-toast id="toast"><span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span></paper-toast></template><script src="scripts/app.js"></script></body></html>
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.2.rellenarunnuevoarray">3 . 2 . Rellenar un nuevo array</h1>
+
+<p>Le proporcionamos un número N.</p>
+
+<p>Cree un array. Luego, usando un bucle, llene el array con N elementos. Establezca cada elemento de array en el indice multiplicado por 10.</p>
+
+<p>** Tenga en cuenta: ** podemos pasar un valor 0, en cuyo caso debe devolver una array vacía.</p>
+<pre><code class="js">
+// Obtener argumentos de la línea de comandos
+var N = 10 // prompt()
+
+// Su código va aquí
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.3.conjuntodecadenasdearraystringdearray">3 . 3 . Conjunto de cadenas de array (string de array)</h1>
+
+<p>Cree su propio string de array. Llame al array lo que quiera, siempre y cuando sea un nombre de variable válido.</p>
+
+<ul>
+<li>El array debe contener 3 elementos</li>
+<li>El primer elemento debe contener ‘AAA’</li>
+<li>El segundo elemento debe contener ‘BBB’</li>
+<li>El tercer elemento debe contener ‘CCC’</li>
+</ul>
+
+<p>Salida del array.</p>
+<pre><code class="js">
+// Su código va aquí
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.4.búsquedasimpledenúmeros">3 . 4 . Búsqueda simple de números</h1>
+
+<p>Le pasaremos 2 inputs</p>
+
+<ul>
+<li>Un array de números</li>
+<li>Un número, N, para buscar</li>
+</ul>
+
+<p>Su trabajo consiste en recorrer el array y encontrar el número especificado en el segundo input. Saque el índice del elemento de array donde encontrará el número.</p>
+
+<p>** Si N no se encuentra en el array, salida –1. **</p>
+<pre><code class="js">
+// Obtener entrada desde la línea de comandos
+var N =    3 // prompt() 	// Elimina el último argumento para obtener N
+var numeros = [1, 3, 4, 5,6, 9]	// utiliza el resto para nuestro array
+
+// Su código va aquí
+
+
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.5.númeromáximo">3 . 5 . Número máximo</h1>
+
+<p>Vamos a pasar en un array de números. Su trabajo es encontrar el número más grande en ese array y de output ** su índice **, no el valor real.</p>
+
+<p>** Consejo: ** necesitará usar una variable de utilidad para almacenar el valor máximo y una decisión para ver si cada número es mayor que el valor máximo actual encontrado en iteraciones anteriores.</p>
+<pre><code class="js">
+// Obtener entrada desde la línea de comandos
+var numeros = [1, 3, 4, 5,6, 9]	
+
+// Su código va aquí
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.6.x10todoslosdemás">3 . 6 . X 10 todos los demás</h1>
+
+<p>Estamos pasando en 3 inputs.</p>
+
+<ul>
+<li>Un array de números</li>
+<li>Un valor multiplicador, M</li>
+<li>Un valor, N</li>
+</ul>
+
+<p>Debe multiplicar cada elemento Nth (no multiplicar el elemento 0) por M. Así que si N es 3, comienza con el elemento 3, que es el índice 2.</p>
+
+<p>Si hay menos de N elementos entonces debería dar output al array de input sin cambios.</p>
+<pre><code class="js">
+// Obtener input desde la línea de comandos
+var N = 3 // prompt() 
+var M = 6 // prompt() 
+var numbers = process.argv.slice(2)
+// Asegúrese de que JavaScript trata todo como enteros
+for (var i = 0; i &lt; numeros.length; i ++) {
+&nbsp;&nbsp;numeros[i] = parseInt(numeros[i])
+}
+
+// Su código va aquí
+
+
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.7.1adentro2fuera">3 . 7 . 1 adentro, 2 fuera</h1>
+
+<p>Aquí hay una más difícil de terminar.</p>
+
+<p>Estamos pasando en una serie de números. Necesita crear 2 nuevos arrays en su gráfico, luego</p>
+
+<ul>
+<li>Poner todos los números impares en un array</li>
+<li>Poner todos los números pares en el otro array</li>
+<li>Primero el output del array de numeros pares, el array de impares segundo.</li>
+</ul>
+
+<p>** Consejo: ** debe usar el operador * modulo * para decidir si el número es impar o par. Te dimos una pequeña función que hace esto.</p>
+
+<p>No olvide definir los 2 nuevos arrays antes de comenzar a agregar elementos a ellas.</p>
+<pre><code class="js">
+// Obtener input desde la línea de comandos
+var numbers = [1, 3, 5, 6, 7]
+
+function esPar(n){
+&nbsp;&nbsp;return ((n% 2) == 0)
+}
+
+// Su código va aquí
+
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+<!-- ##END MARKED WRAPPER## -->
+    </div>
+        
+    </google-codelab-step>
+
+    
+    <google-codelab-step label="Matrices" duration="2">
+
+          <div id="wrapper">
+      <p>Usted va a aprender acerca de los array bidimensionales (2D) estudiando algunas teorías e intentando los retos dados.</p>
+
+<p>Aquí hay un ejemplo de datos bidimensionales:</p>
+<pre><code class="(null)">'Alice', 23, 'Azul', 'Audi''Tariq', 18, 'Rojo', 'Mini'
+'Bob', 31, 'Verde', 'Renault'</code></pre>
+
+<p>Cómo se prepresentan los datos es aquí, en un array bidimensional:</p>
+<pre><code class="(null)">personas = [ ['Alice',23,'Blue','Audi'], ['Tariq',18,'Red','Mini'], ['Bob',31,'Green','Renault']</code></pre>
+
+<h1 id="1.1.experimentos">1 . 1 . Experimentos</h1>
+
+<p>Esta ventana se proporciona para que pruebe cualquier código que desarrolle. Úselo para experimentar y practicar.</p>
+
+<p>Hay un código de inicio proporcionado para usted. Este código se explicará en las siguientes páginas.</p>
+<pre><code class="js">
+// Creación de un array 2D
+var personas = [
+&nbsp;&nbsp;['Nombre', 'Edad', 'Color', 'Carro'],
+&nbsp;&nbsp;['Alice', 23, 'Azul', 'Audi'],
+&nbsp;&nbsp;['Tariq', 18, 'Rojo', 'Mini'],
+&nbsp;&nbsp;['Bob', 31, 'Verde', 'Renault']
+]
+
+// un string que vamos a llenar
+var str = ''
+
+// pasando a través de ambas dimensiones
+for (var i=1; i &lt; personas.length; i++) {
+&nbsp;&nbsp;
+&nbsp;&nbsp;for (var j=0, str =''; j &lt; personas[i].length; j++) {
+&nbsp;&nbsp;&nbsp;&nbsp;str += personas[0][j] + '=' + personas[i][j] + ''
+&nbsp;&nbsp;}
+&nbsp;&nbsp;console.log (str)
+&nbsp;&nbsp;
+}
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO </a></p>
+
+<h1 id="2.arraysen2dexplicados">2 . Arrays en 2D explicados</h1>
+
+<p>Hasta ahora, has aprendido a usar array unidimensionales simples:</p>
+<pre><code class="(null)">numArray = [1, 2, 3, 4, 5] strArray = ['Alice', 'Tariq', 'Bob']</code></pre>
+
+<p>En esta unidad, vas a aprender sobre array bidimensionales.</p>
+
+<p>Los array con dos o más dimensiones pueden ser muy útiles. Los array bidimensionales son las más comunes, por lo que vamos a concentrarnos en ellas en esta unidad. Sin embargo, vale la pena saber para referencia futura que más dimensiones son posibles.</p>
+
+<h1 id="2.1.ejemplo">2 . 1 . Ejemplo</h1>
+
+<p>Imagine un aula con filas de escritorios, y en cada escritorio se sienta un estudiante. Piense en el array 2D como una cuadrícula, con filas que van de izquierda a derecha y columnas que suben y bajan. Se puede hacer referencia a cada elemento del array especificando la fila y la columna que deseamos seleccionar.</p>
+
+<p>El primer elemento del array escritorios, <code>escritorios [0]</code> contiene un array con cuatro elementos, <code>['Adam', 'Ben', 'Carl', 'David']</code>.</p>
+
+<p>[</p>
+
+<p>&nbsp;[‘Adam’, ‘Ben,’ Carl ‘,’ David ’],</p>
+
+<p>&nbsp;[‘Edward’, ‘Frank’, ‘Georgia’, ‘Helen’],</p>
+
+<p>&nbsp;[‘Isabelle’, ‘Joan’, ‘Kelly’, ‘Linda’]</p>
+
+<p>]</p>
+
+<figure>
+<img src="resources/89C7CA5C566D655F7B8E9AAF8ABC3D9C.png" alt="Screenshot 2017-07-14 15.23.23.png">
+<figcaption>Screenshot 2017–07–14 15.23.23.png</figcaption>
+</figure>
+
+<h1 id="2.2.lecturadeunamatriz2d">2 . 2 . Lectura de una matriz 2D</h1>
+<pre><code class="js">// declarar nuestra variable
+var escritorios = []
+
+//
+// establece las filas 0,1,2 para contener un array propio
+//
+escritorios[0] = ['Adam', 'Ben', 'Carl', 'David']
+escritorios[1] = ['Edward', 'Frank', 'Georgia', 'Helen']
+escritorios[2] = ['Isabelle', 'Joan', 'Kelly', 'Linda']
+
+
+for (var fila = 0; fila &lt; escritorios.length; fila++) {
+var filaAlumnos= ''
+	for (var columna = 0; columna &lt; mesas [fila] .length; columna ++) {
+		console.log ('fila [' + fila + ']col[' + column + ']=' + escritorios[fila][columna]);
+	}
+}
+</code></pre>
+
+<p>Echa un vistazo al código de la izquierda. Esto es lo que hace:</p>
+
+<h2 id="definirunarray">Definir un array</h2>
+<pre><code class="(null)">2 var escritorios= []</code></pre>
+
+<p>Para crear unn array 2D, llenamos un array regular `escritorios ’con un array para cada elemento.</p>
+
+<h2 id="rellenarunarray">Rellenar un array</h2>
+
+<p>Hay un número de formas equivalentes de llenar la mismn array 2D.</p>
+
+<p>En el código de ejemplo, el array 2D se ha llenado de esta manera:</p>
+<pre><code class="js">
+7 escritorios[0] = ['Adam', 'Ben', 'Carl', 'David']
+8 escritorios[1] = ['Edward', 'Frank', 'Georgia', 'Helen']
+9 escritorios[2] = ['Isabelle', 'Joan', 'Kelly', 'Linda']
+</code></pre>
+
+<p>Otra forma de rellenar un array 2D sería así, utilizando unn array de array:</p>
+<pre><code class="(null)">
+escritorios= [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['Adam', 'Ben', 'Carl', 'David'],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['Edward', 'Frank', 'Georgia', 'Helen'],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['Isabelle', 'Joan', 'Kelly', 'Linda']
+];
+</code></pre>
+
+<p>Para hacerlo más simple, todo en el ejemplo anterior podría ir en una sola línea, entonces el código sería así:</p>
+<pre><code class="js">
+var escritorios = [['Adam', 'Ben', 'Carl', 'David'],['Edward', 'Frank', 'Georgia', 'Helen'],['Isabelle', 'Joan', 'Kelly', 'Linda']];
+</code></pre>
+
+<h2 id="lengthslongitudes">Lengths (longitudes)</h2>
+
+<p>Echa un vistazo al bucle exterior, utiliza <code>fila \&lt;escritorios.length</code>. Esto nos dice la longitud de la primera dimensión.</p>
+<pre><code class="js">12 for(var fila = 0; fila &lt; escritorios.length; fila++) {</code></pre>
+
+<p>Para el bucle interno, usamos <code>columna \&lt; escritorios[fila] .length</code>.</p>
+<pre><code class="js">14 for (columna = 0; columna &lt; escritorios[fila].length; columna++) {</code></pre>
+
+<p>Esto nos indica la longitud del array interno para la fila <code>fila</code>, es decir, el número de columnas de la fila actual.</p>
+
+<h2 id="bucleatravésdetodo">Bucle a través de todo</h2>
+
+<p>Puede ver que en realidad tenemos un <em>bucle anidado</em> dentro de otro bucle.</p>
+<pre><code class="js">12 for (var fila = 0; fila &lt; desks.length; fila ++) {</code></pre>
+
+<ul>
+<li>El primer bucle se itera a través de cada <em>fila</em>. Por lo tanto, cuando entra en el bucle por primera vez, se está agarrando datos para la primera fila.</li>
+</ul>
+<pre><code class="js">14 for (var columna = 0; columna &lt; escritorios[fila].length; columna++) {</code></pre>
+
+<ul>
+<li>El segundo bucle recorre entonces todas las * columnas *.</li>
+</ul>
+
+<h2 id="referenciadeunelemento">Referencia de un elemento</h2>
+
+<p>Si hacemos referencia al array como <code>escritorios[1][2]</code> vamos a obtener el valor ‘Georgia’. En esta sección hacemos referencia a la fila y columna que queremos imprimir.</p>
+<pre><code class="js">15 console.log('fila [' + fila + ']col[' + columna + '] =' + escritorios[fila] [columna]);</code></pre>
+
+<h1 id="2.3.creacióndeunarray2ddinámica">2 . 3 . Creación de un array 2D dinámica</h1>
+
+<p>Escribir código para crear arrays bidimensionales es lógico, pero puede ser un poco complicado. La gráfica de Flode a la izquierda ilustra un array 2D visualmente para tratar de hacer el concepto ¡un poco más fácil de entender!</p>
+
+<h2 id="avanceenelgráfico">Avance en el gráfico</h2>
+
+<p>Utilice la función ‘Step’ para recorrer el gráfico Flode para que pueda ver exactamente cómo cambia la matriz <code>a2d</code> en cada etapa del proceso.</p>
+
+<h1 id="2.4.array2ddinamicoenjavascript">2 . 4 . Array 2D Dinamico en Javascript</h1>
+
+<p>Mira el ejemplo de código de la izquierda. El código crea un nuevo array y lo llena con algunas filas y columnas.</p>
+
+<p>Cada ‘celda’ del array se llena cuando se ejecuta el código.</p>
+<pre><code class="js">
+// primero crear una matriz vacía 
+// Esto nos da nuestra primera dimensión
+var array = []
+
+// Un par de variables por diversión
+var filas = 5
+var cols = 4
+
+// Trabajamos a través de las filas primero, dimensión 1
+for (var i = 0; i &lt; filas; i++) {
+&nbsp;&nbsp;// Hacer un array vacío array[i] 
+&nbsp;&nbsp;// Esta es la segunda dimensión
+&nbsp;&nbsp;array[i] = []
+&nbsp;&nbsp;for (var j = 0; j &lt; cols; j++) {
+&nbsp;&nbsp;&nbsp;&nbsp;// Ahora podemos escribir en una 'celda'
+&nbsp;&nbsp;&nbsp;&nbsp;// Podría leer [i] como la fila
+&nbsp;&nbsp;&nbsp;&nbsp;// y [j] como columna
+&nbsp;&nbsp;&nbsp;&nbsp;array[i][j] = i + ',' + j
+&nbsp;&nbsp;}
+}
+
+console.log (array)
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<h1 id="3.desafíos">3 . Desafíos</h1>
+
+<p>En las próximas páginas hay algunos desafíos para que pueda probar lo que acaba de aprender.</p>
+
+<h1 id="3.1.pancomido">3 . 1 . Pan comido</h1>
+
+<p>Pasamos por un array bidimensional. Deberá dar output al tercer elemento de la segunda fila.</p>
+<pre><code class="js">
+// Obtener input desde los argumentos de la línea de comandos
+var inputArray = process.argv.slice(2)
+
+// dividir los argumentos en un array 2d
+for (var i=0; i &lt; inputArray.length; i++){
+&nbsp;&nbsp;inputArray[i] = inputArray[i] .split(",")
+}
+
+// Su código va aquí
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.2.enumerarlos">3 . 2 . Enumerarlos</h1>
+
+<p>Pasaremos en una matriz bidimensional de números.</p>
+
+<p>Debieras</p>
+
+<ul>
+<li>Suma todos los números en cada fila y la salida que el número</li>
+<li>Salida el total general de todas las filas</li>
+</ul>
+<pre><code class="js">
+// Obtener input desde los argumentos de la línea de comandos
+var inputArray = [1, 3, 2, 6 , 9]
+
+// dividir los argumentos en un array 2d
+for (var i = 0; i &lt; inputArray.length; i++) {
+&nbsp;&nbsp;inputArray[i] = inputArray[i].split(",")
+}
+
+// Su código va aquí*****
+
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.3.creacióndinámica">3 . 3 . Creación dinámica</h1>
+
+<p>Pasamos en 2 números, A y B. Debería crear un array con A filas y B columnas.</p>
+
+<p>A continuación, debe rellenar cada celda de este modo …</p>
+
+<ul>
+<li>“R0C0”, “R0C1”, “R0C2”, etc.</li>
+</ul>
+<pre><code class="js">
+// Obtenga nuestros argumentos en la línea de comandos
+var B = 10
+var A = 7 
+
+// Su código va aquí
+
+</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+<!-- ##END MARKED WRAPPER## -->
+    </div>
+
+    </google-codelab-step>
+
+
+    <google-codelab-step label="Expresiones numéricas y de cadena" duration="2">
+
+         <div id="wrapper">
+      <h1 id="1.introducción">1 . Introducción</h1>
+
+<p>Esta unidad le enseña cómo crear funciones en JavaScript.</p>
+
+<p>A continuación puede ver una function simple:</p>
+<pre><code class="js">function volCilindro(radio, altura) {
+&nbsp;&nbsp;return Math.PI * radio * radio * altura
+}
+
+// Calcular el volumen de un cilindro
+// de radio=4 y altura=10
+vol = volCilindro(4, 10)</code></pre>
+
+<h1 id="1.1.experimentos">1 . 1 . Experimentos</h1>
+
+<p>Esta ventana se proporciona para que pruebe cualquier código que desarrolle. Úselo para experimentar y practicar.</p>
+<pre><code class="js">// Escribe tu código experimental abajo
+//
+
+console.log('su archivo de experimentos')
+
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<p>Las funciones se utilizan mucho en la programación, y esto es por una buena razón. Las funciones son una de las construcciones más potentes disponibles para usted como programador.</p>
+
+<h2 id="definición">Definición</h2>
+
+<ul>
+<li>Una function es un pedazo de código que realiza una tarea específica.</li>
+<li>Una function está empaquetada como una unidad.</li>
+<li>Se puede llamar a una function con inputs.</li>
+<li>Una function puede devolver datos.</li>
+</ul>
+
+<p>El código que se necesita a menudo o repetitivamente se empaqueta cuidadosamente y se le da un nombre para que pueda usarse tan a menudo como quieras desde donde quieras en un programa.</p>
+
+<h3 id="principiosdeprogramación">Principios de programación</h3>
+
+<ul>
+<li><p>La información oculta * es el principio de tratar una lista de tareas como una sola tarea sin hacer caso de los detalles. Por ejemplo, en lugar de escribir todos los pasos para hacer una taza de té, simplemente pienso en un paso, “hacer té.” Las funciones me permiten crear una forma de ocultar los múltiples pasos de una tarea detrás de un solo paso: esto es La llamada a la function.</p></li>
+<li><p>Modularidad * es el proceso de escribir software para que las secciones puedan ser reemplazadas sin afectar a otras secciones. Mediante el uso de funciones, el código dentro de la function se puede cambiar sin cambiar el código fuera de la function.</p></li>
+</ul>
+
+<h1 id="2.1.unafunctionsimple">2 . 1 . Una function simple</h1>
+<pre><code class="js">
+// calcular el volumen de un cilindro
+function volumenCilindro(radio, altura) {
+&nbsp;&nbsp;var v = Math.PI * radio * radio * altura
+&nbsp;&nbsp;return v
+}
+
+console.log ('r, h =&gt; V')
+console.log ('10, 20 '+ volumeCilindro (10, 20))
+console.log ('1, 10' + volumeCilindro (1, 10))
+console.log ('125, 2520' + volumeCilindro (125, 2520))
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<p>A la izquierda se muestra un ejemplo sencillo que muestra una function <code>volumeCilindro()</code> que tiene dos argumentos.</p>
+
+<p>El programa calcula el volumen de un cilindro, usando la fórmula:</p>
+
+<p>V = π * radio2 * alturaV = π * radio2 * altura</p>
+
+<h2 id="cualquiernúmerodeargumentos">Cualquier número de argumentos</h2>
+
+<p>Por lo tanto, una function puede tomar tantos argumentos como sea necesario. La function de llamada típicamente pasará tantos parámetros como la function especifica los argumentos.</p>
+
+<h1 id="2.2.unafunctionendetalle">2 . 2 . Una function en detalle</h1>
+
+<p>Echa un vistazo a la function <code>volumeCilindro()</code>. A continuación se muestra una explicación de cómo se construye esta function.</p>
+<pre><code class="js">
+// caclular el volumen de un cilindro
+function volumenCilindro( radio, altura) {
+&nbsp;&nbsp;var v = Math.PI * radio * radio * altura
+&nbsp;&nbsp;return v
+}
+
+console.log ('r, h =&gt; V')
+console.log ('10, 20 '+ volumeCilindro(10, 20))
+console.log ('1, 10' + volumeCilindro(1, 10))
+console.log ('125, 2520' + volumeCilindro(125, 2520))
+</code></pre>
+<pre><code class="(null)">[EJECUTE EL CÓDIGO]()</code></pre>
+<pre><code class="js">function volumenCilindro(radio, altura) {
+&nbsp;&nbsp;&nbsp;&nbsp;var v = Math.PI * radio * radio * altura
+&nbsp;&nbsp;&nbsp;&nbsp;Return v
+}</code></pre>
+
+<p>Una forma alternativa de escribir el código es así:</p>
+<pre><code class="js">function volumenCilindro(radio, altura) {
+&nbsp;&nbsp;&nbsp;&nbsp;return Math.PI * radio * radio * altura
+}</code></pre>
+
+<p>** Nombre de la function<br>
+**</p>
+
+<hr>
+
+<p>Para nombrar una function, utilice las mismas reglas que se aplican a una variable. En este caso, la function se llama <code>volumeCilindro()</code>.</p>
+
+<h2 id="bloquedecódigo">Bloque de código</h2>
+
+<p>La function obtiene su propio bloque de código (al igual que una instrucción <code>if</code> o un<code>for</code>loop). El bloque comienza con <code>{</code> y es seguido por tantas líneas de código como quieras. Al final del bloque de código hay un cierre <code>}</code>.</p>
+
+<h2 id="argumentos">Argumentos</h2>
+
+<p>Después de que el nombre de la function viene cualquier * argumento * que recibe la function. Algunas funciones no toman ningún argumento.</p>
+
+<p>Se puede pensar en un argumento como una variable. En nuestro ejemplo, los argumentos son <code>radio</code> y<code>altura</code>. Dentro del bloque de código de su function, ahora puede tratar este argumento como si fuera una variable.</p>
+
+<p>Lo más importante a destacar aquí es que la function de llamada toma un * parámetro * que se asigna a este argumento. Observe la siguiente llamada de function como ejemplo:</p>
+<pre><code class="(null)">vol = volumenCilindro(10, 30)</code></pre>
+
+<ul>
+<li><code>10</code> es el primer parámetro y se pasa al argumento <code>radio</code> de la function.</li>
+<li><code>30</code> es el segundo parámetro y se pasa al argumento <code>altura</code>.</li>
+</ul>
+
+<h2 id="return">Return</h2>
+
+<p>A continuación se muestra un resumen del uso de la sentencia <code>return</code> dentro de una function:</p>
+
+<ul>
+<li>Todas las funciones devuelven el control de nuevo a la línea de código que las llamó si se incluye o no una declaración de return.</li>
+<li>Si no incluye una declaración <code>return</code> explícita en su function, entonces retornará cuando la ejecución llegue al final del bloque de código.</li>
+<li>Una declaración <code>return</code> sin una expresión después de ella simplemente retornará al código de llamada.</li>
+<li>Una declaración <code>return</code> con una expresión después de ella, la retornará de regreso a la línea de código que lo llamó. En el ejemplo anterior ese valor se asigna entonces a <code>vol</code>.</li>
+</ul>
+
+<h1 id="2.3.¿porquéfunctionpartei">2 . 3 . ¿Por qué function? Parte I</h1>
+
+<p>He aquí un ejemplo de código más complejo que está mal escrito. Las razones por las que el código es malo se discutirán en la página siguiente.</p>
+<pre><code class="js">//
+// EL PRIMERO
+//
+var radio1 = 2
+var altura1 = 4
+var circulo1 = radio1 * radio1 				// área de fondo
+var volume1 = Math.PI * circulo1 * altura1  // figura de volumen
+var peso1 = volume1 * 4 					// peso de la figura
+console.log (peso1)
+
+//
+// SEGUNDO
+//
+var radio2 = 5
+var altura2 = 7
+var circulo2 = radio2 * radio2 			// área de fondo
+var volume2 = Math.PI * circulo2 * altura2   // volumen de la figura
+var peso2 = volume2 * altura2 				// peso de la figura
+console.log (peso2)
+
+//
+// EL TERCERO
+//
+var radio3 = 1
+var altura3 = 35
+var circulo3 = radio3 * radio3 				// área de fondo
+var volume3 = Math.PI * circulo3 * height3  // figura de volumen
+var peso3 = volume3 * 8 				    // peso de la figura
+console.log (peso3)
+
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<p>Mira los bloques de código PRIMERO, SEGUNDO Y TERCERO. ¿Ves cómo están haciendo exactamente lo mismo?</p>
+
+<p>No se preocupe demasiado de lo que el código está haciendo, aparte de que cada bloque de código está haciendo lo mismo.</p>
+
+<p>Ahora ve a la siguiente página.</p>
+
+<h1 id="2.4.¿porquéfunctionparteii">2 . 4 . ¿Por qué function? Parte II</h1>
+
+<p>A la izquierda verá código que hace exactamente lo mismo en la forma correcta, usando una function.</p>
+<pre><code class="js">// calcular el área de un círculo
+function areaCirculo(radio) {
+&nbsp;&nbsp;return radio * radio
+}
+
+// calcular el volumen de un cilindro
+function volumenCilindro(radio, altura) {
+&nbsp;&nbsp;return Math.PI * areaCirculo(radio) * altura
+}
+
+// calcular el peso de un cilindro (por unidad)
+function pesoCilindro(radio, altura, peso) {
+&nbsp;&nbsp;return volumeCilindro(radio, altura) * peso
+}
+
+var radio1 = 2
+var altura1 = 4
+var peso1 = pesoCilindro(radio1, altura1, 4) // calcular el peso
+console.log (peso1)
+
+var radio2 = 5
+var altura2 = 7
+var peso2 = pesoCilindro (radio2, altura2, 6) // calcular el peso
+console.log (peso2)
+
+var radio3 = 1;
+var altura3 = 35;
+var peso3 = pesoCilindro(radio3, altura3, 8) // calcular el peso
+console.log (peso3)</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<h2 id="¿porquéesmejor">¿Por qué es mejor?</h2>
+
+<p>Uno de los * Principios de Programación * de esta unidad es ** ocultar información **. Esto se logra ocultando los cálculos necesarios para calcular el peso de un cilindro detrás de una sola llamada de function.</p>
+
+<h3 id="duplicación">Duplicación</h3>
+
+<p>La razón por la que este código es mejor es que no hay bits duplicados de código.</p>
+
+<p>En el ejemplo, la function sólo se llama un par de veces, pero imagínese que necesitaba usar este código en cien lugares diferentes y lo codificó de la manera en que se hizo en la página anterior. Ahora, usted tendría el mismo bit de código repetido una y otra vez en cientos lugares diferentes.</p>
+
+<p>¿Qué pasaría si más tarde descubriste que ese bit de código tiene un error en él? Tendrías que ir y arreglar el código una y otra vez en cien lugares.</p>
+
+<h3 id="legibilidad">Legibilidad</h3>
+
+<p>Otra razón realmente importante de que este código es mejor es que es mucho más fácil de leer.</p>
+
+<p>En lugar de tener que descifrar muchas líneas de código (el código que se movió a una function podría haber sido cientos de líneas de largo) ahora puede leer un nombre agradable y significativo y saber inmediatamente lo que hace.</p>
+
+<h1 id="3.desafíos">3 . Desafíos</h1>
+
+<p>Ahora ya está listo para probar algunos desafíos y probar su conocimiento de funciones.</p>
+
+<h2 id="probandotusfunctions">Probando tus functions</h2>
+
+<p>En estos desafíos, escribirá las funciones que serán llamadas para usted. Puede probar estos directamente en su código como se muestra en el ejemplo anterior:</p>
+<pre><code class="js">// calcular el volumen de un cilindro
+function volumenCilindro( radio, altura) {
+&nbsp;&nbsp;return Math.PI * radio * radio * altura
+}
+
+console.log ('r = 10, h = 20 =&gt; V =' + volumenCilindro(10, 20))</code></pre>
+
+<p>Puede llamar a su function en cualquier lugar fuera de la function como <code>value = volumeCilindro(10,20)</code> lo hace arriba.</p>
+
+<h1 id="3.1.númeroenteroaleatorio">3 . 1 . Número Entero aleatorio</h1>
+
+<h3 id="númeroenteroaleatorio">Número entero aleatorio</h3>
+
+<p>Escribe una function llamada <code>aleatorioEntero</code> que toma dos parámetros numéricos<code>min</code> y <code>max</code> y retorna un valor entero aleatorio entre<code>min</code> y <code>max</code>.</p>
+<pre><code class="js">
+// Escribe tu código aquí
+
+
+function aleatorioEntero (min, max) {
+&nbsp;&nbsp;
+&nbsp;&nbsp;return Math.random() * (max - min) + min;
+}</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.2.perseguirrojo">3 . 2 . Perseguir rojo</h1>
+
+<h3 id="esrojo">Es rojo</h3>
+
+<p>Escribe una function <code>isRed</code> que toma una cadena<code>str</code> y determina si la cadena contiene la palabra ‘red’. Si devuelve <code>true</code>, volverá<code>false</code>.</p>
+
+<p>Tendrás que usar el método <code>str.lastIndexOf ('characters to look for')</code> o <code>str.indexOf ('characters to look for')</code> que devuelve un índice válido si se encuentra la cadena o <code>-1</code> si No lo fue.</p>
+<pre><code class="js">
+// Escribe tu código aquí
+
+function esRojo(str) {
+&nbsp;&nbsp;
+&nbsp;&nbsp;if (str.indexOf ("rojo") &gt;= 0)
+&nbsp;&nbsp;&nbsp;&nbsp;return verdadero;
+&nbsp;&nbsp;return false;
+}</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+<!-- ##END MARKED WRAPPER## -->
+    </div>
+
+
+        
+    </google-codelab-step>
+
+ 
+
+    
+    </google-codelab>
+
+
+
+
+</body></html>
