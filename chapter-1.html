@@ -1,0 +1,304 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/iron-localstorage/iron-localstorage.html">
+<link rel="import" href="bower_components/paper-radio-button/paper-radio-button.html">
+<link rel="import" href="bower_components/paper-radio-group/paper-radio-group.html">
+<link rel="import" href="style/shared-style.html">
+
+
+<dom-module id="chapter-1">
+    <template strip-whitespace="">
+    <style include="shared-style">
+    </style>
+
+<div id="wrapper">
+      <h1 id="1.introducción">1 . Introducción</h1>
+
+<p>Esta unidad le enseña cómo crear funciones en JavaScript.</p>
+
+<p>A continuación puede ver una function simple:</p>
+<pre><code class="js">function volCilindro(radio, altura) {
+&nbsp;&nbsp;return Math.PI * radio * radio * altura
+}
+
+// Calcular el volumen de un cilindro
+// de radio=4 y altura=10
+vol = volCilindro(4, 10)</code></pre>
+
+<h1 id="1.1.experimentos">1 . 1 . Experimentos</h1>
+
+<p>Esta ventana se proporciona para que pruebe cualquier código que desarrolle. Úselo para experimentar y practicar.</p>
+<pre><code class="js">// Escribe tu código experimental abajo
+//
+
+console.log('su archivo de experimentos')
+
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<p>Las funciones se utilizan mucho en la programación, y esto es por una buena razón. Las funciones son una de las construcciones más potentes disponibles para usted como programador.</p>
+
+<h2 id="definición">Definición</h2>
+
+<ul>
+<li>Una function es un pedazo de código que realiza una tarea específica.</li>
+<li>Una function está empaquetada como una unidad.</li>
+<li>Se puede llamar a una function con inputs.</li>
+<li>Una function puede devolver datos.</li>
+</ul>
+
+<p>El código que se necesita a menudo o repetitivamente se empaqueta cuidadosamente y se le da un nombre para que pueda usarse tan a menudo como quieras desde donde quieras en un programa.</p>
+
+<h3 id="principiosdeprogramación">Principios de programación</h3>
+
+<ul>
+<li><p>La información oculta * es el principio de tratar una lista de tareas como una sola tarea sin hacer caso de los detalles. Por ejemplo, en lugar de escribir todos los pasos para hacer una taza de té, simplemente pienso en un paso, “hacer té.” Las funciones me permiten crear una forma de ocultar los múltiples pasos de una tarea detrás de un solo paso: esto es La llamada a la function.</p></li>
+<li><p>Modularidad * es el proceso de escribir software para que las secciones puedan ser reemplazadas sin afectar a otras secciones. Mediante el uso de funciones, el código dentro de la function se puede cambiar sin cambiar el código fuera de la function.</p></li>
+</ul>
+
+<h1 id="2.1.unafunctionsimple">2 . 1 . Una function simple</h1>
+<pre><code class="js">
+// calcular el volumen de un cilindro
+function volumenCilindro(radio, altura) {
+&nbsp;&nbsp;var v = Math.PI * radio * radio * altura
+&nbsp;&nbsp;return v
+}
+
+console.log ('r, h =&gt; V')
+console.log ('10, 20 '+ volumeCilindro (10, 20))
+console.log ('1, 10' + volumeCilindro (1, 10))
+console.log ('125, 2520' + volumeCilindro (125, 2520))
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<p>A la izquierda se muestra un ejemplo sencillo que muestra una function <code>volumeCilindro()</code> que tiene dos argumentos.</p>
+
+<p>El programa calcula el volumen de un cilindro, usando la fórmula:</p>
+
+<p>V = π * radio2 * alturaV = π * radio2 * altura</p>
+
+<h2 id="cualquiernúmerodeargumentos">Cualquier número de argumentos</h2>
+
+<p>Por lo tanto, una function puede tomar tantos argumentos como sea necesario. La function de llamada típicamente pasará tantos parámetros como la function especifica los argumentos.</p>
+
+<h1 id="2.2.unafunctionendetalle">2 . 2 . Una function en detalle</h1>
+
+<p>Echa un vistazo a la function <code>volumeCilindro()</code>. A continuación se muestra una explicación de cómo se construye esta function.</p>
+<pre><code class="js">
+// caclular el volumen de un cilindro
+function volumenCilindro( radio, altura) {
+&nbsp;&nbsp;var v = Math.PI * radio * radio * altura
+&nbsp;&nbsp;return v
+}
+
+console.log ('r, h =&gt; V')
+console.log ('10, 20 '+ volumeCilindro(10, 20))
+console.log ('1, 10' + volumeCilindro(1, 10))
+console.log ('125, 2520' + volumeCilindro(125, 2520))
+</code></pre>
+<pre><code class="(null)">[EJECUTE EL CÓDIGO]()</code></pre>
+<pre><code class="js">function volumenCilindro(radio, altura) {
+&nbsp;&nbsp;&nbsp;&nbsp;var v = Math.PI * radio * radio * altura
+&nbsp;&nbsp;&nbsp;&nbsp;Return v
+}</code></pre>
+
+<p>Una forma alternativa de escribir el código es así:</p>
+<pre><code class="js">function volumenCilindro(radio, altura) {
+&nbsp;&nbsp;&nbsp;&nbsp;return Math.PI * radio * radio * altura
+}</code></pre>
+
+<p>** Nombre de la function<br>
+**</p>
+
+<hr>
+
+<p>Para nombrar una function, utilice las mismas reglas que se aplican a una variable. En este caso, la function se llama <code>volumeCilindro()</code>.</p>
+
+<h2 id="bloquedecódigo">Bloque de código</h2>
+
+<p>La function obtiene su propio bloque de código (al igual que una instrucción <code>if</code> o un<code>for</code>loop). El bloque comienza con <code>{</code> y es seguido por tantas líneas de código como quieras. Al final del bloque de código hay un cierre <code>}</code>.</p>
+
+<h2 id="argumentos">Argumentos</h2>
+
+<p>Después de que el nombre de la function viene cualquier * argumento * que recibe la function. Algunas funciones no toman ningún argumento.</p>
+
+<p>Se puede pensar en un argumento como una variable. En nuestro ejemplo, los argumentos son <code>radio</code> y<code>altura</code>. Dentro del bloque de código de su function, ahora puede tratar este argumento como si fuera una variable.</p>
+
+<p>Lo más importante a destacar aquí es que la function de llamada toma un * parámetro * que se asigna a este argumento. Observe la siguiente llamada de function como ejemplo:</p>
+<pre><code class="(null)">vol = volumenCilindro(10, 30)</code></pre>
+
+<ul>
+<li><code>10</code> es el primer parámetro y se pasa al argumento <code>radio</code> de la function.</li>
+<li><code>30</code> es el segundo parámetro y se pasa al argumento <code>altura</code>.</li>
+</ul>
+
+<h2 id="return">Return</h2>
+
+<p>A continuación se muestra un resumen del uso de la sentencia <code>return</code> dentro de una function:</p>
+
+<ul>
+<li>Todas las funciones devuelven el control de nuevo a la línea de código que las llamó si se incluye o no una declaración de return.</li>
+<li>Si no incluye una declaración <code>return</code> explícita en su function, entonces retornará cuando la ejecución llegue al final del bloque de código.</li>
+<li>Una declaración <code>return</code> sin una expresión después de ella simplemente retornará al código de llamada.</li>
+<li>Una declaración <code>return</code> con una expresión después de ella, la retornará de regreso a la línea de código que lo llamó. En el ejemplo anterior ese valor se asigna entonces a <code>vol</code>.</li>
+</ul>
+
+<h1 id="2.3.¿porquéfunctionpartei">2 . 3 . ¿Por qué function? Parte I</h1>
+
+<p>He aquí un ejemplo de código más complejo que está mal escrito. Las razones por las que el código es malo se discutirán en la página siguiente.</p>
+<pre><code class="js">//
+// EL PRIMERO
+//
+var radio1 = 2
+var altura1 = 4
+var circulo1 = radio1 * radio1 				// área de fondo
+var volume1 = Math.PI * circulo1 * altura1  // figura de volumen
+var peso1 = volume1 * 4 					// peso de la figura
+console.log (peso1)
+
+//
+// SEGUNDO
+//
+var radio2 = 5
+var altura2 = 7
+var circulo2 = radio2 * radio2 			// área de fondo
+var volume2 = Math.PI * circulo2 * altura2   // volumen de la figura
+var peso2 = volume2 * altura2 				// peso de la figura
+console.log (peso2)
+
+//
+// EL TERCERO
+//
+var radio3 = 1
+var altura3 = 35
+var circulo3 = radio3 * radio3 				// área de fondo
+var volume3 = Math.PI * circulo3 * height3  // figura de volumen
+var peso3 = volume3 * 8 				    // peso de la figura
+console.log (peso3)
+
+</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<p>Mira los bloques de código PRIMERO, SEGUNDO Y TERCERO. ¿Ves cómo están haciendo exactamente lo mismo?</p>
+
+<p>No se preocupe demasiado de lo que el código está haciendo, aparte de que cada bloque de código está haciendo lo mismo.</p>
+
+<p>Ahora ve a la siguiente página.</p>
+
+<h1 id="2.4.¿porquéfunctionparteii">2 . 4 . ¿Por qué function? Parte II</h1>
+
+<p>A la izquierda verá código que hace exactamente lo mismo en la forma correcta, usando una function.</p>
+<pre><code class="js">// calcular el área de un círculo
+function areaCirculo(radio) {
+&nbsp;&nbsp;return radio * radio
+}
+
+// calcular el volumen de un cilindro
+function volumenCilindro(radio, altura) {
+&nbsp;&nbsp;return Math.PI * areaCirculo(radio) * altura
+}
+
+// calcular el peso de un cilindro (por unidad)
+function pesoCilindro(radio, altura, peso) {
+&nbsp;&nbsp;return volumeCilindro(radio, altura) * peso
+}
+
+var radio1 = 2
+var altura1 = 4
+var peso1 = pesoCilindro(radio1, altura1, 4) // calcular el peso
+console.log (peso1)
+
+var radio2 = 5
+var altura2 = 7
+var peso2 = pesoCilindro (radio2, altura2, 6) // calcular el peso
+console.log (peso2)
+
+var radio3 = 1;
+var altura3 = 35;
+var peso3 = pesoCilindro(radio3, altura3, 8) // calcular el peso
+console.log (peso3)</code></pre>
+
+<p><a href="">EJECUTE EL CÓDIGO</a></p>
+
+<h2 id="¿porquéesmejor">¿Por qué es mejor?</h2>
+
+<p>Uno de los * Principios de Programación * de esta unidad es ** ocultar información **. Esto se logra ocultando los cálculos necesarios para calcular el peso de un cilindro detrás de una sola llamada de function.</p>
+
+<h3 id="duplicación">Duplicación</h3>
+
+<p>La razón por la que este código es mejor es que no hay bits duplicados de código.</p>
+
+<p>En el ejemplo, la function sólo se llama un par de veces, pero imagínese que necesitaba usar este código en cien lugares diferentes y lo codificó de la manera en que se hizo en la página anterior. Ahora, usted tendría el mismo bit de código repetido una y otra vez en cientos lugares diferentes.</p>
+
+<p>¿Qué pasaría si más tarde descubriste que ese bit de código tiene un error en él? Tendrías que ir y arreglar el código una y otra vez en cien lugares.</p>
+
+<h3 id="legibilidad">Legibilidad</h3>
+
+<p>Otra razón realmente importante de que este código es mejor es que es mucho más fácil de leer.</p>
+
+<p>En lugar de tener que descifrar muchas líneas de código (el código que se movió a una function podría haber sido cientos de líneas de largo) ahora puede leer un nombre agradable y significativo y saber inmediatamente lo que hace.</p>
+
+<h1 id="3.desafíos">3 . Desafíos</h1>
+
+<p>Ahora ya está listo para probar algunos desafíos y probar su conocimiento de funciones.</p>
+
+<h2 id="probandotusfunctions">Probando tus functions</h2>
+
+<p>En estos desafíos, escribirá las funciones que serán llamadas para usted. Puede probar estos directamente en su código como se muestra en el ejemplo anterior:</p>
+<pre><code class="js">// calcular el volumen de un cilindro
+function volumenCilindro( radio, altura) {
+&nbsp;&nbsp;return Math.PI * radio * radio * altura
+}
+
+console.log ('r = 10, h = 20 =&gt; V =' + volumenCilindro(10, 20))</code></pre>
+
+<p>Puede llamar a su function en cualquier lugar fuera de la function como <code>value = volumeCilindro(10,20)</code> lo hace arriba.</p>
+
+<h1 id="3.1.númeroenteroaleatorio">3 . 1 . Número Entero aleatorio</h1>
+
+<h3 id="númeroenteroaleatorio">Número entero aleatorio</h3>
+
+<p>Escribe una function llamada <code>aleatorioEntero</code> que toma dos parámetros numéricos<code>min</code> y <code>max</code> y retorna un valor entero aleatorio entre<code>min</code> y <code>max</code>.</p>
+<pre><code class="js">
+// Escribe tu código aquí
+
+
+function aleatorioEntero (min, max) {
+&nbsp;&nbsp;
+&nbsp;&nbsp;return Math.random() * (max - min) + min;
+}</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+
+<h1 id="3.2.perseguirrojo">3 . 2 . Perseguir rojo</h1>
+
+<h3 id="esrojo">Es rojo</h3>
+
+<p>Escribe una function <code>isRed</code> que toma una cadena<code>str</code> y determina si la cadena contiene la palabra ‘red’. Si devuelve <code>true</code>, volverá<code>false</code>.</p>
+
+<p>Tendrás que usar el método <code>str.lastIndexOf ('characters to look for')</code> o <code>str.indexOf ('characters to look for')</code> que devuelve un índice válido si se encuentra la cadena o <code>-1</code> si No lo fue.</p>
+<pre><code class="js">
+// Escribe tu código aquí
+
+function esRojo(str) {
+&nbsp;&nbsp;
+&nbsp;&nbsp;if (str.indexOf ("rojo") &gt;= 0)
+&nbsp;&nbsp;&nbsp;&nbsp;return verdadero;
+&nbsp;&nbsp;return false;
+}</code></pre>
+
+<p><a href="">¡Revisalo!</a></p>
+<!-- ##END MARKED WRAPPER## -->
+    </div>
+      
+  </template>
+    <script>
+        Polymer({
+            is: 'chapter-1'
+
+        });
+
+    </script>
+</dom-module>
