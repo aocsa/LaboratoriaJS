@@ -1,0 +1,61 @@
+//------------------------------------
+// Padding - Margins
+//
+// Description: Puede usar estas clases para alinear elementos en la pagina,
+// esta basado en multiplos de 7, sin embargo se puede cambiar a otra base
+//
+// Uso:
+//
+// <p class="mt-21"></p>
+// <div class="mr-7"></div>
+//
+//------------------------------------
+
+$loop-limit: 20;
+$multiple: 7;
+
+$box-models-abbr: 'p', 'pt', 'pr', 'pb', 'pl', 'm', 'mt', 'mr', 'mb', 'ml';
+$box-models: 'padding', 'padding-top', 'padding-right',
+             'padding-bottom', 'padding-left', 'margin',
+             'margin-top', 'margin-right', 'margin-bottom',
+             'margin-left';
+$breakpoints-sufix-list:  'xs', 'sm', 'md', 'lg';
+
+
+@for $i from 0 through $loop-limit {
+  @for $j from 1 through length($box-models) {
+    .#{nth($box-models-abbr, $j)}-#{$i * $multiple} {
+      #{nth($box-models, $j)}: $i * $multiple + px;
+    }
+  }
+}
+
+// PADDING VERTICAL & HORIZONTAL
+@for $i from 0 through $loop-limit {
+  .pv-#{$i * $multiple} {
+    padding-top: ($i * $multiple) + px;
+    padding-bottom: ($i * $multiple) + px;
+  }
+}
+
+@for $i from 0 through $loop-limit {
+  .ph-#{$i * $multiple} {
+    padding-left: ($i * $multiple) + px !important;
+    padding-right: ($i * $multiple) + px !important;
+  }
+}
+
+// MARGIN VERTICAL & HORIZONTAL
+@for $i from 0 through $loop-limit {
+  .mv-#{$i * $multiple} {
+    margin-top: ($i * $multiple) + px;
+    margin-bottom: ($i * $multiple) + px;
+  }
+}
+
+@for $i from 0 through $loop-limit {
+  .mh-#{$i*$multiple} {
+    margin-left: ($i*$multiple) + px;
+    margin-right: ($i*$multiple) + px;
+  }
+}

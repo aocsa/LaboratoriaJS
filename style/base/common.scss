@@ -1,0 +1,716 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, .root{
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: $default-font-family;
+  position: relative;
+  background: $white;
+}
+
+small, pre {
+  font-weight: $small-font-weight;
+  font-style: $small-font-style;
+  line-height: $small-line-height;
+  color: $black;
+  letter-spacing: $small-letter-spacing;	
+}
+
+.text-medium {
+	font-size: $medium-font-size;
+}
+
+.text-small {
+	font-size: $small-font-size;
+	line-height: $small-line-height;
+}
+
+code {
+	font-size: $small-font-size;
+	color: $black-dark; 
+}
+
+p, ul, ol, li, blockquote, a {
+  font-size: $default-font-size;
+  font-weight: $default-font-weight;
+  font-style: $default-font-style;
+  line-height: $default-line-height;
+  color: $black;
+  letter-spacing: $default-letter-spacing;
+}
+
+p {
+	padding-bottom:14px;
+}
+
+ul, ol {
+	padding-left:35px;
+	padding-bottom:14px;
+}
+
+li {
+	padding:3px 0;
+}
+
+blockquote {
+	font-style: italic;
+	font-family: $pfhandbook-font-family;
+	font-size: $h3-font-size;
+	border-left: 4px solid $yellow;
+	padding-left: 7px;
+}
+
+/* Formularios */
+
+form {
+	div {
+		padding-bottom: 21px;
+		label {
+			font-family: $montserrat-font-family;
+			font-size: $small-font-size;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+		input[type=text], textarea {
+			font-family: $museo-sanse-font-family;
+			background-color: $gray-lighter;
+			color: $black;
+			width: 100%;
+			border: 1px solid $gray-light;
+			border-radius: 2px;
+			padding: 14px;
+			margin-top:7px;
+			font-size: $small-font-size;
+			font-weight: $small-font-weight;
+			line-height: $small-line-height;
+		}
+		input[type=checkbox] {
+			height:15px;
+			width: 20px;
+		}
+		input[type=radio] {
+			height:15px;
+			width: 20px;
+		}
+		select{
+			font-family: $museo-sanse-font-family;
+			background-color: $gray-lighter;
+			color: $black;
+			width: 100%;
+			border: 1px solid $gray-light;
+			border-radius: 2px;
+			padding: 14px;
+			margin-top:7px;
+			font-size: $small-font-size;
+			font-weight: $small-font-weight;
+			line-height: $small-line-height;			
+			height: 50px;
+		}
+	}
+}
+
+/* Navegacion */
+nav {
+	display: block;
+	.active {
+		background-color: $gray-lighter;
+		border-bottom: 1px solid $yellow;
+	}
+	a {
+		font-size: $small-font-size;
+		border-bottom: 1px solid $gray-light;
+		display: block;
+		padding: 10px 7px;
+		&:hover {
+			background-color: $gray-lighter;
+			border-bottom: 1px solid $yellow;
+		}
+	}
+}
+.in-line {
+	display: inline-flex;
+}
+
+/* Contenedores */
+.card {
+	background-color: $white;
+	border-radius: 2px;
+	margin-bottom: 21px;
+	padding: 28px 21px;
+	box-shadow: 1px 1px 0 1px $gray-light;
+	overflow: auto;
+	img {
+		padding-bottom: 14px;
+	}
+}
+
+/* Hipervinculos */
+
+a {
+ text-decoration: none;
+ border-bottom: 2px solid $yellow;
+}
+
+a:hover {
+	border-bottom: 1px solid $yellow-darker;
+}
+
+/*Tipografia*/
+
+.montserrat {
+	font-family: $montserrat-font-family;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	line-height: 135%;
+	font-style: normal;
+}
+
+.pfhandbook {
+	font-family: $pfhandbook-font-family;
+	font-weight: 500;
+	line-height: 135%;	
+	font-style: normal;
+}
+
+.museo-sanse {
+	font-family: $museo-sanse-font-family;
+	line-height: 135%;
+	font-style: normal;
+}
+
+h1 {
+	font-size: $h1-font-size;
+}
+
+h2 {
+	font-size: $h2-font-size;
+}
+
+h3 {
+	font-size: $h3-font-size;
+}
+
+h4 {
+	font-size: $h4-font-size;
+}
+
+h5 {
+	font-size: $h5-font-size;
+}
+
+h6 {
+	font-size: $h6-font-size;
+}
+
+/* Botones */
+
+button {
+	padding: 12px 22px;
+	font-family: $montserrat-font-family;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-style: normal;
+	font-size: $boton-font-size;	
+	border: 1px;
+	border-radius: 2px;
+}
+
+.primary {
+	background-color: $yellow;
+	color: $black;
+	&:hover {
+		background-color: $yellow-lighter;
+	}
+}
+
+.secondary {
+	background-color: $black;
+	color: $white;
+	&:hover {
+		background-color: $black-lighter;
+	}
+}
+
+.destructive {
+	background-color: $red;
+	color: $white;
+	&:hover {
+		background-color: $red-lighter;
+	}
+}
+
+.disable {
+	background-color: $gray-light;
+	color: $gray-darker;
+}
+
+.outline-primary {
+	background-color: transparent;
+	color: $yellow;
+	border: 2px solid $yellow;
+	&:hover {
+		color: $yellow-lighter;
+		border: 2px solid $yellow-lighter;
+	}	
+}
+
+.outline-secondary {
+	background-color: transparent;
+	color: $black;
+	border: 2px solid $black;
+	&:hover {
+		color: $black-lighter;
+		border: 2px solid $black-lighter;
+	}	
+}
+
+/*
+	Alineaciones
+*/
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.full-width {
+	width:100%;
+}
+
+/*
+	Estilo de textos
+*/	
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+/*
+	Estilo de listas
+*/
+
+.no-style {
+	list-style: none;
+}
+
+/*
+	Botones
+*/
+
+.btn-primary {
+  background-color: #f7b617;
+}
+
+.btn {
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.71429;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.line-gray {
+  border: 2px solid #f7f7f7;
+}
+
+.btn-primary {
+  -moz-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  background-color: #f7b617;
+  &:hover {
+    background: #fcbc25;
+    color: white !important;
+  }
+}
+
+
+/*
+	Contenedores
+*/
+
+.border {
+	border: 1px solid $gray;
+}
+
+.border-gray-light {
+  border: 1px solid #e1e1e1;
+}
+
+.link-more {
+    display: flex;
+    span {
+      font-size: 13px;
+      margin-left: 7px;
+      display: flex;
+      align-items: center;
+      align-self: center;
+      flex-direction: row;
+    }
+}
+
+.main {
+  height: calc(100% - 60px);
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+img.img-profile {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+	colores
+*/
+
+//White
+.white {
+	color: $white;
+}
+
+//Yellow
+.yellow-lighter {
+	color: $yellow-lighter;
+}
+
+.yellow-light {
+	color: $yellow-light;
+}
+
+.yellow {
+	color: $yellow;
+}
+
+.yellow-dark {
+	color: $yellow-dark;
+}
+
+.yellow-darker {
+	color: $yellow-darker;
+}
+
+//Black
+.black-lighter {
+	color: $yellow-lighter;
+}
+
+.black-light {
+	color: $yellow-light;
+}
+
+.black {
+	color: $yellow;
+}
+
+.black-dark {
+	color: $yellow-dark;
+}
+
+.black-darker {
+	color: $yellow-darker;
+}
+
+//Gray
+.gray-lighter {
+	color: $gray-lighter;
+}
+
+.gray-light {
+	color: $gray-light;
+}
+
+.gray {
+	color: $gray;
+}
+
+.gray-dark {
+	color: $gray-dark;
+}
+
+.gray-darker {
+	color: $gray-darker;
+}
+
+//Red
+.red-lighter {
+	color: $red-lighter;
+}
+
+.red-light {
+	color: $red-light;
+}
+
+.red {
+	color: $gray;
+}
+
+.red-dark {
+	color: $red-dark;
+}
+
+.red-darker {
+	color: $red-darker;
+}
+
+//Green
+.green-lighter {
+	color: $green-lighter;
+}
+
+.green-light {
+	color: $green-light;
+}
+
+.green {
+	color: $green;
+}
+
+.green-dark {
+	color: $green-dark;
+}
+
+.green-darker {
+	color: $green-darker;
+}
+
+//Blue
+.blue-lighter {
+	color: $blue-lighter;
+}
+
+.blue-light {
+	color: $blue-light;
+}
+
+.blue {
+	color: $blue;
+}
+
+.blue-dark {
+	color: $blue-dark;
+}
+
+.blue-darker {
+	color: $blue-darker;
+}
+
+
+// flexbox
+.flex-center {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  -webkit-align-self: center;
+  align-self: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+
+/* 
+	background-color
+*/	
+
+//Yellow
+.bg-yellow-lighter {
+	background-color: $yellow-lighter;
+}
+
+.bg-yellow-light {
+	background-color: $yellow-light;
+}
+
+.bg-yellow {
+	background-color: $yellow;
+}
+
+.bg-yellow-dark {
+	background-color: $yellow-dark;
+}
+
+.bg-yellow-darker {
+	background-color: $yellow-darker;
+}
+
+//Black
+.bg-black-lighter {
+	background-color: $black-lighter;
+}
+
+.bg-black-light {
+	background-color: $black-light;
+}
+
+.bg-black {
+	background-color: $black;
+}
+
+.bg-black-dark {
+	background-color: $black-dark;
+}
+
+.bg-black-darker {
+	background-color: $black-darker;
+}
+
+//Gray
+.bg-gray-lighter {
+	background-color: $gray-lighter;
+}
+
+.bg-gray-light {
+	background-color: $gray-light;
+}
+
+.bg-gray {
+	background-color: $gray;
+}
+
+.bg-gray-dark {
+	background-color: $gray-dark;
+}
+
+.bg-gray-darker {
+	background-color: $gray-darker;
+}
+
+//Red
+.bg-red-lighter {
+	background-color: $red-lighter;
+}
+
+.bg-red-light {
+	background-color: $red-light;
+}
+
+.bg-red {
+	background-color: $red;
+}
+
+.bg-red-dark {
+	background-color: $red-dark;
+}
+
+.bg-red-darker {
+	background-color: $red-darker;
+}
+
+//Green
+.bg-green-lighter {
+	background-color: $green-lighter;
+}
+
+.bg-green-light {
+	background-color: $green-light;
+}
+
+.bg-green {
+	background-color: $green;
+}
+
+.bg-green-dark {
+	background-color: $green-dark;
+}
+
+.bg-green-darker {
+	background-color: $green-darker;
+}
+
+//Blue
+.bg-blue-lighter {
+	background-color: $blue-lighter;
+}
+
+.bg-blue-light {
+	background-color: $blue-light;
+}
+
+.bg-blue {
+	background-color: $blue;
+}
+
+.bg-blue-dark {
+	background-color: $blue-dark;
+}
+
+.bg-blue-darker {
+	background-color: $blue-darker;
+}
+
+
+
+.bg-block {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-gray-darker {
+  background-color: $gray-darker !important;
+}
+.bg-white {
+  background-color: $white !important;
+}
+.bg-gray {
+  background-color: #e1e1e1 !important
+}
+
+// Responsive
+@media only screen and (max-width: 480px) {
+  .hidden-xs {
+    display: none !important;
+  }
+  .full-width-xs {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}

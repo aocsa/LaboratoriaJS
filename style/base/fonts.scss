@@ -1,0 +1,67 @@
+
+
+/*
+	Fuentes
+*/
+
+@mixin font-face($shortName,$longName, $style, $weight, $type, $url, $format) {
+  @font-face {
+    font-family: quote($shortName);
+    font-style: $style;
+    font-weight: $weight;
+    src: local(quote($longName)), local(quote($type)), url($url) format(quote($format));
+  }
+}
+
+/* Montserrat */
+@include font-face('Montserrat','Montserrat Regular',normal,400,'Montserrat-Regular','fonts/Montserrat-Regular.woff','woff');
+@include font-face('Montserrat','Montserrat Bold',normal,700,'Montserrat-Bold','fonts/Montserrat-Bold.woff','woff');
+
+/* PF Handbook */
+@include font-face('PF Handbook Pro','PF Handbook Pro light',normal,300,'PF-Handbook-Pro-light','fonts/PFHandbookPro-Light.woff','woff');
+@include font-face('PF Handbook Pro','PF Handbook Pro italic',italic,300,'PF-Handbook-Pro-italic','fonts/PFHandbookPro-LightItalic.woff','woff');
+
+
+/*
+	Parametros
+*/
+
+/* Familias */
+$montserrat-font-family: "Montserrat", Helvetica, Arial;
+$pfhandbook-font-family: "PF Handbook Pro", Helvetica, Arial;
+$museo-sanse-font-family: "museo-sanse", Helvetica, Arial;
+
+/* Tamanos */
+$h1-font-size: 50px;
+$h2-font-size: 36px;
+$h3-font-size: 28px;
+$h4-font-size: 24px;
+$h5-font-size: 20px;
+$h6-font-size: 16px;
+
+/* Parrafo */
+$default-font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$default-font-size: 20px;
+$default-font-weight: 100;
+$default-line-height: 135%;
+$default-letter-spacing: 0px;
+$default-font-style: normal;
+
+/* Medium */
+$medium-font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$medium-font-size: 18px;
+$medium-font-weight: 100;
+$medium-line-height: 125%;
+$medium-letter-spacing: 0px;
+$medium-font-style: normal;
+
+/* Small */
+$small-font-family: "museo-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$small-font-size: 16px;
+$small-font-weight: 100;
+$small-line-height: 145%;
+$small-letter-spacing: 0px;
+$small-font-style: normal;
+
+/* Botones */
+$boton-font-size: 14px;

@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+//Config variables
+@import "base/colors.scss";
+
+//All available fonts in the application
+@import "base/fonts.scss";
+
+//Flexbox mixins
+@import "base/flex.scss";
+
+//Misc CSS that apply to all containers / components
+@import "base/common.scss";
+
+//Grid system
+@import "base/grid.scss";
+
+//Padding Margin utils
+@import "base/padding-margins.scss";
+
+//components
+// @import "components/checkbox.scss";
+// @import "components/tabs.scss";
+// @import "components/cards.scss";
+// @import "components/box.scss";
+// @import "components/badges.scss";
+// @import "components/progress.scss";
+
+
+//Custom CSS related to a single page
+@import "containers/dashboard.scss";
+// @import "containers/profile.scss";

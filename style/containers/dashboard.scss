@@ -1,0 +1,14 @@
+header {
+	background-color: $gray-lighter;	
+}
+
+article {
+	padding:70px 0;
+	border-bottom: 2px solid $gray;
+	.color-container {
+		height: 100px;
+		padding: 14px;
+		border-radius: 2px;
+	}			
+}
+
