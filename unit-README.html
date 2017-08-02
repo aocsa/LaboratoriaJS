@@ -1,0 +1,679 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="style/shared-style.html">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+<dom-module id="unit-README">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <template strip-whitespace="">
+    
+    
+    <style include="shared-style">        
+    /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:0.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}*{box-sizing:border-box}input,select,textarea,button{font:13px/1.4 Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Segoe UI Emoji","Segoe UI Symbol"}body{font:13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";color:#333;background-color:#fff}a{color:#4078c0;text-decoration:none}a:hover,a:active{text-decoration:underline}hr,.rule{height:0;margin:15px 0;overflow:hidden;background:transparent;border:0;border-bottom:1px solid #ddd}hr:before,.rule:before{display:table;content:""}hr:after,.rule:after{display:table;clear:both;content:""}h1,h2,h3,h4,h5,h6{margin-top:15px;margin-bottom:15px;line-height:1.1}h1{font-size:30px}h2{font-size:21px}h3{font-size:16px}h4{font-size:14px}h5{font-size:12px}h6{font-size:11px}small{font-size:90%}blockquote{margin:0}ul,ol{padding:0;margin-top:0;margin-bottom:0}ol ol,ul ol{list-style-type:lower-roman}ul ul ol,ul ol ol,ol ul ol,ol ol ol{list-style-type:lower-alpha}dd{margin-left:0}tt,code{font-family:Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size:12px}pre{margin-top:0;margin-bottom:0;font:12px Consolas,"Liberation Mono",Menlo,Courier,monospace}html,body{color:black}#wrapper{-webkit-font-smoothing:antialiased;line-height:1.6;padding:3px;background:#fff;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;color:#333}p{margin:1em 0}a{color:#4183c4;text-decoration:none}#wrapper{background-color:#fff;font-size:16px;line-height:1.6}#wrapper>*:first-child{margin-top:0 !important}#wrapper>*:last-child{margin-bottom:0 !important}@media screen{#wrapper{}}h1,h2,h3,h4,h5,h6{position:relative;font-weight:700;line-height:1.4;color:#333}h1{padding-bottom:.3em;font-size:2.25em;line-height:1.2;border-bottom:1px solid #eee}h2{padding-bottom:0.3em;font-size:1.75em;line-height:1.225;border-bottom:1px solid #eee}h3{font-size:1.5em;line-height:1.43}h4{font-size:1.25em}h5{font-size:1em}h6{color:#777;font-size:1em}p,blockquote,ul,ol,dl,table,pre{margin-top:0;margin-bottom:16px}hr{height:4px;padding:0;margin:16px 0;background-color:#e7e7e7;border:0 none}ul,ol{padding-left:2em}ul.no-list,ol.no-list{padding:0;list-style-type:none}ul ul,ul ol{margin-top:0;margin-bottom:0}ol ol,ol ul{margin-top:0;margin-bottom:0}li>p{margin-top:16px}dl{padding:0}dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}dl dd{padding:0 16px;margin-bottom:16px}blockquote{padding:0 15px;margin-left:0;color:#777;border-left:4px solid #ddd}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{display:block;width:100%;overflow:auto}table th{font-weight:700;padding:6px 13px;border:1px solid #ddd}table td{padding:6px 13px;border:1px solid #ddd}table tr{background-color:#fff;border-top:1px solid #ccc}table tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%;-moz-box-sizing:border-box;box-sizing:border-box}span.frame{display:block;overflow:hidden}span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}span.frame span img{display:block;float:left}span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}span.align-center{display:block;overflow:hidden;clear:both}span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}span.align-center span img{margin:0 auto;text-align:center}span.align-right{display:block;overflow:hidden;clear:both}span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}span.align-right span img{margin:0;text-align:right}span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}span.float-left span{margin:13px 0 0}span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}code,tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,0.04);border-radius:3px}code:before,code:after{letter-spacing:-.2em;content:"\00a0"}tt:before,tt:after{letter-spacing:-.2em;content:"\00a0"}code br,tt br{display:none}del code{text-decoration:inherit;vertical-align:text-top}pre>code{padding:0;margin:0;font-size:100%;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight pre{padding:16px;margin-bottom:0;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}pre{padding:16px;margin-bottom:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px;word-wrap:normal}pre code,pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}pre code:before,pre code:after{content:normal}pre tt:before,pre tt:after{content:normal}.poetry pre{font-family:Georgia, Garamond, serif !important;font-style:italic;font-size:110% !important;line-height:1.6em;display:block;margin-left:1em}.poetry pre code{font-family:Georgia, Garamond, serif !important;word-break:break-all;word-break:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;white-space:pre-wrap}sup,sub,a.footnote{font-size:1.4ex;height:0;line-height:1;vertical-align:super;position:relative}sub{vertical-align:sub;top:-1px}@media print{body{background:#fff}img,table,figure{page-break-inside:avoid}#wrapper{background:#fff;border:none !important;font-size:12px}pre code{overflow:visible}}@media screen{body.inverted{color:#eee !important;border-color:#555;box-shadow:none}.inverted #wrapper,.inverted hr,.inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted th,.inverted .math,.inverted caption,.inverted dd,.inverted dt,.inverted blockquote{color:#eee !important;border-color:#555;box-shadow:none}.inverted td,.inverted th{background:#333}.inverted pre,.inverted code,.inverted tt{background:#eeeeee !important;color:#111}.inverted h2{border-color:#555555}.inverted hr{border-color:#777;border-width:1px !important}::selection{background:rgba(157,193,200,0.5)}h1::selection{background-color:rgba(45,156,208,0.3)}h2::selection{background-color:rgba(90,182,224,0.3)}h3::selection,h4::selection,h5::selection,h6::selection,li::selection,ol::selection{background-color:rgba(133,201,232,0.3)}code::selection{background-color:rgba(0,0,0,0.7);color:#eeeeee}code span::selection{background-color:rgba(0,0,0,0.7) !important;color:#eeeeee !important}a::selection{background-color:rgba(255,230,102,0.2)}.inverted a::selection{background-color:rgba(255,230,102,0.6)}td::selection,th::selection,caption::selection{background-color:rgba(180,237,95,0.5)}.inverted{background:#0b2531;background:#252a2a}.inverted #wrapper{background:#252a2a}.inverted a{color:#acd1d5}}.highlight{background:#fff}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k,.highlight .o{font-weight:700}.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:700}.highlight .c1{color:#998;font-style:italic}.highlight .cs{color:#999;font-weight:700;font-style:italic}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:700}.highlight .gu{color:purple;font-weight:700}.highlight .gt{color:#a00}.highlight .kc,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr{font-weight:700}.highlight .kt{color:#458;font-weight:700}.highlight .m{color:#099}.highlight .s{color:#d14}.highlight .n{color:#333}.highlight .na{color:teal}.highlight .nb{color:#0086b3}.highlight .nc{color:#458;font-weight:700}.highlight .no{color:teal}.highlight .ni{color:purple}.highlight .ne,.highlight .nf{color:#900;font-weight:700}.highlight .nn{color:#555}.highlight .nt{color:navy}.highlight .nv{color:teal}.highlight .ow{font-weight:700}.highlight .w{color:#bbb}.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .bp{color:#999}.highlight .vc,.highlight .vg,.highlight .vi{color:teal}.highlight .il{color:#099}.highlight .gc{color:#999;background-color:#EAF2F5}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:blue}.type-csharp .highlight .nf{color:#000;font-weight:400}.type-csharp .highlight .nc{color:#2b91af}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#a31515}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:#00F}.type-csharp .highlight .nf{color:#000;font-weight:normal}.type-csharp .highlight .nc{color:#2B91AF}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#A31515}body.dark #wrapper{background:transparent !important;box-shadow:none !important}
+    .hljs{display:block;overflow-x:auto;padding:0.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:bold}.hljs-number,.hljs-literal,.hljs-variable,.hljs-template-variable,.hljs-tag .hljs-attr{color:#008080}.hljs-string,.hljs-doctag{color:#d14}.hljs-title,.hljs-section,.hljs-selector-id{color:#900;font-weight:bold}.hljs-subst{font-weight:normal}.hljs-type,.hljs-class .hljs-title{color:#458;font-weight:bold}.hljs-tag,.hljs-name,.hljs-attribute{color:#000080;font-weight:normal}.hljs-regexp,.hljs-link{color:#009926}.hljs-symbol,.hljs-bullet{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}#mkreplaced-toc{list-style-position:inside;padding:0;margin:0 0 0 1rem;list-style-type:none}#mkreplaced-toc li::before{content:''}#mkreplaced-toc li{font-size:1rem;line-height:1.25;font-weight:normal}#mkreplaced-toc li ul{font-size:1.3rem;font-weight:300;padding:.5rem 0;margin:0 0 0 1rem}#mkreplaced-toc li.missing{list-style-type:none !important}#mkreplaced-toc.max-1 ul,#mkreplaced-toc.max1 ul{display:none}#mkreplaced-toc.max-2 ul ul,#mkreplaced-toc.max2 ul ul{display:none}#mkreplaced-toc.max-3 ul ul ul,#mkreplaced-toc.max3 ul ul ul{display:none}#mkreplaced-toc.max-4 ul ul ul ul,#mkreplaced-toc.max4 ul ul ul ul{display:none}#mkreplaced-toc.max-5 ul ul ul ul ul,#mkreplaced-toc.max5 ul ul ul ul ul{display:none}.rtl{direction:rtl;text-align:right}@media print{body{background:white;line-height:1.4}html,body,#wrapper{max-width:100%;width:100%;-webkit-text-size-adjust:none;-webkit-perspective:none !important;box-sizing:border-box;width:auto;border:0;margin:0;padding:0;float:none;-moz-box-shadow:none !important;-webkit-box-shadow:none !important;box-shadow:none !important}mark{background:transparent !important}h1,h2,h3,h4,h5,h6{page-break-after:avoid}p,h2,h3{orphans:3;widows:3}section{page-break-before:avoid}pre>code{white-space:pre;word-break:break-word}#generated-toc,#firstdiff,#toc-title,#mkdocumentprogress,#mkincludechart,#mkprogressbar1,#mkprogressbar2,.mkscrollmeter,#alllinks,.popup{display:none !important}.suppressprintlinks a{color:inherit !important;text-decoration:none !important;border-bottom:none !important;cursor:default !important}.hrefafterlinktext #wrapper a:link:after,.hrefafterlinktext #wrapper a:visited:after{content:" (" attr(href) ") ";font-size:90%;opacity:0.9}.nocodebreak pre{page-break-inside:avoid}img,table,figure{page-break-inside:avoid}.breakfootnotes .footnotes{page-break-before:always}.breakfootnotes .footnotes hr{display:none}#mktoctitle{display:block}#print-title{display:block;border-bottom:solid 1px #666}#wrapper pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}#wrapper #generated-toc-clone,#wrapper #mkreplaced-toc{display:block}.task-list .task-list-item{list-style-type:none !important}.task-list .gh-complete.task-list-item .task-list-item-checkbox:before{content:'\2713';background:#838387}.task-list .task-list-item-checkbox{-webkit-appearance:none;position:relative}.task-list .task-list-item-checkbox:before{content:' ';border:solid 1px #aaa;width:1em;height:1em;display:block;border-radius:2px;left:-20px;top:-.75em;color:white;font-weight:bold;line-height:1;text-align:center;position:absolute}}
+    #wrapper #generated-toc-clone,#wrapper #mkreplaced-toc,#wrapper #generated-toc-clone ul,#wrapper #mkreplaced-toc ul{list-style-position:inside}#wrapper #generated-toc-clone li.missing,#wrapper #mkreplaced-toc li.missing{list-style-type: none!important}#wrapper #generated-toc-clone,#wrapper #mkreplaced-toc{list-style-type: upper-roman}#wrapper #generated-toc-clone>li>ul,#wrapper #mkreplaced-toc>li>ul {list-style-type: decimal}#wrapper #generated-toc-clone>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul{list-style-type: decimal-leading-zero}#wrapper #generated-toc-clone>li>ul>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul>li>ul{list-style-type: lower-greek}#wrapper #generated-toc-clone>li>ul>li>ul>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul>li>ul>li>ul{list-style-type: disc}#wrapper #generated-toc-clone>li>ul>li>ul>li>ul>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul>li>ul>li>ul>li>ul{list-style-type: square}#wrapper #generated-toc-clone,#wrapper #mkreplaced-toc{list-style-position:outside!important;margin-left:2rem;}
+    </style>
+
+    <style id="mkprintstyles">@media print{#wrapper #generated-toc-clone,#generated-toc{display:none!important}
+    html,body,#wrapper{font-size:10pt!important}
+    }
+    </style>
+        
+    <div id="wrapper">
+        <h1>01. Introducción a la programación (con JavaScript)</h1>
+<p>En un mundo que rápidamente se está digitalizando, aprender a programar abre<br />
+nuevas (y muchas veces mejores) oportunidades. Con este curso darás tus primeros<br />
+pasos hacia el mundo de la programación. Empezaremos desde cero, enseñándote los<br />
+fundamentos de JavaScript, el lenguaje de programación más popular de la Web.</p>
+<h2>Público Objetivo</h2>
+<p>Este curso está dirigido a personas <em>sin</em> conocimientos previos de programación<br />
+que tienen el interés de aventurarse al mundo del código. Será tu primer paso en<br />
+la ruta de aprendizaje.</p>
+<h2>Propósito General</h2>
+<p>El propósito de este curso es darte una idea de qué se trata el mundo del<br />
+desarrollo de software, para que puedas determinar si es algo que te apasiona<br />
+perseguir como profesión. Al terminar este curso sabrás si el código es lo tuyo<br />
+y habrás sentado unas buenas bases para el desarrollo de tu carrera profesional<br />
+en el mundo tech.</p>
+<h2>Aprenderás</h2>
+<ul>
+<li>Cómo funciona la Web: HTML, CSS, JavaScript, HTTP &amp; URLs</li>
+<li>Conceptos básicos de programación como: variables, tipos datos, estructuras de<br />
+datos, operadores, declaraciones condicionales, ciclos y funciones</li>
+<li>La sintaxis básica de JavaScript como lenguaje de programación</li>
+<li>A correr programas utilizando la interfaz de línea de comandos (CLI)</li>
+<li>A utilizar un sistema de control de versiones (Git)</li>
+</ul>
+<h2>Duración</h2>
+<ul>
+<li>Total: 30 horas aprox.</li>
+<li>Modalidad: Self-paced (online)</li>
+</ul>
+<h2>Requerimientos previos</h2>
+<p>Ningún conocimiento previo de programación es necesario para completar este<br />
+curso. Está diseñado para principiantes.</p>
+<h2>Productos a desarrollar</h2>
+<p>En este curso pondrás en práctica los conceptos al desarrollar tres (3)<br />
+productos digitales:</p>
+<ol>
+<li>
+<p><strong>Cajero automático</strong>: crearás un programa que un cajero automático pueda<br />
+utilizar para determinar el número mínimo de billetes a entregar dado un<br />
+monto solicitado.</p>
+</li>
+<li>
+<p><strong>¿Es una tarjeta de crédito falsa?</strong>: crearás un programa que confirme si<br />
+una tarjeta de crédito es válida según el<br />
+<a href="https://es.wikipedia.org/wiki/Algoritmo_de_Luhn">algoritmo de Luhn</a>.</p>
+</li>
+<li>
+<p><strong>Post encriptados en Facebook</strong>: aplicación web que publica mensajes<br />
+codificados (encriptados) en Facebook, que tus amigos solo pueden decifrar a<br />
+través de tu aplicación web.</p>
+</li>
+</ol>
+<h2>Syllabus</h2>
+<h3>Lección 01: <a href="01-introduction">Introducción</a></h3>
+<p>30min (self-paced)</p>
+<p>Tu primer acercamiento al mundo de la tecnología. Después de una breve<br />
+bienvenida, entraremos al por qué aprender a programar con JavaScript y crearás<br />
+tu primera página web.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tipo</th>
+<th>Duración</th>
+<th>Tópico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td>lectura</td>
+<td>Xmin</td>
+<td><a href="01-introduction/00-welcome-and-orientation.md">Bienvenida y orientación</a></td>
+</tr>
+<tr>
+<td>01</td>
+<td>lectura</td>
+<td>Xmin</td>
+<td><a href="01-introduction/01-growth-mindset.md">Growth Mindset</a></td>
+</tr>
+<tr>
+<td>02</td>
+<td>lectura</td>
+<td>Xmin</td>
+<td><a href="01-introduction/02-why-learn-to-code.md">¿Qué es la programación y porqué aprender a programar?</a></td>
+</tr>
+<tr>
+<td>03</td>
+<td>lectura</td>
+<td>Xmin</td>
+<td><a href="01-introduction/03-your-first-website.md">Tu primera página web</a></td>
+</tr>
+<tr>
+<td>04</td>
+<td>quiz</td>
+<td>Xmin</td>
+<td><a href="01-introduction/04-prueba-tu-conocimiento.md">Prueba tu conocimiento</a></td>
+</tr>
+</tbody>
+</table>
+<h3>Lección 02: <a href="02-variables-and-data-types">Variables y Tipos de Datos</a></h3>
+<p>30min (self-paced)</p>
+<p>Aprende a utilizar variables para almacenar información que cambia durante el<br />
+transcurso del programa y los diferentes tipo de datos de los valores en<br />
+JavaScript.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tipo</th>
+<th>Duración</th>
+<th>Tópico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>lectura</td>
+<td>Xmin</td>
+<td><a href="02-variables-and-data-types/01-values-data-types-and-operators.md">Valores, tipos de datos y operadores</a></td>
+</tr>
+<tr>
+<td>02</td>
+<td>lectura</td>
+<td>Xmin</td>
+<td><a href="02-variables-and-data-types/02-variables.md">Variables</a></td>
+</tr>
+<tr>
+<td>03</td>
+<td>lectura</td>
+<td>Xmin</td>
+<td><a href="02-variables-and-data-types/03-self-learning-MDN.md">Manipulando <code>strings</code> y <code>numbers</code></a></td>
+</tr>
+<tr>
+<td>04</td>
+<td>lectura</td>
+<td>Xmin</td>
+<td><a href="02-variables-and-data-types/04-comments.md">Comentarios en JavaScript</a></td>
+</tr>
+<tr>
+<td>05</td>
+<td>video</td>
+<td>Xmin</td>
+<td><a href="02-variables-and-data-types/05-guided-exercises.md">Practicando con ejercicios de variables y tipos de datos</a></td>
+</tr>
+<tr>
+<td>06</td>
+<td>quiz</td>
+<td>Xmin</td>
+<td><a href="02-variables-and-data-types/06-prueba-tu-conocimiento.md">Prueba tu conocimiento</a></td>
+</tr>
+</tbody>
+</table>
+<h3>Lección 08: <a href="08-conditional-structures">Estructuras Condicionales</a></h3>
+<p>30min (self-paced)</p>
+<p>Explora una de las formas más comunes de controlar el flujo de tu programa, y<br />
+por lo tanto darle flexibilidad a lo que hace tu producto.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tipo</th>
+<th>Duración</th>
+<th>Tópico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Repaso semana 1</td>
+</tr>
+<tr>
+<td>02</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Introducción a estructuras condicionales</td>
+</tr>
+<tr>
+<td>03</td>
+<td>video</td>
+<td>Xmin</td>
+<td><code>if… else</code> &amp; <code>else if</code></td>
+</tr>
+<tr>
+<td>04</td>
+<td>reto</td>
+<td>Xmin</td>
+<td>Completa el siguiente código para que, de acuerdo a la edad, clasifique entre: baby, toddler, kid, teenager and adult.</td>
+</tr>
+<tr>
+<td>05</td>
+<td>video</td>
+<td>Xmin</td>
+<td><code>switch</code></td>
+</tr>
+<tr>
+<td>06</td>
+<td>quiz</td>
+<td>Xmin</td>
+<td>Prueba tu conocimiento</td>
+</tr>
+</tbody>
+</table>
+<h3>Lección 09: <a href="09-loops">Estructuras Repetitivas</a></h3>
+<p>40min (self-paced)</p>
+<p>Aprende a optimizar tu código con el uso de ciclos y sigue el principio de DRY:<br />
+Don’t Repeat Yourself.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tipo</th>
+<th>Duración</th>
+<th>Tópico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Código DRY</td>
+</tr>
+<tr>
+<td>02</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Introducción a estructuras repetitivas</td>
+</tr>
+<tr>
+<td>03</td>
+<td>video</td>
+<td>Xmin</td>
+<td><code>while</code> and <code>do while</code> loops</td>
+</tr>
+<tr>
+<td>04</td>
+<td>reto</td>
+<td>Xmin</td>
+<td>Imprime los números del 0-10</td>
+</tr>
+<tr>
+<td>05</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Saliendo de un loop</td>
+</tr>
+<tr>
+<td>06</td>
+<td>video</td>
+<td>Xmin</td>
+<td><code>for</code> loops</td>
+</tr>
+<tr>
+<td>07</td>
+<td>reto</td>
+<td>Xmin</td>
+<td>Imprime los caracteres de un <code>string</code></td>
+</tr>
+<tr>
+<td>08</td>
+<td>quiz</td>
+<td>Xmin</td>
+<td>Prueba tu conocimiento</td>
+</tr>
+</tbody>
+</table>
+<h3>Lección 10: <a href="10-loops">Creando código reusable con Funciones</a></h3>
+<p>50min (self-paced)</p>
+<p>Funciones es un tema que todo desarrollador en JavaScript debe conocer a<br />
+profundidad y, por lo tanto, retornarás a este concepto en muchas ocasiones. Con<br />
+esta lección darás tu primer paso para entender el mundo de oportunidades que te<br />
+ofrecen las funciones.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tipo</th>
+<th>Duración</th>
+<th>Tópico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Introducción a funciones</td>
+</tr>
+<tr>
+<td>02</td>
+<td>reto</td>
+<td>Xmin</td>
+<td>Crea una función</td>
+</tr>
+<tr>
+<td>03</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Las funciones también cambian el flujo del programa</td>
+</tr>
+<tr>
+<td>04</td>
+<td>video</td>
+<td>Xmin</td>
+<td><code>return</code> statement</td>
+</tr>
+<tr>
+<td>05</td>
+<td>reto</td>
+<td>Xmin</td>
+<td>Crea una función con dos opciones de <code>return</code></td>
+</tr>
+<tr>
+<td>06</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Pasar información a una función</td>
+</tr>
+<tr>
+<td>07</td>
+<td>reto</td>
+<td>Xmin</td>
+<td>Crea una función que sume dos números. Si los argumentos no son números debe retornar mensaje de error.</td>
+</tr>
+<tr>
+<td>08</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Entiende <code>scope</code></td>
+</tr>
+<tr>
+<td>09</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Clean code: indentación, cammelCase, semantica y comentarios</td>
+</tr>
+<tr>
+<td>10</td>
+<td>quiz</td>
+<td>Xmin</td>
+<td>Prueba tu conocimiento</td>
+</tr>
+</tbody>
+</table>
+<h3>Lección 11: <a href="11-instructor-led-projects-functions">Ejercicios guiados</a></h3>
+<p>45min (self-paced)</p>
+<p>Repasa y consolida los conceptos aprendidos con un ejercicios práctico guiado.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tipo</th>
+<th>Duración</th>
+<th>Tópico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Revisar conceptos aprendidos</td>
+</tr>
+<tr>
+<td>02</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Enunciado: crea dos funciones, <code>add</code> y <code>multiply</code>. Cada uno debe tomar dos argumentos. La función <code>add</code> debe sumar sus argumentos y devolver el resultado. La funcion <code>multiply</code> debe multiplicar sus argumentos. Usando solamente estas dos funciones, resuelva este simple problema matemático: 36325 * 9824 + 777</td>
+</tr>
+<tr>
+<td>03</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Solucionario</td>
+</tr>
+<tr>
+<td>04</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Enunciado: crea una función que encripte los mensajes utilizando el <a href="https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar">Cifrado César</a></td>
+</tr>
+<tr>
+<td>05</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Solucionario</td>
+</tr>
+</tbody>
+</table>
+<h3>Lección 12: <a href="12-problem-sets-functions">Problem Sets</a></h3>
+<p>3h (self-paced)</p>
+<p>Resuelve los siguiente problemas en <a href="https://repl.it"><code>Repl.it</code></a>:</p>
+<ol>
+<li>getStringLength</li>
+<li>countSpaces</li>
+<li>countVowels</li>
+<li>capitalizeFirstLetter</li>
+<li>isPrime</li>
+<li>isEven</li>
+<li>isOdd</li>
+<li>isGreater</li>
+<li>isSpleeping</li>
+<li>areBothEven</li>
+<li>isOldEnoughToDrinkAndDrive</li>
+<li>determineBadge</li>
+<li>fizzBuzz</li>
+<li>chessBoard</li>
+<li>piramidConsole</li>
+</ol>
+<h3>Lección 13: <a href="13-intro-objects-and-arrays">Objects &amp; Arrays</a></h3>
+<p>60min (self-paced)</p>
+<p>Los <code>numbers</code> y <code>strings</code> son los ladrillos con los que se contruyen estructuras<br />
+de datos más complejas. Llegó la hora de conocer a los <code>objects</code> y los <code>arrays</code>.<br />
+¡Con ellos vas a poder crear programas más interesantes!</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tipo</th>
+<th>Duración</th>
+<th>Tópico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Intro a objetos y arreglos</td>
+</tr>
+<tr>
+<td>02</td>
+<td>video</td>
+<td>Xmin</td>
+<td>¿Qué son arreglos y por qué son importantes ?</td>
+</tr>
+<tr>
+<td>03</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Creando, accesando y modificando arreglos</td>
+</tr>
+<tr>
+<td>04</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Propiedades y métodos comunes de arreglos: <code>.length</code>; <code>.push()</code>; <code>.shift()</code>; <code>.unshift()</code>; <code>.pop()</code>; <code>.concat()</code>; <code>.indexOf()</code>; <code>.join()</code>; <code>.slice()</code>; <code>.lastIndexOf()</code>; <code>.trim()</code></td>
+</tr>
+<tr>
+<td>05</td>
+<td>quiz</td>
+<td>Xmin</td>
+<td>Prueba tu conocimiento</td>
+</tr>
+<tr>
+<td>06</td>
+<td>reto</td>
+<td>Xmin</td>
+<td>Varios retos pequeños de manipulación de arreglos</td>
+</tr>
+<tr>
+<td>07</td>
+<td>video</td>
+<td>Xmin</td>
+<td>¿Qué son objetos en JS y por qué son importantes?</td>
+</tr>
+<tr>
+<td>08</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Creando, accesando y modificando objetos</td>
+</tr>
+<tr>
+<td>09</td>
+<td>quiz</td>
+<td>Xmin</td>
+<td>Prueba tu conocimiento</td>
+</tr>
+<tr>
+<td>10</td>
+<td>reto</td>
+<td>Xmin</td>
+<td>Varios retos pequeños de manipulación de objetos</td>
+</tr>
+<tr>
+<td>11</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Combinando arreglos con objetos</td>
+</tr>
+<tr>
+<td>12</td>
+<td>reto</td>
+<td>Xmin</td>
+<td>Manipula un arreglo de objetos que representan tus amigos</td>
+</tr>
+</tbody>
+</table>
+<h3>Lección 14: <a href="14-instructor-led-projects-objects-and-arrays">Ejercicios guiados </a></h3>
+<p>45min (self-paced)</p>
+<p>Repasa y consolida los conceptos aprendidos con algunos ejercicios prácticos<br />
+guiados.</p>
+<p>| # | Tipo | Duración | Tópico<br />
+| - | ---- | -----<br />
+| 01 | video | Xmin | Revisar conceptos aprendidos<br />
+| 02 | video | Xmin | Enunciado: Crea un programa que imprima la suma todos los números entre un rango, como: <code>console.log(sum(range(start, end)))</code><br />
+| 03 | video | Xmin | Solucionario<br />
+| 04 | video | Xmin | Enunciado: Crea una función que invierta el orden de los elementos de un array<br />
+| 05 | video | Xmin | Solucionario<br />
+| 06 | video | Xmin | Enunciado: Crea una función <code>arrayToList</code> y otra <code>listToArray</code><br />
+| 07 | video | Xmin | Solucionario<br />
+| 08 | video | Xmin | Enunciado: Crea dos funciones que busquen un elemento en un array: linear search and binary search<br />
+| 09 | video | Xmin | Solucionario<br />
+| 10 | video | Xmin | Enunciado: escribe una función llamada <code>areArraysSame</code> que toma dos arrays como argumentos. Debe devolver verdadero si los dos arrays son iguales (es decir, tienen los mismos números, en el mismo orden) y false si son diferentes.<br />
+| 11 | video | Xmin | Solucionario</p>
+<h3>Lección 15: <a href="15-problem-sets-objects-and-arrays">Problem Sets</a></h3>
+<p>3h (self-paced)</p>
+<p>Resuelve los siguiente problemas en <a href="https://repl.it"><code>Repl.it</code></a>:</p>
+<ol>
+<li>arrayToObject</li>
+<li>objectToArray</li>
+<li>personalGreeting</li>
+<li>addProperty</li>
+<li>removeProperty</li>
+<li>calculateFee</li>
+<li>removeElement</li>
+<li>removeDuplicates</li>
+<li>sortArray</li>
+<li>classAverage</li>
+<li>isEmployable</li>
+<li>calculateDropoutRate</li>
+<li>topStudents</li>
+<li>isHacker</li>
+<li>isUnicorn</li>
+</ol>
+<h3>Lección 16: <a href="16-cool-products">Creating Cool Products</a></h3>
+<p>3h (presencial)</p>
+<p>Ahora que ya dominas los conceptos base de la programación, es hora de ponerlos<br />
+en práctica creando productos divertidos.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tipo</th>
+<th>Duración</th>
+<th>Tópico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Tips sobre cómo crear tus productos</td>
+</tr>
+<tr>
+<td>02</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Cómo enviar tu trabajo</td>
+</tr>
+<tr>
+<td>03</td>
+<td>video</td>
+<td>Xmin</td>
+<td><strong>Cajero automático</strong>: crea un programa que un cajero automático pueda utilizar para determinar el número mínimo de billetes a entregar dado un monto solicitado.</td>
+</tr>
+<tr>
+<td>04</td>
+<td>video</td>
+<td>Xmin</td>
+<td><strong>¿Es una tarjeta de crédito falsa?</strong>: crea un programa que confirme si una tarjeta de crédito es válida según el algoritmo de Luhn.</td>
+</tr>
+<tr>
+<td>05</td>
+<td>video</td>
+<td>Xmin</td>
+<td><strong>Post encriptados en Facebook</strong>: aplicación web que publica mensajes codificados (encriptados) en Facebook, que tus amigos solo pueden decifrar a través de tu aplicación web.</td>
+</tr>
+<tr>
+<td>06</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Aprende a desplegar tus productos en la web con <code>Heroku</code></td>
+</tr>
+<tr>
+<td>07</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Cierre</td>
+</tr>
+</tbody>
+</table>
+<h3>[BONUS] Lesson 17: <a href="17-javascripting">Javascripting de Node</a></h3>
+<p>3h (self-paced)</p>
+<p>Si quieres solidificar tus conocimientos y asegurarte de que dominas por<br />
+completo los temas que acabas de aprender, te recomendamos completar el curso de<br />
+<a href="https://github.com/workshopper/javascripting">javascripting</a> de la comunidad de<br />
+<a href="https://nodeschool.io/">nodeschool</a>.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tipo</th>
+<th>Duración</th>
+<th>Tópico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Tutorial workshoppers javascripting</td>
+</tr>
+<tr>
+<td>02</td>
+<td>video</td>
+<td>Xmin</td>
+<td>Cómo enviar tu trabajo</td>
+</tr>
+</tbody>
+</table>
+<h3>[BONUS] Lesson 18: <a href="18-how-the-web-works">Javascripting de Node</a></h3>
+<p>30min (self-paced)</p>
+<ul>
+<li>¿Cómo funciona la web?</li>
+<li>HTTP &amp; URLs</li>
+</ul>
+<hr />
+<h2>Contributors</h2>
+<ul>
+<li>Rodulfo Prieto (autor)</li>
+<li>Lupo Montero</li>
+<li>Iván Medina</li>
+</ul>
+<h2>Libros de consulta</h2>
+<ul>
+<li><a href="http://eloquentjavascript.net/">Eloquent JavaScript</a>, Marijn Haverbeke, 2014</li>
+<li><a href="http://pepa.holla.cz/wp-content/uploads/2015/11/JavaScript-for-Kids.pdf">JavaScript for kids</a>,<br />
+Nick Morgan, 2015</li>
+</ul>
+
+    </div>
+
+  </template>
+    <script>
+        Polymer({
+            is: "unit-README",
+            ready: function () {
+                hljs.initHighlightingOnLoad();
+            }
+        });
+    </script>
+</dom-module>

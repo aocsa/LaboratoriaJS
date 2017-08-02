@@ -5,26 +5,24 @@
     <title>Laboratoria</title>
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js" async=""></script>
     
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/9.1.0/styles/github.min.css">
-    <script src="https://twemoji.maxcdn.com/twemoji.min.js"></script>
-
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
     
+       
     <script>
         window.Polymer = {
             dom: 'shadow',
             lazyRegister: 'max',
             useNativeCSSProperties: true
-        };
+        }; 
         hljs.initHighlightingOnLoad();
     </script>
-    
+     
+
+        <style id="mkprintstyles">@media print{#wrapper #generated-toc-clone,#generated-toc{display:none!important}
+        html,body,#wrapper{font-size:10pt!important}
+        }
+        </style>
 
 
     <link rel="import" href="bower_components/iron-icons/iron-icons.html">
@@ -33,6 +31,9 @@
     <link rel="import" href="chapter-1.html">
     <link rel="import" href="unit-1.html">
     <link rel="import" href="unit-2.html">
+    
+    <link rel="import" href="unit-01-values-data-types-and-operators.html">
+    <link rel="import" href="unit-README.html">
     
     
     <link rel="import" href="google-codelab-step.html">
@@ -57,6 +58,7 @@
 
         <google-codelab-step label="Expresiones numéricas y de cadena" duration="2">
 
+           
             <unit-1 > </unit-1>        
  
          </google-codelab-step>
@@ -1454,10 +1456,13 @@ var string2 = "strings" // prompt("input: ")
         </google-codelab-step>
 
         
-        
- 
+         
         
    <google-codelab-step label="Demos LMS" duration="2">
+       
+       
+      
+       
             <script src="https://embed.runkit.com" data-element-id="my-element"></script>
 
             <div id="my-element">
